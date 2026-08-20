@@ -36,8 +36,8 @@ export const StrategicFacilities = () => {
     <Section className="bg-transparent">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="lg:col-span-6 flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-text-primary leading-tight">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-fluid-32 font-semibold text-text-primary leading-none">
               Strategically Located <br className="hidden sm:block" />
               Manufacturing Facilities
             </h2>
@@ -45,7 +45,7 @@ export const StrategicFacilities = () => {
               Display the three locations mentioned in the profile:
             </p>
           </div>
-          <div className="flex flex-col gap-6 pt-2">
+          <div className="flex flex-col gap-8 pt-2 max-w-lg">
             {facilities.map((item) => (
               <div key={item.id} className="flex flex-row items-start gap-4">
                 <div className="pt-0.5 shrink-0">
@@ -59,7 +59,7 @@ export const StrategicFacilities = () => {
                   />
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-3">
                   <h3
                     className={`text-base sm:text-lg font-bold ${
                       item.isPrimary ? "text-primary" : "text-text-primary"

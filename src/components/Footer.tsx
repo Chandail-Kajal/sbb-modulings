@@ -18,7 +18,7 @@ const XIcon = ({ size = 18 }: { size?: number }) => (
 export const Footer = () => {
   return (
     <footer className="w-full bg-linear-to-bl from-primary-light to-primary text-white flex flex-col">
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 py-12 lg:py-16">
+      <div className="px-section-x lg:py-16 sm:py-12 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -30,8 +30,8 @@ export const Footer = () => {
                 className="object-contain h-24 w-24"
               />
             </div>
-            <h3 className="text-lg font-bold">SBB Mouldings Pvt. Ltd.</h3>
-            <p className="text-xs text-white/80 leading-relaxed max-w-sm">
+            <h3 className="text-fluid-24 font-bold">SBB Mouldings Pvt. Ltd.</h3>
+            <p className="text-sm text-white/80 leading-snug max-w-sm">
               Advanced injection moulding and assembly solutions for the
               automotive, HVAC, white goods, and industrial sectors. With
               high-capacity manufacturing infrastructure and experienced
@@ -39,9 +39,10 @@ export const Footer = () => {
               production solutions.
             </p>
           </div>
+
           <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-sm font-semibold mb-1">Quick Links</h4>
-            <ul className="flex flex-col gap-2 text-xs text-white/80">
+            <h4 className="text-fluid-24 font-semibold mb-1">Quick Links</h4>
+            <ul className="flex flex-col gap-2.5 text-sm leading-snug text-white/80">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
                   Home
@@ -86,8 +87,8 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-sm font-semibold mb-1">Manufacturing</h4>
-            <ul className="flex flex-col gap-2 text-xs text-white/80">
+            <h4 className="text-fluid-24 font-semibold mb-1">Manufacturing</h4>
+            <ul className="flex flex-col gap-2.5 text-sm leading-snug text-white/80">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
                   Injection Moulding
@@ -117,8 +118,8 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-sm font-semibold mb-1">Industries</h4>
-            <ul className="flex flex-col gap-2 text-xs text-white/80">
+            <h4 className="text-fluid-24 font-semibold mb-1">Industries</h4>
+            <ul className="flex flex-col gap-2.5 text-sm leading-snug text-white/80">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
                   Automotive
@@ -143,8 +144,8 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-sm font-semibold mb-1">Contact Us</h4>
-            <div className="flex flex-col gap-3 text-xs text-white/80">
+            <h4 className="text-fluid-24 font-semibold mb-1">Contact Us</h4>
+            <div className="flex flex-col gap-3 text-sm leading-snug text-white/80">
               <span className="font-semibold text-white">
                 Manufacturing Locations
               </span>
@@ -181,10 +182,9 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full bg-white text-text-secondary py-4 px-4 sm:px-8 lg:px-16 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <div className="bg-white text-text-secondary py-4 px-section-x border-t border-gray-100">
+        <div className="mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
           <p>© 2026 SBB Mouldings Pvt. Ltd. All Rights Reserved.</p>
-
           <div className="flex items-center gap-3">
             <Link
               href="#"

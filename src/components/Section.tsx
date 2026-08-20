@@ -2,49 +2,33 @@ import { PropsWithChildren } from "react";
 
 interface SectionProps extends PropsWithChildren {
   className?: string;
-  enablePadding?: boolean;
-  enableLeftPadding?: boolean;
-  enableRightPadding?: boolean;
-  enableTopPadding?: boolean;
-  enableBottomPadding?: boolean;
+  disablePaddingX?: boolean;
+  disablePaddingY?: boolean;
   asChild?: boolean;
 }
 
 export const Section = ({
   children,
   className = "",
-  enablePadding = true,
-  enableLeftPadding = true,
-  enableRightPadding = true,
-  enableTopPadding = true,
-  enableBottomPadding = true,
+  disablePaddingX = false,
+  disablePaddingY = false,
   asChild = false,
 }: SectionProps) => {
-  const pxClass = !enablePadding
+  /* 
+    Fluid Padding Math:
+    px: 210px on 1920px screen -> clamp(1.25rem, 10.938vw, 13.125rem)
+    py: 157.5px (75% of 210px) -> clamp(1.5rem, 8.2vw, 9.84375rem)
+  */
+  const pxClass = disablePaddingX
     ? ""
-    : enableLeftPadding && enableRightPadding
-      ? "px-4 sm:px-8 lg:px-16"
-      : enableLeftPadding
-        ? "pl-4 sm:pl-8 lg:pl-16"
-        : enableRightPadding
-          ? "pr-4 sm:pr-8 lg:pr-16"
-          : "";
-
-  const pyClass = !enablePadding
-    ? ""
-    : enableTopPadding && enableBottomPadding
-      ? "py-16 sm:py-24"
-      : enableTopPadding
-        ? "pt-16 sm:pt-24"
-        : enableBottomPadding
-          ? "pb-16 sm:pb-24"
-          : "";
+    : "px-[clamp(1.25rem,10.938vw,13.125rem)]";
+  const pyClass = disablePaddingY ? "" : "py-[clamp(1.5rem,8.2vw,9.84375rem)]";
 
   return (
     <section
       className={`w-full bg-background ${pxClass} ${pyClass} ${className}`.trim()}
     >
-      {asChild ? children : <div className="max-w-7xl mx-auto">{children}</div>}
+      {asChild ? children : <div className="w-full">{children}</div>}
     </section>
   );
 };

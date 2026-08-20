@@ -4,12 +4,12 @@ import { Section } from "./Section";
 export const CtaBanner = () => {
   return (
     <Section>
-      <div className="relative w-full bg-linear-90 from-primary-light to-primary rounded-3xl overflow-hidden p-8 sm:p-12 lg:p-16 flex flex-col md:flex-row justify-between items-center gap-8 shadow-xl">
+      <div className="relative w-full bg-linear-to-r from-primary-light to-primary rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-8 flex flex-col md:flex-row justify-between items-center gap-8 shadow-xl">
         <div className="flex flex-col gap-4 max-w-xl z-10 text-white">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
+          <h2 className="text-fluid-32 font-bold leading-none">
             {"Let's Build the Next Generation of Components Together."}
           </h2>
-          <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-md">
+          <p className="text-xs sm:text-sm text-white/80 leading-snug max-w-lg">
             Short supporting text focused on OEM and manufacturing partnerships.
           </p>
           <div className="pt-2">

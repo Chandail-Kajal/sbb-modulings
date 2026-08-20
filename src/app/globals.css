@@ -17,7 +17,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Color utilities (generates bg-primary, text-primary, bg-secondary, etc.) */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-light: var(--primary-light);
@@ -26,11 +25,56 @@
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
 
-  /* Font utilities (generates font-sans, font-mono, font-neue, font-ce) */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-neue: var(--font-helvetica-neue), "Helvetica Neue", Arial, sans-serif;
   --font-ce: var(--font-helvetica-ce), "Helvetica Neue", Arial, sans-serif;
+
+  --spacing-section-x: clamp(1.25rem, 10.938vw, 13.125rem);
+  --spacing-section-x-static: 13.125rem; /* 210px */
+  --spacing-section-y: 9.84375rem; /* 157.5px */
+  --spacing-header-y: 1.71875rem; /* 27.5px */
+
+  --text-body: 1rem; /* 16px */
+  --text-sub: 1.125rem; /* 18px */
+  --text-title-sm: 1.5rem; /* 24px */
+  --text-title-md: 2rem; /* 32px */
+  --text-title-lg: 2.5rem; /* 40px */
+  --text-display: 6rem; /* 96px */
+
+  --text-fluid-16: clamp(1rem, 1.125rem, 1.25rem);
+  --text-fluid-24: clamp(1.25rem, 2vw, 1.5rem); /* 20px -> 24px */
+  --text-fluid-32: clamp(1.5rem, 2.5vw, 2rem); /* 24px -> 32px */
+  --text-fluid-40: clamp(1.875rem, 3.5vw, 2.5rem); /* 30px -> 40px */
+  --text-fluid-96: clamp(2.5rem, 8vw, 6rem);
+}
+
+@layer utilities {
+  .section-padding {
+    padding-left: var(--spacing-section-x);
+    padding-right: var(--spacing-section-x);
+    padding-top: var(--spacing-section-y);
+    padding-bottom: var(--spacing-section-y);
+  }
+
+  .header-padding {
+    padding-left: var(--spacing-section-x);
+    padding-right: var(--spacing-section-x);
+    padding-top: var(--spacing-header-y);
+    padding-bottom: var(--spacing-header-y);
+  }
+  .animate-infinite-scroll {
+    animation: infinite-scroll 25s linear infinite;
+  }
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 body {

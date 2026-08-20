@@ -28,16 +28,16 @@ export default function HomePage() {
       <Hero />
 
       <Section>
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-between">
-          <div className="flex flex-col gap-3 sm:gap-4 w-full lg:max-w-xl">
-            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-primary leading-tight">
+        <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
+          <div className="flex flex-col gap-2 sm:gap-3 w-full lg:max-w-xl">
+            <h4 className="text-2xl sm:text-3xl leading-none lg:text-4xl font-semibold text-text-primary ">
               Built on Engineering. Driven by{" "}
               <span className="block sm:inline text-primary">
                 Manufacturing Excellence.
               </span>
             </h4>
 
-            <p className="text-sm leading-relaxed text-text-secondary">
+            <p className="text-sm leading-snug text-text-muted">
               SBB Mouldings Pvt. Ltd. is an injection moulding and assembly
               company established in 2018, serving the automotive and white
               goods industries with advanced manufacturing capabilities,
@@ -48,7 +48,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="w-full lg:max-w-2xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6 sm:pt-2">
+          <div className="w-full lg:max-w-xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-x-4 sm:gap-y-8 sm:pt-2">
             {metricsData.map((item) => (
               <MetricBlock key={item.title} {...item} />
             ))}
@@ -64,7 +64,7 @@ export default function HomePage() {
 
       <ComponentsToAssemblies />
 
-      <div className="relative w-full overflow-hidden ">
+      <div className="relative w-full overflow-hidden">
         <Image
           src={"/map-bg.jpg"}
           alt="map-bg"
@@ -87,7 +87,7 @@ export default function HomePage() {
 const MetricBlock = (data: { title: string; subtitle: string }) => {
   return (
     <div className="flex flex-col font-neue gap-1">
-      <h4 className="text-2xl sm:text-3xl font-bold text-text-primary">
+      <h4 className="text-2xl sm:text-4xl lg:5xl font-bold text-text-primary">
         {data.title}
       </h4>
       <p className="text-sm text-text-secondary font-normal">{data.subtitle}</p>

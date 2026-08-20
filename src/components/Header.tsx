@@ -18,8 +18,14 @@ export const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-background px-4 py-4 sm:px-8 lg:px-16 sm:py-6">
-      <div className="max-w-7xl mx-auto flex flex-row justify-between items-center gap-4">
+    /* 
+      px-[clamp(1.25rem,10.938vw,13.125rem)] applies:
+      - 210px padding on 1920px screens
+      - Scales down fluidly for smaller screens
+      py-[1.71875rem] applies exact 27.5px top and bottom padding
+    */
+    <header className="w-full bg-background px-[clamp(1.25rem,10.938vw,13.125rem)] py-[1.71875rem]">
+      <div className="w-full flex flex-row justify-between items-center gap-4">
         <div className="shrink-0 flex items-center">
           <Image
             src="/shree_logo.png"
@@ -43,7 +49,7 @@ export const Header = () => {
         </nav>
 
         <div className="hidden sm:flex items-center shrink-0">
-          <button className="text-sm font-medium rounded-lg bg-primary text-white p-3 px-4 hover:bg-primary-light transition-colors">
+          <button className="text-sm font-medium rounded-lg bg-primary text-white p-2.5 px-6 hover:bg-primary-light transition-colors">
             Request A Quote
           </button>
         </div>

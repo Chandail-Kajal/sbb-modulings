@@ -1,7 +1,8 @@
+"use client";
+
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
-import { Section } from "./Section";
 import Image from "next/image";
 
 export const ManufacturingCarousel = () => {
@@ -32,10 +33,17 @@ export const ManufacturingCarousel = () => {
     },
   ];
 
-  // Embla Carousel setup: align start, loop enabled, snap 1 card at a time
+  /* 
+    Embla Carousel Options:
+    - loop: true -> Infinite loop scrolling
+    - align: "start" -> Aligns current active card to the left container margin
+    - slidesToScroll: 1 -> Explicitly scrolls 1 card at a time regardless of screen width
+    - skipSnaps: false -> Forces tight snapping to individual cards
+  */
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: true,
+    slidesToScroll: 1,
     skipSnaps: false,
   });
 
@@ -48,68 +56,49 @@ export const ManufacturingCarousel = () => {
   }, [emblaApi]);
 
   return (
-    <Section enableRightPadding={false} asChild>
-      <div className="sm:pl-14 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-between">
-        <div className="flex flex-col gap-3 sm:gap-4 w-full lg:max-w-md">
-          <h4 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-primary leading-tight">
-            Advanced Manufacturing Capabilities
-          </h4>
-          <p className="text-sm leading-relaxed text-text-secondary">
-            SBB Mouldings delivers precision moulding and assembly solutions
-            across automotive, HVAC, white goods, and industrial applications.
-          </p>
+    <section className="w-full overflow-hidden pl-section-x pr-0 pt-[clamp(1.5rem,8.2vw,9.84375rem)] flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-between">
+      <div className="flex flex-col gap-3 sm:gap-4 w-full lg:max-w-lg shrink-0 pr-4 sm:pr-8 lg:pr-0">
+        <h2 className="text-fluid-32 font-semibold text-text-primary leading-none w-full">
+          Advanced Manufacturing Capabilities
+        </h2>
+        <p className="text-sm leading-snug text-text-secondary">
+          SBB Mouldings delivers precision moulding and assembly solutions
+          across automotive, HVAC, white goods, and industrial applications.
+        </p>
+      </div>
 
-          <div className="hidden lg:flex flex-row items-center gap-4 pt-4">
-            <button
-              onClick={scrollPrev}
-              aria-label="Previous slide"
-              className="h-10 w-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition-colors cursor-pointer"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={scrollNext}
-              aria-label="Next slide"
-              className="h-10 w-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition-colors cursor-pointer"
-            >
-              <ChevronRight size={20} />
-            </button>
+      <div className="w-full min-w-0 flex flex-col gap-6">
+        <div className="overflow-hidden w-full" ref={emblaRef}>
+          <div className="flex gap-6">
+            {advanceManufacturingSectionCards.map((card, index) => (
+              <div
+                key={`${card.image}-${index}`}
+                className="flex-[0_0_280px] sm:flex-[0_0_320px] lg:flex-[0_0_360px] min-w-0"
+              >
+                <ManufacturingCard {...card} />
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="w-full flex flex-col gap-6 overflow-hidden">
-          <div className="overflow-hidden w-full" ref={emblaRef}>
-            <div className="flex gap-4 sm:gap-6">
-              {advanceManufacturingSectionCards.map((card) => (
-                <div
-                  key={card.image}
-                  className="flex-[0_0_80%] sm:flex-[0_0_300px] lg:flex-[0_0_320px] min-w-0"
-                >
-                  <ManufacturingCard {...card} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex lg:hidden flex-row justify-center items-center gap-4 pt-2">
-            <button
-              onClick={scrollPrev}
-              aria-label="Previous slide"
-              className="h-10 w-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition-colors cursor-pointer"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={scrollNext}
-              aria-label="Next slide"
-              className="h-10 w-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition-colors cursor-pointer"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+        <div className="flex flex-row items-center justify-center sm:justify-end sm:mr-30 gap-4 pt-2">
+          <button
+            onClick={scrollPrev}
+            aria-label="Previous slide"
+            className="h-10 w-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition-colors cursor-pointer"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={scrollNext}
+            aria-label="Next slide"
+            className="h-10 w-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition-colors cursor-pointer"
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
 
@@ -124,18 +113,18 @@ const ManufacturingCard = ({
 }) => {
   return (
     <div className="w-full flex flex-col gap-3">
-      <div className="relative aspect-3/4 w-full overflow-hidden border border-gray-200 rounded-4xl">
+      <div className="relative aspect-square w-full overflow-hidden border border-gray-200 rounded-3xl">
         <Image
           src={`/advance-manufacturing/${image}`}
           alt={title}
           fill
-          sizes="(max-width: 640px) 80vw, 320px"
+          sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
           className="object-cover"
         />
       </div>
       <div className="flex flex-col gap-1">
-        <h4 className="text-primary text-lg font-ce font-medium">{title}</h4>
-        <p className="text-text-secondary font-neue text-sm font-normal">
+        <h3 className="text-primary text-sub font-ce font-medium">{title}</h3>
+        <p className="text-text-secondary font-neue text-body font-normal leading-relaxed">
           {description}
         </p>
       </div>
