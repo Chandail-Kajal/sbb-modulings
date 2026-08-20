@@ -43,13 +43,13 @@ const industries: IndustryItem[] = [
 
 export const IndustrialApplications = () => {
   return (
-    <Section>
-      <div className="flex flex-col gap-10 lg:gap-14">
+    <Section >
+      <div className="section-container flex flex-col gap-10 lg:gap-14">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <h2 className="text-fluid-32 font-semibold text-text-primary max-w-xl leading-tight">
             Serving Diverse Industrial Applications
           </h2>
-          <p className="text-xs sm:text-sm text-text-secondary max-w-xs text-left md:text-right">
+          <p className="text-fluid-16 text-text-secondary max-w-xs text-left md:text-right">
             SBB Mouldings delivers precision moulding and assembly solutions
             across automotive, HVAC, white goods, and industrial applications.
           </p>

@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 @import "tailwindcss";
 
 :root {
@@ -20,51 +21,191 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-light: var(--primary-light);
+
   --color-secondary: var(--background);
+
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
   --font-neue: var(--font-helvetica-neue), "Helvetica Neue", Arial, sans-serif;
   --font-ce: var(--font-helvetica-ce), "Helvetica Neue", Arial, sans-serif;
 
-  --spacing-section-x: clamp(1.25rem, 10.938vw, 13.125rem);
-  --spacing-section-x-static: 13.125rem; /* 210px */
-  --spacing-section-y: 9.84375rem; /* 157.5px */
-  --spacing-header-y: 1.71875rem; /* 27.5px */
+  /*
+   * 1920px design:
+   * 1920 - 210 - 210 = 1500px content width
+   */
+  --container-content: 1500px;
 
-  --text-body: 1rem; /* 16px */
-  --text-sub: 1.125rem; /* 18px */
-  --text-title-sm: 1.5rem; /* 24px */
-  --text-title-md: 2rem; /* 32px */
-  --text-title-lg: 2.5rem; /* 40px */
-  --text-display: 6rem; /* 96px */
+  --section-y: 70px;
+  --header-y: 28px;
 
-  --text-fluid-16: clamp(1rem, 1.125rem, 1.25rem);
-  --text-fluid-24: clamp(1.25rem, 2vw, 1.5rem); /* 20px -> 24px */
-  --text-fluid-32: clamp(1.5rem, 2.5vw, 2rem); /* 24px -> 32px */
-  --text-fluid-40: clamp(1.875rem, 3.5vw, 2.5rem); /* 30px -> 40px */
-  --text-fluid-96: clamp(2.5rem, 8vw, 6rem);
+  --text-body: 16px;
+  --text-sub: 18px;
+  --text-title-sm: 24px;
+  --text-title-md: 32px;
+  --text-title-lg: 40px;
+  --text-display: 96px;
+
+  /*
+   * Fluid typography
+   */
+  --text-fluid-16: clamp(12px, 1.125vw, 16px);
+  --text-fluid-24: clamp(20px, 2vw, 24px);
+  --text-fluid-32: clamp(24px, 2.5vw, 32px);
+  --text-fluid-40: clamp(30px, 3.5vw, 40px);
+  --text-fluid-96: clamp(40px, 8vw, 96px);
 }
 
 @layer utilities {
-  .section-padding {
-    padding-left: var(--spacing-section-x);
-    padding-right: var(--spacing-section-x);
-    padding-top: var(--spacing-section-y);
-    padding-bottom: var(--spacing-section-y);
+  /*
+   * Main page content container.
+   *
+   * 1920px viewport:
+   * max-width = 1500px
+   *
+   * Smaller screens:
+   * max-width changes through breakpoints below.
+   */
+  .section-container {
+    width: 100%;
+    max-width: var(--container-content);
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .header-padding {
-    padding-left: var(--spacing-section-x);
-    padding-right: var(--spacing-section-x);
-    padding-top: var(--spacing-header-y);
-    padding-bottom: var(--spacing-header-y);
+  /*
+   * Section vertical spacing only.
+   *
+   * Horizontal spacing is handled by
+   * .section-container + max-width.
+   */
+  .section-padding {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
   }
+
+  /*
+   * Header vertical spacing only.
+   */
+  .header-padding {
+    padding-top: var(--header-y);
+    padding-bottom: var(--header-y);
+  }
+
   .animate-infinite-scroll {
     animation: infinite-scroll 25s linear infinite;
+  }
+}
+
+/*
+ * ============================================================
+ * DESKTOP
+ * 1920px+
+ * ============================================================
+ *
+ * Content:
+ * 1920px - 1500px = 420px
+ * 420px / 2 = 210px each side
+ */
+
+@media (min-width: 1920px) {
+  :root {
+    --container-content: 1500px;
+    --section-y: 70px;
+    --header-y: 28px;
+  }
+}
+
+/*
+ * ============================================================
+ * LARGE DESKTOP
+ * 1440px - 1919px
+ * ============================================================
+ */
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  :root {
+    --container-content: 1200px;
+    --section-y: 70px;
+    --header-y: 28px;
+  }
+}
+
+/*
+ * ============================================================
+ * DESKTOP / TABLET LANDSCAPE
+ * 1024px - 1439px
+ * ============================================================
+ */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  :root {
+    --container-content: 900px;
+    --section-y: 60px;
+    --header-y: 26px;
+  }
+}
+
+/*
+ * ============================================================
+ * TABLET
+ * 768px - 1023px
+ * ============================================================
+ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --container-content: 680px;
+    --section-y: 50px;
+    --header-y: 24px;
+  }
+}
+
+/*
+ * ============================================================
+ * MOBILE
+ * < 768px
+ * ============================================================
+ */
+
+@media (max-width: 767px) {
+  :root {
+    --container-content: calc(100% - 40px);
+
+    --section-y: 40px;
+    --header-y: 20px;
+
+    --text-body: 16px;
+    --text-sub: 17px;
+    --text-title-sm: 22px;
+    --text-title-md: 28px;
+    --text-title-lg: 32px;
+  }
+}
+
+/*
+ * ============================================================
+ * SMALL MOBILE
+ * < 480px
+ * ============================================================
+ */
+
+@media (max-width: 479px) {
+  :root {
+    --container-content: calc(100% - 32px);
+
+    --section-y: 32px;
+    --header-y: 16px;
+
+    --text-body: 15px;
+    --text-sub: 16px;
+    --text-title-sm: 20px;
+    --text-title-md: 26px;
+    --text-title-lg: 30px;
   }
 }
 
@@ -72,6 +213,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }

@@ -34,14 +34,14 @@ const facilities: Facility[] = [
 export const StrategicFacilities = () => {
   return (
     <Section className="bg-transparent">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="section-container grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="lg:col-span-6 flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <h2 className="text-fluid-32 font-semibold text-text-primary leading-none">
               Strategically Located <br className="hidden sm:block" />
               Manufacturing Facilities
             </h2>
-            <p className="text-xs sm:text-sm text-text-secondary">
+            <p className="text-fluid-16 text-text-secondary">
               Display the three locations mentioned in the profile:
             </p>
           </div>
@@ -61,13 +61,13 @@ export const StrategicFacilities = () => {
 
                 <div className="flex flex-col gap-3">
                   <h3
-                    className={`text-base sm:text-lg font-bold ${
+                    className={`text-fluid-24 font-bold ${
                       item.isPrimary ? "text-primary" : "text-text-primary"
                     }`}
                   >
                     {item.address}
                   </h3>
-                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
+                  <p className="text-fluid-16 text-text-secondary leading-snug">
                     {item.description}
                   </p>
                 </div>
@@ -76,8 +76,8 @@ export const StrategicFacilities = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-6 flex justify-center items-center w-full">
-          <div className="relative w-full max-w-lg aspect-4/3 sm:aspect-16/11">
+        <div className="lg:col-span-6 flex justify-center items-center w-full h-full">
+          <div className="relative w-full max-w-lg h-full aspect-3/3">
             <Image
               src="/map.png"
               alt="Strategically Located Manufacturing Facilities Map"

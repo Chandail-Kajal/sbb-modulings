@@ -18,13 +18,7 @@ export const Header = () => {
   ];
 
   return (
-    /* 
-      px-[clamp(1.25rem,10.938vw,13.125rem)] applies:
-      - 210px padding on 1920px screens
-      - Scales down fluidly for smaller screens
-      py-[1.71875rem] applies exact 27.5px top and bottom padding
-    */
-    <header className="w-full bg-background px-[clamp(1.25rem,10.938vw,13.125rem)] py-[1.71875rem]">
+    <header className="w-full bg-background section-container py-[1.71875rem]">
       <div className="w-full flex flex-row justify-between items-center gap-4">
         <div className="shrink-0 flex items-center">
           <Image
@@ -36,11 +30,11 @@ export const Header = () => {
           />
         </div>
 
-        <nav className="hidden lg:flex flex-row justify-center items-center gap-6">
+        <nav className="hidden lg:flex flex-row justify-center items-center gap-6 text-fluid-16">
           {navItems.map((item) => (
             <button
               key={item}
-              className="flex items-center text-sm font-normal font-neue gap-1 text-text-primary hover:text-primary transition-colors cursor-pointer"
+              className="flex items-center font-normal font-neue gap-1 text-text-primary hover:text-primary transition-colors cursor-pointer"
             >
               <span>{item}</span>
               <ChevronDown className="text-primary stroke-[2.5]" size={16} />
@@ -48,8 +42,8 @@ export const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden sm:flex items-center shrink-0">
-          <button className="text-sm font-medium rounded-lg bg-primary text-white p-2.5 px-6 hover:bg-primary-light transition-colors">
+        <div className="hidden sm:flex items-center shrink-0 text-fluid-16">
+          <button className="font-medium rounded-lg bg-primary text-white p-2.5 px-6 hover:bg-primary-light transition-colors">
             Request A Quote
           </button>
         </div>
@@ -68,14 +62,14 @@ export const Header = () => {
           {navItems.map((item) => (
             <button
               key={item}
-              className="flex items-center justify-between py-2 text-sm font-normal font-neue text-text-primary hover:text-primary transition-colors w-full text-left"
+              className="flex items-center justify-between py-2 text-fluid-16 font-normal font-neue text-text-primary hover:text-primary transition-colors w-full text-left"
             >
               <span>{item}</span>
               <ChevronDown className="text-primary" size={16} />
             </button>
           ))}
           <div className="pt-2">
-            <button className="w-full text-sm font-medium rounded-lg bg-primary text-white p-3 px-4 hover:bg-primary-light transition-colors">
+            <button className="w-full text-fluid-16 font-medium rounded-lg bg-primary text-white p-3 px-4 hover:bg-primary-light transition-colors">
               Request A Quote
             </button>
           </div>

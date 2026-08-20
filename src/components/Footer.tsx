@@ -17,173 +17,233 @@ const XIcon = ({ size = 18 }: { size?: number }) => (
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-linear-to-bl from-primary-light to-primary text-white flex flex-col">
-      <div className="px-section-x lg:py-16 sm:py-12 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
-          <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/shree_logo_white.png"
-                alt="SBB Logo"
-                width={150}
-                height={150}
-                className="object-contain h-24 w-24"
-              />
+    <footer className="w-full flex flex-col mt-(--section-y)">
+      <div className="w-full bg-linear-to-bl from-primary-light to-primary text-white">
+        <div className="section-container lg:py-16 sm:py-12 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+            <div className="lg:col-span-4 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/shree_logo_white.png"
+                  alt="SBB Logo"
+                  width={150}
+                  height={150}
+                  className="object-contain h-24 w-24"
+                />
+              </div>
+              <h3 className="text-fluid-24 font-bold">
+                SBB Mouldings Pvt. Ltd.
+              </h3>
+              <p className="text-fluid-16 text-white/80 leading-snug max-w-sm">
+                Advanced injection moulding and assembly solutions for the
+                automotive, HVAC, white goods, and industrial sectors. With
+                high-capacity manufacturing infrastructure and experienced
+                professionals, we deliver precision components and reliable
+                production solutions.
+              </p>
             </div>
-            <h3 className="text-fluid-24 font-bold">SBB Mouldings Pvt. Ltd.</h3>
-            <p className="text-sm text-white/80 leading-snug max-w-sm">
-              Advanced injection moulding and assembly solutions for the
-              automotive, HVAC, white goods, and industrial sectors. With
-              high-capacity manufacturing infrastructure and experienced
-              professionals, we deliver precision components and reliable
-              production solutions.
-            </p>
-          </div>
 
-          <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-fluid-24 font-semibold mb-1">Quick Links</h4>
-            <ul className="flex flex-col gap-2.5 text-sm leading-snug text-white/80">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
+            <div className="grid lg:col-span-8 lg:grid-cols-9 md:grid-cols-2 sm:grid-cols-1 gap-10">
+              <div className="lg:col-span-2 flex flex-col gap-2">
+                <h4 className="text-fluid-24 font-semibold mb-1">
+                  Quick Links
+                </h4>
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-white/80">
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Manufacturing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Industries
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Infrastructure
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Quality
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="lg:col-span-2 flex flex-col gap-2">
+                <h4 className="text-fluid-24 font-semibold mb-1">
                   Manufacturing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Industries
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Infrastructure
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Quality
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-fluid-24 font-semibold mb-1">Manufacturing</h4>
-            <ul className="flex flex-col gap-2.5 text-sm leading-snug text-white/80">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Injection Moulding
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Assembly Operations
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Component Manufacturing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Packaging & Traceability
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Manufacturing Infrastructure
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-fluid-24 font-semibold mb-1">Industries</h4>
-            <ul className="flex flex-col gap-2.5 text-sm leading-snug text-white/80">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Automotive
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  HVAC & Air Conditioning
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  White Goods
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Industrial Applications
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="text-fluid-24 font-semibold mb-1">Contact Us</h4>
-            <div className="flex flex-col gap-3 text-sm leading-snug text-white/80">
-              <span className="font-semibold text-white">
-                Manufacturing Locations
-              </span>
-
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
-                <span>
-                  84 km Stone, Sangwari Jarthal Road Bawal, Rewari, Haryana –
-                  123501
-                </span>
+                </h4>
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-white/80">
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Injection Moulding
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Assembly Operations
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Component Manufacturing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Packaging & Traceability
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Manufacturing Infrastructure
+                    </Link>
+                  </li>
+                </ul>
               </div>
 
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
-                <span>Plot No. 8 & 9, Sector 3, HSIIDC Bawal</span>
+              <div className="lg:col-span-2 flex flex-col gap-2">
+                <h4 className="text-fluid-24 font-semibold mb-1">Industries</h4>
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-white/80">
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Automotive
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      HVAC & Air Conditioning
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      White Goods
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="hover:text-white transition-colors"
+                    >
+                      Industrial Applications
+                    </Link>
+                  </li>
+                </ul>
               </div>
 
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
-                <span>Plot No. 58, Sector 14, HSIIDC Bawal</span>
-              </div>
+              <div className="lg:col-span-3 flex flex-col gap-2">
+                <h4 className="text-fluid-24 font-semibold mb-1">Contact Us</h4>
+                <div className="flex flex-col gap-3 text-fluid-16 leading-snug text-white/80">
+                  <span className="font-semibold text-white">
+                    Manufacturing Locations
+                  </span>
 
-              <div className="flex items-center gap-2 pt-1">
-                <Phone size={14} className="shrink-0 text-white" />
-                <span>+91 98765-43210</span>
-              </div>
+                  <div className="flex items-start gap-2">
+                    <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
+                    <span>
+                      84 km Stone, Sangwari Jarthal Road Bawal, Rewari, Haryana
+                      – 123501
+                    </span>
+                  </div>
 
-              <div className="flex items-center gap-2">
-                <Mail size={14} className="shrink-0 text-white" />
-                <span>info@sbbmoulding.com</span>
+                  <div className="flex items-start gap-2">
+                    <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
+                    <span>Plot No. 8 & 9, Sector 3, HSIIDC Bawal</span>
+                  </div>
+
+                  <div className="flex items-start gap-2">
+                    <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
+                    <span>Plot No. 58, Sector 14, HSIIDC Bawal</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-1">
+                    <Phone size={14} className="shrink-0 text-white" />
+                    <span>+91 98765-43210</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Mail size={14} className="shrink-0 text-white" />
+                    <span>info@sbbmoulding.com</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="bg-white text-text-secondary py-4 px-section-x border-t border-gray-100">
-        <div className="mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+      <div className="bg-white section-container text-text-secondary py-4  border-t border-gray-100">
+        <div className="mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-fluid-16">
           <p>© 2026 SBB Mouldings Pvt. Ltd. All Rights Reserved.</p>
           <div className="flex items-center gap-3">
             <Link

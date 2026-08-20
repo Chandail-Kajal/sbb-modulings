@@ -26,14 +26,14 @@ const capabilities: CapabilityItem[] = [
 
 export const ComponentsToAssemblies = () => {
   return (
-    <Section disablePaddingY>
-      <div className="pb-section-y grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+    <Section disablePaddingY className="pb-(--section-y)">
+      <div className="section-container grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         <div className="lg:col-span-4 flex flex-col gap-3">
           <h2 className="text-fluid-32 font-semibold text-text-primary leading-none">
             From Components to <br className="hidden sm:block" />
             Complete Assemblies
           </h2>
-          <p className="text-sm leading-snug text-text-secondary">
+          <p className="text-fluid-16 leading-snug text-text-secondary">
             Showcase actual products from the company profile:
           </p>
         </div>
@@ -65,7 +65,7 @@ export const ComponentsToAssemblies = () => {
               >
                 {item.title}
               </h3>
-              <p className="text-xs sm:text-sm text-text-secondary leading-snug">
+              <p className="text-fluid-16 text-text-secondary leading-snug">
                 {item.description}
               </p>
             </div>

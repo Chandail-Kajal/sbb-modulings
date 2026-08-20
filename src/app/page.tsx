@@ -28,27 +28,29 @@ export default function HomePage() {
       <Hero />
 
       <Section>
-        <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
-          <div className="flex flex-col gap-2 sm:gap-3 w-full lg:max-w-xl">
-            <h4 className="text-2xl sm:text-3xl leading-none lg:text-4xl font-semibold text-text-primary ">
-              Built on Engineering. Driven by{" "}
-              <span className="block sm:inline text-primary">
-                Manufacturing Excellence.
-              </span>
-            </h4>
+        <div className="flex flex-col items-start justify-between sm:flex-row section-container">
+          <div className="w-full lg:max-w-2xl">
+            <div className="flex flex-col gap-4">
+              <h4 className="text-fluid-40 font-bold leading-none text-text-primary">
+                Built on Engineering. Driven by{" "}
+                <span className="text-primary lg:block">
+                  Manufacturing Excellence.
+                </span>
+              </h4>
 
-            <p className="text-sm leading-snug text-text-muted">
-              SBB Mouldings Pvt. Ltd. is an injection moulding and assembly
-              company established in 2018, serving the automotive and white
-              goods industries with advanced manufacturing capabilities,
-              experienced professionals, and strategically developed production
-              facilities. Our capabilities enable us to support demanding
-              automotive and white goods applications from development through
-              production.
-            </p>
+              <p className="max-w-full text-fluid-16 leading-snug text-text-muted">
+                SBB Mouldings Pvt. Ltd. is an injection moulding and assembly
+                company established in 2018, serving the automotive and white
+                goods industries with advanced manufacturing capabilities,
+                experienced professionals, and strategically developed
+                production facilities. Our capabilities enable us to support
+                demanding automotive and white goods applications from
+                development through production.
+              </p>
+            </div>
           </div>
 
-          <div className="w-full lg:max-w-xl grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-x-4 sm:gap-y-8 sm:pt-2">
+          <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:max-w-2xl lg:gap-x-6 lg:gap-y-10">
             {metricsData.map((item) => (
               <MetricBlock key={item.title} {...item} />
             ))}
@@ -86,11 +88,11 @@ export default function HomePage() {
 
 const MetricBlock = (data: { title: string; subtitle: string }) => {
   return (
-    <div className="flex flex-col font-neue gap-1">
-      <h4 className="text-2xl sm:text-4xl lg:5xl font-bold text-text-primary">
+    <div className="flex   flex-col font-neue gap-1">
+      <h4 className="text-fluid-40 font-bold text-text-primary">
         {data.title}
       </h4>
-      <p className="text-sm text-text-secondary font-normal">{data.subtitle}</p>
+      <p className="text-fluid-16 leading-none text-text-muted font-normal">{data.subtitle}</p>
     </div>
   );
 };
