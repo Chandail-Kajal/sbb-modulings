@@ -33,8 +33,21 @@ const facilities: Facility[] = [
 
 export const StrategicFacilities = () => {
   return (
-    <Section className="bg-transparent">
-      <div className="section-container grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <Section className="relative overflow-hidden">
+      {/* Background Image Container */}
+      <div className="absolute inset-0 ">
+        <Image
+          src="/map-bg.jpg"
+          alt="map background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* 70% White Overlay */}
+        <div className="absolute inset-0 bg-white/70" />
+      </div>
+
+      <div className="section-container grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 bg-transparent">
         <div className="lg:col-span-6 flex flex-col gap-6">
           <div className="flex flex-col gap-4">
             <h2 className="text-fluid-32 font-semibold text-text-primary leading-none">

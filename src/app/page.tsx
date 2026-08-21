@@ -28,7 +28,7 @@ export default function HomePage() {
       <Hero />
 
       <Section>
-        <div className="flex flex-col gap-8 sm:gap-0 items-start justify-between sm:flex-row section-container">
+        <div className="flex flex-col gap-8 lg:gap-0 items-start justify-between lg:flex-row section-container">
           <div className="w-full lg:max-w-[40%]">
             <div className="flex flex-col gap-4">
               <h4 className="text-fluid-40 font-bold leading-none text-text-primary">
@@ -66,18 +66,12 @@ export default function HomePage() {
 
       <ComponentsToAssemblies />
 
-      <div className="relative w-full overflow-hidden">
-        <Image
-          src={"/map-bg.jpg"}
-          alt="map-bg"
-          height={1080}
-          width={1280}
-          className="inset-0 w-full absolute object-cover -z-10"
-        />
-        <div className="h-full w-full bg-white/70">
+
+        
+        
           <StrategicFacilities />
-        </div>
-      </div>
+       
+      
 
       <CtaBanner />
 

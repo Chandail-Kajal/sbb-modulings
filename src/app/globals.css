@@ -12,6 +12,9 @@
   --text-secondary: #4d4d4d;
   --text-primary: #3b3b3b;
   --text-muted: #7c7c7c;
+  --container-content: 1500px;
+  --section-y: 120px;
+  --header-y: 28px;
 }
 
 @theme inline {
@@ -34,10 +37,10 @@
   --font-neue: var(--font-helvetica-neue), "Helvetica Neue", Arial, sans-serif;
   --font-ce: var(--font-helvetica-ce), "Helvetica Neue", Arial, sans-serif;
 
-  --container-content: 1500px;
+  --container-content: var(--container-content);
 
-  --section-y: 70px;
-  --header-y: 28px;
+  --section-y: var(--section-y);
+  --header-y: var(--header-y);
 
   --text-body: 16px;
   --text-sub: 18px;
@@ -78,16 +81,15 @@
 }
 
 /* ============================================================
- * DESKTOP
+ * ULTRA-WIDE DESKTOP
  * 1920px+
  * ============================================================ */
 @media (min-width: 1920px) {
   :root {
     --container-content: 1500px;
-    --section-y: 70px;
+    --section-y: 120px;
     --header-y: 28px;
 
-    /* Locked at full target sizes above 1920px */
     --text-fluid-16: 16px;
     --text-fluid-24: 24px;
     --text-fluid-32: 32px;
@@ -97,16 +99,14 @@
 }
 
 /* ============================================================
- * LARGE DESKTOP
- * 1440px - 1919px
+ * LARGE DESKTOP (1550px - 1919px)
  * ============================================================ */
-@media (min-width: 1440px) and (max-width: 1919px) {
+@media (min-width: 1550px) and (max-width: 1919px) {
   :root {
-    --container-content: 1200px;
-    --section-y: 70px;
+    --container-content: 1400px;
+    --section-y: 100px;
     --header-y: 28px;
 
-    /* Scales continuously from 1440px up to 1920px */
     --text-fluid-16: clamp(15px, 0.83vw, 16px);
     --text-fluid-24: clamp(21px, 1.25vw, 24px);
     --text-fluid-32: clamp(26px, 1.66vw, 32px);
@@ -116,16 +116,48 @@
 }
 
 /* ============================================================
- * DESKTOP / TABLET LANDSCAPE
- * 1024px - 1439px
+ * MID-LARGE DESKTOP (1450px - 1549px)
  * ============================================================ */
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 1450px) and (max-width: 1549px) {
   :root {
-    --container-content: 900px;
-    --section-y: 60px;
+    --container-content: 1300px;
+    --section-y: 95px;
+    --header-y: 28px;
+
+    --text-fluid-16: clamp(15px, 0.9vw, 16px);
+    --text-fluid-24: clamp(20px, 1.35vw, 23px);
+    --text-fluid-32: clamp(25px, 1.8vw, 30px);
+    --text-fluid-40: clamp(30px, 2.2vw, 36px);
+    --text-fluid-96: clamp(66px, 5.2vw, 84px);
+  }
+}
+
+/* ============================================================
+ * MEDIUM DESKTOP (1350px - 1449px)
+ * ============================================================ */
+@media (min-width: 1350px) and (max-width: 1449px) {
+  :root {
+    --container-content: 1150px;
+    --section-y: 90px;
     --header-y: 26px;
 
-    /* Scales continuously from 1024px up to 1440px */
+    --text-fluid-16: clamp(14px, 1vw, 15px);
+    --text-fluid-24: clamp(19px, 1.45vw, 22px);
+    --text-fluid-32: clamp(24px, 1.9vw, 28px);
+    --text-fluid-40: clamp(29px, 2.35vw, 34px);
+    --text-fluid-96: clamp(60px, 5.2vw, 76px);
+  }
+}
+
+/* ============================================================
+ * COMPACT DESKTOP / TABLET LANDSCAPE (1024px - 1349px)
+ * ============================================================ */
+@media (min-width: 1024px) and (max-width: 1349px) {
+  :root {
+    --container-content: 960px;
+    --section-y: 80px;
+    --header-y: 26px;
+
     --text-fluid-16: clamp(14px, 1.1vw, 15px);
     --text-fluid-24: clamp(19px, 1.6vw, 21px);
     --text-fluid-32: clamp(24px, 2.1vw, 26px);
@@ -135,16 +167,14 @@
 }
 
 /* ============================================================
- * TABLET
- * 768px - 1023px
+ * TABLET (768px - 1023px)
  * ============================================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
   :root {
     --container-content: 680px;
-    --section-y: 50px;
+    --section-y: 60px;
     --header-y: 24px;
 
-    /* Scales continuously from 768px up to 1024px */
     --text-fluid-16: clamp(14px, 1.5vw, 15px);
     --text-fluid-24: clamp(17px, 2.1vw, 19px);
     --text-fluid-32: clamp(21px, 2.6vw, 24px);
@@ -154,8 +184,7 @@
 }
 
 /* ============================================================
- * MOBILE
- * 480px - 767px
+ * MOBILE (480px - 767px)
  * ============================================================ */
 @media (max-width: 767px) {
   :root {
@@ -170,7 +199,6 @@
     --text-title-md: 28px;
     --text-title-lg: 32px;
 
-    /* Scales continuously from 480px up to 768px */
     --text-fluid-16: clamp(13px, 2.7vw, 14px);
     --text-fluid-24: clamp(16px, 3.3vw, 17px);
     --text-fluid-32: clamp(18px, 3.9vw, 21px);
@@ -180,8 +208,7 @@
 }
 
 /* ============================================================
- * SMALL MOBILE
- * < 480px
+ * SMALL MOBILE (< 480px)
  * ============================================================ */
 @media (max-width: 479px) {
   :root {
@@ -196,7 +223,6 @@
     --text-title-md: 26px;
     --text-title-lg: 30px;
 
-    /* Scales smoothly down to 320px mobile devices */
     --text-fluid-16: clamp(12px, 3.75vw, 13px);
     --text-fluid-24: clamp(14px, 4.3vw, 16px);
     --text-fluid-32: clamp(16px, 5vw, 18px);
@@ -209,7 +235,6 @@
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }

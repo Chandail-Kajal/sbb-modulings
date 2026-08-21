@@ -34,7 +34,7 @@ export const Footer = () => {
               <h3 className="text-fluid-24 font-bold">
                 SBB Mouldings Pvt. Ltd.
               </h3>
-              <p className="text-[16px] font-ce  text-primary-foreground leading-snug max-w-md">
+              <p className="text-fluid-16 font-ce  text-primary-foreground leading-snug max-w-md">
                 Advanced injection moulding and assembly solutions for<br/> the
                 automotive, HVAC, white goods, and industrial sectors.<br/> With
                 high-capacity manufacturing infrastructure and experienced

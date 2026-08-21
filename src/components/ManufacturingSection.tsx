@@ -56,10 +56,11 @@ export const ManufacturingCarousel = () => {
           mx-auto
           flex
           flex-col
-          sm:flex-row
+          lg:flex-row
           section-container
           items-start
-          gap-12
+          gap-8
+          lg:gap-12
           overflow-visible
           "
       >
@@ -104,7 +105,7 @@ export const ManufacturingCarousel = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-start ml-[33vw] sm:ml-0 gap-4 sm:justify-center sm:pr-8 lg:pr-0">
+          <div className="mt-6 flex items-center justify-start ml-[33vw] sm:ml-[37vw] lg:ml-0 gap-4 lg:justify-center sm:pr-8 lg:pr-0">
             <button
               type="button"
               onClick={scrollPrev}
@@ -149,19 +150,23 @@ const ManufacturingCard = ({
   description: string;
 }) => {
   return (
-    <div className="flex w-full flex-col gap-3">
+    <div className="group flex w-full cursor-pointer flex-col gap-3">
       <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-gray-200">
         <Image
           src={`/advance-manufacturing/${image}`}
           alt={title}
           fill
           sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
         />
       </div>
 
       <div className="flex flex-col gap-1">
-        <h3 className={`font-ce text-fluid-24 font-bold ${index===0?"text-primary":"text-text-primary"}`}>
+        <h3
+          className={`font-ce text-fluid-24 font-bold ${
+            index === 0 ? "text-primary" : "text-text-primary"
+          }`}
+        >
           {title}
         </h3>
 
