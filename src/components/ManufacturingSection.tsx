@@ -45,7 +45,7 @@ export const ManufacturingCarousel = () => {
     },
     [
       Autoplay({
-        delay: 1500,
+        delay: 3000,
         stopOnInteraction: false,
         stopOnMouseEnter: false,
         stopOnFocusIn: false,
