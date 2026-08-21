@@ -45,20 +45,35 @@ export const ManufacturingCarousel = () => {
     },
     [
       Autoplay({
-        delay: 1500, // Slides every 1.5 seconds
+        delay: 1500,
         stopOnInteraction: false,
-        stopOnMouseEnter: true,
+        stopOnMouseEnter: false,
+        stopOnFocusIn: false,
       }),
     ]
   );
 
-  const scrollPrev = useCallback(() => {
-    emblaApi?.scrollPrev();
-  }, [emblaApi]);
+  const scrollPrev = useCallback(
+    (e?: React.SyntheticEvent) => {
+      e?.preventDefault();
+      if (!emblaApi) return;
+      emblaApi.scrollPrev();
+      const autoplay = emblaApi.plugins()?.autoplay;
+      if (autoplay) autoplay.reset();
+    },
+    [emblaApi]
+  );
 
-  const scrollNext = useCallback(() => {
-    emblaApi?.scrollNext();
-  }, [emblaApi]);
+  const scrollNext = useCallback(
+    (e?: React.SyntheticEvent) => {
+      e?.preventDefault();
+      if (!emblaApi) return;
+      emblaApi.scrollNext();
+      const autoplay = emblaApi.plugins()?.autoplay;
+      if (autoplay) autoplay.reset();
+    },
+    [emblaApi]
+  );
 
   return (
     <Section className="overflow-visible pt-(--section-y)" disablePaddingY>
@@ -94,7 +109,7 @@ export const ManufacturingCarousel = () => {
           </div>
         </div>
 
-        <div className="min-w-full flex-1">
+        <div className="w-full min-w-0 flex-1 overflow-hidden">
           <div ref={emblaRef} className="w-full overflow-hidden">
             <div className="flex gap-6">
               {[
@@ -117,31 +132,39 @@ export const ManufacturingCarousel = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-start ml-[33vw] sm:ml-[37vw] lg:ml-0 gap-4 lg:justify-center sm:pr-8 lg:pr-0">
+          <div className="mt-6 flex items-center justify-center lg:justify-start gap-4 relative z-20">
             <button
               type="button"
               onClick={scrollPrev}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                scrollPrev(e);
+              }}
               aria-label="Previous slide"
               className="
-                flex h-10 w-10 cursor-pointer items-center justify-center
-                rounded-full bg-black text-white
-                transition-colors hover:bg-primary
+                flex h-12 w-12 cursor-pointer items-center justify-center
+                rounded-full bg-black text-white active:scale-95
+                transition-transform hover:bg-primary touch-manipulation select-none
               "
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={22} />
             </button>
 
             <button
               type="button"
               onClick={scrollNext}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                scrollNext(e);
+              }}
               aria-label="Next slide"
               className="
-                flex h-10 w-10 cursor-pointer items-center justify-center
-                rounded-full bg-black text-white
-                transition-colors hover:bg-primary
+                flex h-12 w-12 cursor-pointer items-center justify-center
+                rounded-full bg-black text-white active:scale-95
+                transition-transform hover:bg-primary touch-manipulation select-none
               "
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={22} />
             </button>
           </div>
         </div>
@@ -160,7 +183,7 @@ const ManufacturingCard = ({
   description: string;
 }) => {
   return (
-    <div className="group flex w-full cursor-pointer flex-col gap-3">
+    <div className="group flex w-full cursor-pointer flex-col gap-3 select-none">
       <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-gray-200">
         <Image
           src={`/advance-manufacturing/${image}`}

@@ -29,7 +29,7 @@ export const LogoSection = () => {
 
 const LogoBlock = ({ logo }: { logo: string }) => {
   return (
-    <div className="w-54 h-18 p-4 border border-gray-400 shadow-md rounded-2xl flex items-center justify-center shadow-black/20 bg-white hover:shadow-lg transition-shadow">
+    <div className="w-70 h-18 p-4 border border-gray-400 shadow-md rounded-2xl flex items-center justify-center shadow-black/20 bg-white hover:shadow-lg transition-shadow">
       <Image
         src={`/client-logo/${logo}_logo.png`}
         alt={logo}
