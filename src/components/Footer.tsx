@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, MapPinHouse } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { SolidLocationBuildingIcon, SolidPhoneIcon, SolidMailIcon } from "./SolidLocationBuildingIcon";
 
 const XIcon = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -17,7 +18,7 @@ const XIcon = ({ size = 18 }: { size?: number }) => (
 
 export const Footer = () => {
   return (
-    <footer className="w-full flex flex-col mt-(--section-y)">
+    <footer className="w-full flex flex-col mt-6">
       <div className="w-full bg-linear-to-bl from-primary-light to-primary text-white">
         <div className="section-container lg:py-16 sm:py-12 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
@@ -43,12 +44,12 @@ export const Footer = () => {
               </p>
             </div>
 
-            <div className="grid lg:col-span-8 lg:grid-cols-9 md:grid-cols-2 sm:grid-cols-1 gap-10">
+            <div className="grid lg:col-span-8 lg:grid-cols-9 md:grid-cols-2 sm:grid-cols-1 gap-12">
               <div className="lg:col-span-2 flex flex-col gap-2">
                 <h4 className="text-fluid-24 font-semibold mb-1 text-primary-foreground">
                   Quick Links
                 </h4>
-                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground tracking-normal">
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground tracking-normal font-ce">
                   <li>
                     <Link
                       href="#"
@@ -120,7 +121,7 @@ export const Footer = () => {
                 <h4 className="text-fluid-24 font-semibold mb-1 text-primary-foreground">
                   Manufacturing
                 </h4>
-                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground">
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground font-ce">
                   <li>
                     <Link
                       href="#"
@@ -209,33 +210,40 @@ export const Footer = () => {
                     Manufacturing Locations
                   </span>
 
-                  <div className="flex items-start gap-2">
-                    <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
-                    <span>
-                      84 km Stone, Sangwari Jarthal Road Bawal, Rewari, Haryana
-                      – 123501
-                    </span>
-                  </div>
+                  <div className="flex flex-col gap-3 text-white text-sm">
+      {/* Location 1 */}
+      <div className="flex items-start gap-3">
+        <SolidLocationBuildingIcon className="shrink-0 mt-1" size={20} />
+        <span className="leading-snug">
+          84 km Stone, Sangwari Jarthal Road<br />
+          Bawal, Rewari, Haryana – 123501
+        </span>
+      </div>
 
-                  <div className="flex items-start gap-2">
-                    <MapPin size={16} className="shrink-0 mt-0.5 text-primary-foreground" />
-                    <span>Plot No. 8 & 9, Sector 3, HSIIDC Bawal</span>
-                  </div>
+      {/* Location 2 */}
+      <div className="flex items-start gap-3">
+        <SolidLocationBuildingIcon className="shrink-0 mt-0.5" size={20} />
+        <span>Plot No. 8 & 9, Sector 3, HSIIDC Bawal</span>
+      </div>
 
-                  <div className="flex items-start gap-2">
-                    <MapPin size={16} className="shrink-0 mt-0.5 text-primary-foreground" />
-                    <span>Plot No. 58, Sector 14, HSIIDC Bawal</span>
-                  </div>
+      {/* Location 3 */}
+      <div className="flex items-start gap-3">
+        <SolidLocationBuildingIcon className="shrink-0 mt-0.5" size={20} />
+        <span>Plot No. 58, Sector 14, HSIIDC Bawal</span>
+      </div>
 
-                  <div className="flex items-center gap-2 pt-1">
-                    <Phone size={14} className="shrink-0 text-primary-foreground" />
-                    <span>+91 98765-43210</span>
-                  </div>
+      {/* Phone */}
+      <div className="flex items-center gap-3 pt-1">
+        <SolidPhoneIcon className="shrink-0" size={18} />
+        <span>+91 98765-43210</span>
+      </div>
 
-                  <div className="flex items-center gap-2">
-                    <Mail size={14} className="shrink-0 text-primary-foreground" />
-                    <span>info@sbbmoulding.com</span>
-                  </div>
+      {/* Email */}
+      <div className="flex items-center gap-3">
+        <SolidMailIcon className="shrink-0" size={18} />
+        <span>info@sbbmoulding.com</span>
+      </div>
+    </div>
                 </div>
               </div>
             </div>

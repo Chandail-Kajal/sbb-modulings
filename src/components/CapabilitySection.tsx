@@ -4,14 +4,12 @@ import { Section } from "@/components/Section";
 interface CapabilityItem {
   title: string;
   description: string;
-  isPrimary?: boolean;
 }
 
 const capabilities: CapabilityItem[] = [
   {
     title: "Automotive Components",
     description: "Door Visors and other automotive parts",
-    isPrimary: true,
   },
   {
     title: "AC Components",
@@ -52,17 +50,13 @@ export const ComponentsToAssemblies = () => {
           {capabilities.map((item, index) => (
             <div
               key={item.title}
-              className={`flex flex-col py-6 ${
+              className={`group flex flex-col py-6 cursor-pointer ${
                 index !== capabilities.length - 1
                   ? "border-b-2 border-gray-400"
                   : ""
               }`}
             >
-              <h3
-                className={`text-fluid-24 sm:text-xl font-bold mb-1 ${
-                  item.isPrimary ? "text-primary" : "text-text-primary"
-                }`}
-              >
+              <h3 className="text-fluid-24 sm:text-xl font-bold mb-1 text-text-primary transition-colors duration-300 group-hover:text-primary">
                 {item.title}
               </h3>
               <p className="text-fluid-16 text-text-secondary leading-snug">

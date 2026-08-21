@@ -1,6 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
 import Image from "next/image";
@@ -34,12 +35,20 @@ export const ManufacturingCarousel = () => {
     },
   ];
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: true,
-    slidesToScroll: 1,
-    skipSnaps: false,
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align: "start",
+      loop: true,
+      dragFree: true,
+    },
+    [
+      AutoScroll({
+        speed: 1.5, // Adjust speed (e.g., 1 for slower, 2 for faster)
+        stopOnInteraction: false,
+        stopOnMouseEnter: true, // Pauses scrolling when hovering over cards
+      }),
+    ]
+  );
 
   const scrollPrev = useCallback(() => {
     emblaApi?.scrollPrev();
@@ -62,7 +71,7 @@ export const ManufacturingCarousel = () => {
           gap-8
           lg:gap-12
           overflow-visible
-          "
+        "
       >
         <div
           className="
@@ -89,6 +98,7 @@ export const ManufacturingCarousel = () => {
               {[
                 ...advanceManufacturingSectionCards,
                 ...advanceManufacturingSectionCards,
+                ...advanceManufacturingSectionCards,
               ].map((card, index) => (
                 <div
                   key={`${card.image}-${index}`}
@@ -99,7 +109,7 @@ export const ManufacturingCarousel = () => {
                     lg:flex-[0_0_360px]
                   "
                 >
-                  <ManufacturingCard index={index} {...card} />
+                  <ManufacturingCard {...card} />
                 </div>
               ))}
             </div>
@@ -139,12 +149,10 @@ export const ManufacturingCarousel = () => {
 };
 
 const ManufacturingCard = ({
-  index,
   image,
   title,
   description,
 }: {
-  index: number;
   image: string;
   title: string;
   description: string;
@@ -162,11 +170,7 @@ const ManufacturingCard = ({
       </div>
 
       <div className="flex flex-col gap-1">
-        <h3
-          className={`font-ce text-fluid-24 font-bold ${
-            index === 0 ? "text-primary" : "text-text-primary"
-          }`}
-        >
+        <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
           {title}
         </h3>
 
