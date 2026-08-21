@@ -6,7 +6,6 @@ interface Facility {
   id: number;
   address: string;
   description: string;
-  isPrimary?: boolean;
 }
 
 const facilities: Facility[] = [
@@ -15,7 +14,6 @@ const facilities: Facility[] = [
     address: "84 km Stone, Sangwari Jarthal Road",
     description:
       "Panasonic, Daikin, Mitsubishi, Blue Star, Lloyd/Havells and other AC assemblies",
-    isPrimary: true,
   },
   {
     id: 2,
@@ -35,7 +33,7 @@ export const StrategicFacilities = () => {
   return (
     <Section className="relative overflow-hidden">
       {/* Background Image Container */}
-      <div className="absolute inset-0 ">
+      <div className="absolute inset-0">
         <Image
           src="/map-bg.jpg"
           alt="map background"
@@ -58,26 +56,22 @@ export const StrategicFacilities = () => {
               Display the three locations mentioned in the profile:
             </p>
           </div>
+
           <div className="flex flex-col gap-8 pt-2 max-w-lg">
             {facilities.map((item) => (
-              <div key={item.id} className="flex flex-row items-start gap-4">
+              <div
+                key={item.id}
+                className="group flex flex-row items-start gap-4 cursor-pointer"
+              >
                 <div className="pt-0.5 shrink-0">
                   <MapPin
-                    className={
-                      item.isPrimary
-                        ? "text-primary fill-primary/10"
-                        : "text-text-primary"
-                    }
+                    className="text-text-primary transition-colors duration-300 group-hover:text-primary group-hover:fill-primary/10"
                     size={24}
                   />
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <h3
-                    className={`text-fluid-24 font-bold ${
-                      item.isPrimary ? "text-primary" : "text-text-primary"
-                    }`}
-                  >
+                  <h3 className="text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
                     {item.address}
                   </h3>
                   <p className="text-fluid-16 text-text-secondary leading-snug">
@@ -90,13 +84,15 @@ export const StrategicFacilities = () => {
         </div>
 
         <div className="lg:col-span-6 flex justify-center items-center w-full h-full">
-          <div className="relative w-full max-w-lg h-full aspect-3/3">
+          {/* Increase height values across screen sizes */}
+          <div className="relative w-full max-w-2xl h-[480px] sm:h-[600px] lg:h-[720px] xl:h-[800px]">
             <Image
               src="/map.png"
-              alt="Strategically Located Manufacturing Facilities Map"
+              alt="Manufacturing Facilities Map"
               fill
-              className="object-contain drop-shadow-md"
+              className="object-contain object-right"
               priority
+              sizes="(max-width: 1024px) 100vw, 55vw"
             />
           </div>
         </div>

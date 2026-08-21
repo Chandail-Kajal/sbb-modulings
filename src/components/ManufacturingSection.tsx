@@ -1,7 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
+import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
 import Image from "next/image";
@@ -39,13 +39,15 @@ export const ManufacturingCarousel = () => {
     {
       align: "start",
       loop: true,
-      dragFree: true,
+      slidesToScroll: 1,
+      skipSnaps: false,
+      duration: 20,
     },
     [
-      AutoScroll({
-        speed: 1.5, // Adjust speed (e.g., 1 for slower, 2 for faster)
+      Autoplay({
+        delay: 1500, // Slides every 1.5 seconds
         stopOnInteraction: false,
-        stopOnMouseEnter: true, // Pauses scrolling when hovering over cards
+        stopOnMouseEnter: true,
       }),
     ]
   );
