@@ -45,7 +45,7 @@ export const ManufacturingCarousel = () => {
     },
     [
       Autoplay({
-        delay: 3000,
+        delay: 5000,
         stopOnInteraction: false,
         stopOnMouseEnter: false,
         stopOnFocusIn: false,
@@ -132,7 +132,8 @@ export const ManufacturingCarousel = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-center lg:justify-start gap-4 relative z-20">
+          <div className="mt-8 flex items-center justify-center lg:justify-end gap-3 relative z-20 pr-4">
+            {/* Left Button - Light Gray Background */}
             <button
               type="button"
               onClick={scrollPrev}
@@ -142,14 +143,15 @@ export const ManufacturingCarousel = () => {
               }}
               aria-label="Previous slide"
               className="
-                flex h-12 w-12 cursor-pointer items-center justify-center
-                rounded-full bg-black text-white active:scale-95
-                transition-transform hover:bg-primary touch-manipulation select-none
+                flex h-11 w-11 cursor-pointer items-center justify-center
+                rounded-full bg-gray-200 text-neutral-700 active:scale-95
+                transition-all duration-200 hover:bg-gray-300 touch-manipulation select-none
               "
             >
-              <ChevronLeft size={22} />
+              <ChevronLeft size={20} strokeWidth={2.5} />
             </button>
 
+            {/* Right Button - Solid Black Background */}
             <button
               type="button"
               onClick={scrollNext}
@@ -159,12 +161,12 @@ export const ManufacturingCarousel = () => {
               }}
               aria-label="Next slide"
               className="
-                flex h-12 w-12 cursor-pointer items-center justify-center
+                flex h-11 w-11 cursor-pointer items-center justify-center
                 rounded-full bg-black text-white active:scale-95
-                transition-transform hover:bg-primary touch-manipulation select-none
+                transition-all duration-200 hover:bg-neutral-800 touch-manipulation select-none
               "
             >
-              <ChevronRight size={22} />
+              <ChevronRight size={20} strokeWidth={2.5} />
             </button>
           </div>
         </div>

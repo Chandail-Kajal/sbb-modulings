@@ -31,7 +31,7 @@ const facilities: Facility[] = [
 
 export const StrategicFacilities = () => {
   return (
-    <Section className="relative overflow-hidden">
+    <Section className="relative overflow-hidden py-8 sm:py-12 lg:py-14" disablePaddingY>
       {/* Background Image Container */}
       <div className="absolute inset-0">
         <Image
@@ -57,7 +57,7 @@ export const StrategicFacilities = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-8 pt-2 max-w-lg">
+          <div className="flex flex-col gap-6 pt-2 max-w-lg">
             {facilities.map((item) => (
               <div
                 key={item.id}
@@ -70,7 +70,7 @@ export const StrategicFacilities = () => {
                   />
                 </div>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
                   <h3 className="text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
                     {item.address}
                   </h3>
@@ -84,8 +84,7 @@ export const StrategicFacilities = () => {
         </div>
 
         <div className="lg:col-span-6 flex justify-center items-center w-full h-full">
-          {/* Increase height values across screen sizes */}
-          <div className="relative w-full max-w-2xl h-[480px] sm:h-[600px] lg:h-[720px] xl:h-[800px]">
+          <div className="relative w-full max-w-2xl h-[360px] sm:h-[450px] lg:h-[520px] xl:h-[580px]">
             <Image
               src="/map.png"
               alt="Manufacturing Facilities Map"
