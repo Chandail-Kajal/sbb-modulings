@@ -55,6 +55,8 @@ export const ManufacturingCarousel = () => {
         className="
           mx-auto
           flex
+          flex-col
+          sm:flex-row
           section-container
           items-start
           gap-12
@@ -65,7 +67,7 @@ export const ManufacturingCarousel = () => {
           className="
             w-full
             shrink-0
-            lg:max-w-xl
+            lg:max-w-[40%]
           "
         >
           <div className="flex flex-col gap-4">
@@ -102,7 +104,7 @@ export const ManufacturingCarousel = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-end gap-4 sm:justify-center sm:pr-8 lg:pr-0">
+          <div className="mt-6 flex items-center justify-start ml-[33vw] sm:ml-0 gap-4 sm:justify-center sm:pr-8 lg:pr-0">
             <button
               type="button"
               onClick={scrollPrev}

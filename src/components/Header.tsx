@@ -18,13 +18,14 @@ export const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-background section-container py-[1.71875rem]">
+    <header className="w-full bg-background section-container py-(--header-y)">
       <div className="w-full flex flex-row justify-between items-center gap-4">
         <div className="shrink-0 flex items-center">
           <Image
+            className="h-15 w-full"
             src="/shree_logo.png"
-            height={40}
-            width={40}
+            height={100}
+            width={100}
             alt="logo"
             priority
           />

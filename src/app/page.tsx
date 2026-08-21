@@ -28,8 +28,8 @@ export default function HomePage() {
       <Hero />
 
       <Section>
-        <div className="flex flex-col items-start justify-between sm:flex-row section-container">
-          <div className="w-full lg:max-w-2xl">
+        <div className="flex flex-col gap-8 sm:gap-0 items-start justify-between sm:flex-row section-container">
+          <div className="w-full lg:max-w-[40%]">
             <div className="flex flex-col gap-4">
               <h4 className="text-fluid-40 font-bold leading-none text-text-primary">
                 Built on Engineering. Driven by{" "}
@@ -50,7 +50,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:max-w-2xl lg:gap-x-6 lg:gap-y-10">
+          <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:max-w-[50%] lg:gap-x-6 lg:gap-y-8">
             {metricsData.map((item) => (
               <MetricBlock key={item.title} {...item} />
             ))}

@@ -46,7 +46,7 @@ export const IndustrialApplications = () => {
     <Section >
       <div className="section-container flex flex-col gap-10 lg:gap-14">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h2 className="text-fluid-32 font-semibold text-text-primary max-w-xl leading-tight">
+          <h2 className="text-fluid-32 font-semibold text-text-primary lg:max-w-[30%] leading-tight">
             Serving Diverse Industrial Applications
           </h2>
           <p className="text-fluid-16 text-text-secondary max-w-xs text-left md:text-right">
@@ -54,9 +54,9 @@ export const IndustrialApplications = () => {
             across automotive, HVAC, white goods, and industrial applications.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 relative">
           <div className="flex flex-col gap-8 relative">
-            <div className="relative bg-primary text-white p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-70">
+            <div className="relative bg-primary text-white p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
                 <span className="text-5xl lg:text-6xl font-bold block mb-4">
                   {industries[0].number}
@@ -73,7 +73,7 @@ export const IndustrialApplications = () => {
 
             <div className="hidden lg:block absolute left-1/2 top-70 bottom-1/3 w-3 bg-linear-to-b from-primary/10 via-primary to-primary -translate-x-1/2 z-0" />
 
-            <div className="relative min-h-70 rounded-3xl overflow-hidden shadow-md">
+            <div className="relative min-h-75 rounded-3xl overflow-hidden shadow-md">
               <Image
                 src={industries[0].image}
                 alt={industries[0].title}
@@ -83,7 +83,7 @@ export const IndustrialApplications = () => {
             </div>
           </div>
           <div className="flex flex-col gap-8 relative">
-            <div className="relative min-h-70 rounded-3xl overflow-hidden shadow-md z-10">
+            <div className="relative min-h-75 rounded-3xl overflow-hidden shadow-md z-10">
               <Image
                 src={industries[1].image}
                 alt={industries[1].title}
@@ -94,7 +94,7 @@ export const IndustrialApplications = () => {
 
             <div className="hidden lg:block absolute left-1/2 top-1/3 bottom-70 w-3 bg-linear-to-t from-primary/10 via-primary to-primary -translate-x-1/2 z-0" />
 
-            <div className="relative bg-white text-text-primary border border-gray-100 z-10 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-70">
+            <div className="relative bg-white text-text-primary border border-gray-100 z-10 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
                 <span className="text-5xl lg:text-6xl font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b]">
                   {industries[1].number}
@@ -110,7 +110,7 @@ export const IndustrialApplications = () => {
             </div>
           </div>
           <div className="flex flex-col gap-8 relative">
-            <div className="relative bg-white text-text-primary border border-gray-100 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-70">
+            <div className="relative bg-white text-text-primary border border-gray-100 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
                 <span className="text-5xl lg:text-6xl font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b]">
                   {industries[2].number}
@@ -126,9 +126,9 @@ export const IndustrialApplications = () => {
               <div className="hidden lg:block absolute -right-12 top-1/3 -translate-y-1/2 w-12 h-20 bg-linear-to-r from-primary via-primary-light to-white z-20 [clip-path:polygon(0_0,100%_50%,0_100%)]" />
             </div>
 
-            <div className="hidden lg:block absolute left-1/2 top-70 bottom-1/3 w-3 bg-linear-to-b from-primary/10 via-primary to-primary -translate-x-1/2 z-0" />
+            <div className="hidden lg:block absolute left-1/2 top-75 bottom-1/3 w-3 bg-linear-to-b from-primary/10 via-primary to-primary -translate-x-1/2 z-0" />
 
-            <div className="relative min-h-70 rounded-3xl overflow-hidden shadow-md">
+            <div className="relative min-h-75 rounded-3xl overflow-hidden shadow-md">
               <Image
                 src={industries[2].image}
                 alt={industries[2].title}
@@ -139,7 +139,7 @@ export const IndustrialApplications = () => {
           </div>
 
           <div className="flex flex-col gap-8 relative">
-            <div className="relative min-h-70 rounded-3xl overflow-hidden shadow-md z-10">
+            <div className="relative min-h-75 rounded-3xl overflow-hidden shadow-md z-10">
               <Image
                 src={industries[3].image}
                 alt={industries[3].title}
@@ -148,7 +148,7 @@ export const IndustrialApplications = () => {
               />
             </div>
             <div className="hidden lg:block absolute left-1/2 top-1/3 bottom-70 w-3 bg-linear-to-t from-primary/10 via-primary to-primary -translate-x-1/2 z-0" />
-            <div className="relative bg-white text-text-primary border border-gray-100 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-70">
+            <div className="relative bg-white text-text-primary border border-gray-100 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
                 <span className="text-5xl lg:text-6xl font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b]">
                   {industries[3].number}
