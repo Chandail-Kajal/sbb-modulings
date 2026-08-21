@@ -34,21 +34,21 @@ export const Footer = () => {
               <h3 className="text-fluid-24 font-bold">
                 SBB Mouldings Pvt. Ltd.
               </h3>
-              <p className="text-fluid-16 text-white/80 leading-snug max-w-sm">
-                Advanced injection moulding and assembly solutions for the
-                automotive, HVAC, white goods, and industrial sectors. With
+              <p className="text-[16px] font-ce  text-primary-foreground leading-snug max-w-md">
+                Advanced injection moulding and assembly solutions for<br/> the
+                automotive, HVAC, white goods, and industrial sectors.<br/> With
                 high-capacity manufacturing infrastructure and experienced
-                professionals, we deliver precision components and reliable
+                professionals, we deliver precision <br/>components and reliable
                 production solutions.
               </p>
             </div>
 
             <div className="grid lg:col-span-8 lg:grid-cols-9 md:grid-cols-2 sm:grid-cols-1 gap-10">
               <div className="lg:col-span-2 flex flex-col gap-2">
-                <h4 className="text-fluid-24 font-semibold mb-1">
+                <h4 className="text-fluid-24 font-semibold mb-1 text-primary-foreground">
                   Quick Links
                 </h4>
-                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-white/80">
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground tracking-normal">
                   <li>
                     <Link
                       href="#"
@@ -117,10 +117,10 @@ export const Footer = () => {
               </div>
 
               <div className="lg:col-span-2 flex flex-col gap-2">
-                <h4 className="text-fluid-24 font-semibold mb-1">
+                <h4 className="text-fluid-24 font-semibold mb-1 text-primary-foreground">
                   Manufacturing
                 </h4>
-                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-white/80">
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground">
                   <li>
                     <Link
                       href="#"
@@ -165,8 +165,8 @@ export const Footer = () => {
               </div>
 
               <div className="lg:col-span-2 flex flex-col gap-2">
-                <h4 className="text-fluid-24 font-semibold mb-1">Industries</h4>
-                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-white/80">
+                <h4 className="text-fluid-24 font-semibold mb-1 text-primary-foreground">Industries</h4>
+                <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground">
                   <li>
                     <Link
                       href="#"
@@ -203,9 +203,9 @@ export const Footer = () => {
               </div>
 
               <div className="lg:col-span-3 flex flex-col gap-2">
-                <h4 className="text-fluid-24 font-semibold mb-1">Contact Us</h4>
-                <div className="flex flex-col gap-3 text-fluid-16 leading-snug text-white/80">
-                  <span className="font-semibold text-white">
+                <h4 className="text-fluid-24 font-semibold mb-1 text-primary-foreground">Contact Us</h4>
+                <div className="flex flex-col gap-3 text-fluid-16 leading-snug text-primary-foreground">
+                  <span className="font-semibold  text-primary-foreground">
                     Manufacturing Locations
                   </span>
 
@@ -218,22 +218,22 @@ export const Footer = () => {
                   </div>
 
                   <div className="flex items-start gap-2">
-                    <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
+                    <MapPin size={16} className="shrink-0 mt-0.5 text-primary-foreground" />
                     <span>Plot No. 8 & 9, Sector 3, HSIIDC Bawal</span>
                   </div>
 
                   <div className="flex items-start gap-2">
-                    <MapPin size={16} className="shrink-0 mt-0.5 text-white" />
+                    <MapPin size={16} className="shrink-0 mt-0.5 text-primary-foreground" />
                     <span>Plot No. 58, Sector 14, HSIIDC Bawal</span>
                   </div>
 
                   <div className="flex items-center gap-2 pt-1">
-                    <Phone size={14} className="shrink-0 text-white" />
+                    <Phone size={14} className="shrink-0 text-primary-foreground" />
                     <span>+91 98765-43210</span>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <Mail size={14} className="shrink-0 text-white" />
+                    <Mail size={14} className="shrink-0 text-primary-foreground" />
                     <span>info@sbbmoulding.com</span>
                   </div>
                 </div>

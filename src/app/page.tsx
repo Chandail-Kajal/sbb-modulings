@@ -50,7 +50,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:max-w-[50%] lg:gap-x-6 lg:gap-y-8">
+          <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:max-w-[50%] lg:gap-x-4 lg:gap-y-8">
             {metricsData.map((item) => (
               <MetricBlock key={item.title} {...item} />
             ))}
