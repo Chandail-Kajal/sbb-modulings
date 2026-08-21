@@ -24,43 +24,34 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative h-full min-h-[300px] sm:min-h-[450px] lg:min-h-[600px] w-full overflow-hidden rounded-2xl bg-black">
-      {/* Video Element */}
+    <div className="relative w-full h-[280px] sm:h-[380px] lg:h-[650px] overflow-hidden">
       <video
         ref={videoRef}
         src="/hero-video.mp4"
         controls={isPlaying}
         playsInline
         onEnded={handleVideoEnded}
-        className={`h-full w-full object-cover transition-opacity duration-300 ${
-          isPlaying ? "opacity-100" : "pointer-events-none opacity-0"
+        className={`h-full w-full object-cover ${
+          isPlaying ? "block" : "hidden"
         }`}
       />
 
-      {/* Thumbnail and Play Button Overlay */}
       {!isPlaying && (
-        <div
-          onClick={handlePlay}
-          className="group absolute inset-0 z-10 flex cursor-pointer items-center justify-center"
-        >
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/30" />
-
-          {/* Play Icon */}
-          <div className="relative z-20 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95">
-            <CirclePlay className="size-16 sm:size-24 lg:size-28 stroke-1 text-white drop-shadow-lg" />
+        <>
+          <div
+            onClick={handlePlay}
+            className="inset-0 absolute bg-black/10 flex flex-row justify-center items-center cursor-pointer z-10"
+          >
+            <CirclePlay className="text-white size-16 sm:size-24 stroke-1" />
           </div>
-
-          {/* Image Poster */}
           <Image
-            className="h-full w-full object-cover select-none"
-            src="/hero_thumbnail.png"
+            className="h-full w-full object-cover"
+            src={"/hero_thumbnail.png"}
             alt="hero"
-            fill
-            priority
-            sizes="100vw"
+            height={1080}
+            width={1280}
           />
-        </div>
+        </>
       )}
     </div>
   );
