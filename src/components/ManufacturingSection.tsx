@@ -44,7 +44,7 @@ export const ManufacturingCarousel = () => {
     },
     [
       Autoplay({
-        delay: 1500,
+        delay: 4500,
         stopOnInteraction: false,
         stopOnMouseEnter: true,
       }),
@@ -106,11 +106,11 @@ export const ManufacturingCarousel = () => {
                     className="
                       min-w-0
                       flex-[0_0_100%]
-                      sm:flex-[0_0_33%]
+                      sm:flex-[0_0_29%]
                       px-3
                     "
                   >
-                    <ManufacturingCard index={index} {...card} />
+                    <ManufacturingCard  {...card} />
                   </div>
                 ))}
               </div>
