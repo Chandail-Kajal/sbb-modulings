@@ -84,7 +84,7 @@ export const StrategicFacilities = () => {
         </div>
 
         <div className="lg:col-span-6 flex justify-center items-center w-full h-full">
-          <div className="relative w-full max-w-2xl h-[360px] sm:h-[450px] lg:h-[520px] xl:h-[580px]">
+          <div className="relative w-full max-w-2xl h-90 sm:h-112.5 lg:h-130 xl:h-145">
             <Image
               src="/map.png"
               alt="Manufacturing Facilities Map"

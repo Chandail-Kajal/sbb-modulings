@@ -2,7 +2,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
-import Image from "next/image";
 import { ManufacturingCarousel } from "@/components/ManufacturingSection";
 import { LogoSection } from "@/components/LogoSection";
 import { IndustrialApplications } from "@/components/IndustrialApplications";

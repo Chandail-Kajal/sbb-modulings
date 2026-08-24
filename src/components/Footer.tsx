@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Mail, MapPinHouse } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { SolidLocationBuildingIcon, SolidPhoneIcon, SolidMailIcon } from "./SolidLocationBuildingIcon";
 

@@ -34,7 +34,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-[280px] sm:h-[380px] lg:h-[650px] overflow-hidden">
+    <div className="relative w-full h-70 sm:h-95 lg:h-162.5 overflow-hidden">
       <video
         ref={videoRef}
         src="/hero-video.mp4"
