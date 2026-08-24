@@ -126,9 +126,15 @@ export const ManufacturingCarousel = () => {
           aria-label="Previous slide"
           className="
             flex h-10 w-10 cursor-pointer items-center justify-center
-            rounded-full bg-[#D5D5D5] text-white
-            transition-colors hover:bg-black
-          "
+            rounded-full bg-[#D5D5D5]
+          text-black
+            transition-colors
+          hover:bg-black
+          hover:text-white
+          active:bg-black
+          active:text-white
+          
+  "
         >
           <ChevronLeft size={20} />
         </button>
@@ -139,9 +145,15 @@ export const ManufacturingCarousel = () => {
           aria-label="Next slide"
           className="
             flex h-10 w-10 cursor-pointer items-center justify-center
-            rounded-full bg-[#D5D5D5] text-white
-            transition-colors hover:bg-black
-          "
+            rounded-full bg-[#D5D5D5]
+          text-black
+            transition-colors
+          hover:bg-black
+          hover:text-white
+          active:bg-black
+          active:text-white
+         
+  "
         >
           <ChevronRight size={20} />
         </button>
