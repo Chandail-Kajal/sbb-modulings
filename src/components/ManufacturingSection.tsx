@@ -41,163 +41,143 @@ export const ManufacturingCarousel = () => {
       loop: true,
       slidesToScroll: 1,
       skipSnaps: false,
-      duration: 20,
     },
     [
       Autoplay({
-        delay: 5000,
+        delay: 1500,
         stopOnInteraction: false,
-        stopOnMouseEnter: false,
-        stopOnFocusIn: false,
+        stopOnMouseEnter: true,
       }),
-    ]
+    ],
   );
 
-  const scrollPrev = useCallback(
-    (e?: React.SyntheticEvent) => {
-      e?.preventDefault();
-      if (!emblaApi) return;
-      emblaApi.scrollPrev();
-      const autoplay = emblaApi.plugins()?.autoplay;
-      if (autoplay) autoplay.reset();
-    },
-    [emblaApi]
-  );
+  const scrollPrev = useCallback(() => {
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
 
-  const scrollNext = useCallback(
-    (e?: React.SyntheticEvent) => {
-      e?.preventDefault();
-      if (!emblaApi) return;
-      emblaApi.scrollNext();
-      const autoplay = emblaApi.plugins()?.autoplay;
-      if (autoplay) autoplay.reset();
-    },
-    [emblaApi]
-  );
+  const scrollNext = useCallback(() => {
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
 
   return (
-    <Section className="overflow-visible pt-(--section-y)" disablePaddingY>
-      <div
-        className="
-          mx-auto
-          flex
-          flex-col
-          lg:flex-row
-          section-container
-          items-start
-          gap-8
-          lg:gap-12
-          overflow-visible
-        "
-      >
+    <div className="flex flex-col w-full">
+      <Section className="overflow-visible pt-(--section-y)" disablePaddingY>
         <div
           className="
-            w-full
-            shrink-0
-            lg:max-w-[40%]
+            mx-auto
+            flex
+            flex-col
+            sm:flex-row
+            section-container
+            items-start
+            gap-12
+            overflow-visible
           "
         >
-          <div className="flex flex-col gap-4">
-            <h2 className="text-fluid-40 w-full font-bold leading-none text-text-primary">
-              Advanced Manufacturing Capabilities
-            </h2>
+          <div
+            className="
+              w-full
+              shrink-0
+              lg:max-w-[40%]
+            "
+          >
+            <div className="flex flex-col gap-4">
+              <h2 className="text-fluid-40 w-full font-bold leading-none text-text-primary">
+                Advanced Manufacturing Capabilities
+              </h2>
 
-            <p className="text-fluid-16 leading-snug text-text-secondary">
-              SBB Mouldings delivers precision moulding and assembly solutions
-              across automotive, HVAC, white goods, and industrial applications.
-            </p>
-          </div>
-        </div>
-
-        <div className="w-full min-w-0 flex-1 overflow-hidden">
-          <div ref={emblaRef} className="w-full overflow-hidden">
-            <div className="flex gap-6">
-              {[
-                ...advanceManufacturingSectionCards,
-                ...advanceManufacturingSectionCards,
-                ...advanceManufacturingSectionCards,
-              ].map((card, index) => (
-                <div
-                  key={`${card.image}-${index}`}
-                  className="
-                    min-w-0
-                    flex-[0_0_280px]
-                    sm:flex-[0_0_320px]
-                    lg:flex-[0_0_360px]
-                  "
-                >
-                  <ManufacturingCard {...card} />
-                </div>
-              ))}
+              <p className="text-fluid-16 leading-snug text-text-secondary">
+                SBB Mouldings delivers precision moulding and assembly solutions
+                across automotive, HVAC, white goods, and industrial
+                applications.
+              </p>
             </div>
           </div>
 
-          <div className="mt-8 flex items-center justify-center lg:justify-end gap-3 relative z-20 pr-4">
-            {/* Left Button - Light Gray Background */}
-            <button
-              type="button"
-              onClick={scrollPrev}
-              onTouchEnd={(e) => {
-                e.stopPropagation();
-                scrollPrev(e);
-              }}
-              aria-label="Previous slide"
-              className="
-                flex h-11 w-11 cursor-pointer items-center justify-center
-                rounded-full bg-gray-200 text-neutral-700 active:scale-95
-                transition-all duration-200 hover:bg-gray-300 touch-manipulation select-none
-              "
-            >
-              <ChevronLeft size={20} strokeWidth={2.5} />
-            </button>
-
-            {/* Right Button - Solid Black Background */}
-            <button
-              type="button"
-              onClick={scrollNext}
-              onTouchEnd={(e) => {
-                e.stopPropagation();
-                scrollNext(e);
-              }}
-              aria-label="Next slide"
-              className="
-                flex h-11 w-11 cursor-pointer items-center justify-center
-                rounded-full bg-black text-white active:scale-95
-                transition-all duration-200 hover:bg-neutral-800 touch-manipulation select-none
-              "
-            >
-              <ChevronRight size={20} strokeWidth={2.5} />
-            </button>
+          <div className="min-w-0 max-w-full flex-1 w-full">
+            <div ref={emblaRef} className="w-full overflow-hidden">
+              <div className="flex -mx-3">
+                {[
+                  ...advanceManufacturingSectionCards,
+                  ...advanceManufacturingSectionCards,
+                ].map((card, index) => (
+                  <div
+                    key={`${card.image}-${index}`}
+                    className="
+                      min-w-0
+                      flex-[0_0_100%]
+                      sm:flex-[0_0_50%]
+                      px-3
+                    "
+                  >
+                    <ManufacturingCard index={index} {...card} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
+      </Section>
+      <div className="mt-6 flex items-center justify-center gap-4 sm:justify-end section-container">
+        <button
+          type="button"
+          onClick={scrollPrev}
+          aria-label="Previous slide"
+          className="
+            flex h-10 w-10 cursor-pointer items-center justify-center
+            rounded-full bg-black text-white
+            transition-colors hover:bg-primary
+          "
+        >
+          <ChevronLeft size={20} />
+        </button>
+
+        <button
+          type="button"
+          onClick={scrollNext}
+          aria-label="Next slide"
+          className="
+            flex h-10 w-10 cursor-pointer items-center justify-center
+            rounded-full bg-black text-white
+            transition-colors hover:bg-primary
+          "
+        >
+          <ChevronRight size={20} />
+        </button>
       </div>
-    </Section>
+    </div>
   );
 };
 
 const ManufacturingCard = ({
+  index,
   image,
   title,
   description,
 }: {
+  index: number;
   image: string;
   title: string;
   description: string;
 }) => {
   return (
-    <div className="group flex w-full cursor-pointer flex-col gap-3 select-none">
+    <div className="flex w-full flex-col gap-3">
       <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-gray-200">
         <Image
           src={`/advance-manufacturing/${image}`}
           alt={title}
           fill
-          sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+          sizes="(max-width: 640px) 80vw, 50vw"
+          className="object-cover"
         />
       </div>
 
       <div className="flex flex-col gap-1">
-        <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
+        <h3
+          className={`font-ce text-fluid-24 font-bold ${
+            index === 0 ? "text-primary" : "text-text-primary"
+          }`}
+        >
           {title}
         </h3>
 
