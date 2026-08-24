@@ -70,7 +70,7 @@ export const ManufacturingCarousel = () => {
             sm:flex-row
             carousel-section
             items-start
-            gap-12
+
             overflow-visible
           "
         >
@@ -79,6 +79,7 @@ export const ManufacturingCarousel = () => {
               w-full
               shrink-0
               lg:max-w-[35%]
+              h-123.5
             "
           >
             <div className="flex flex-col gap-4">
@@ -106,7 +107,7 @@ export const ManufacturingCarousel = () => {
                     className="
                       min-w-0
                       flex-[0_0_100%]
-                      sm:flex-[0_0_29%]
+                      sm:flex-[0_0_30%]
                       px-3
                     "
                   >
@@ -118,15 +119,15 @@ export const ManufacturingCarousel = () => {
           </div>
         </div>
       </Section>
-      <div className="mt-6 flex items-center justify-center gap-4 sm:justify-end section-container">
+      <div className="mt-6 flex items-center justify-center gap-10 sm:justify-end section-container">
         <button
           type="button"
           onClick={scrollPrev}
           aria-label="Previous slide"
           className="
             flex h-10 w-10 cursor-pointer items-center justify-center
-            rounded-full bg-gray-400 text-white
-            transition-colors hover:bg-primary
+            rounded-full bg-[#D5D5D5] text-white
+            transition-colors hover:bg-black
           "
         >
           <ChevronLeft size={20} />
@@ -138,8 +139,8 @@ export const ManufacturingCarousel = () => {
           aria-label="Next slide"
           className="
             flex h-10 w-10 cursor-pointer items-center justify-center
-            rounded-full bg-gray-400 text-white
-            transition-colors hover:bg-primary
+            rounded-full bg-[#D5D5D5] text-white
+            transition-colors hover:bg-black
           "
         >
           <ChevronRight size={20} />
@@ -159,18 +160,30 @@ const ManufacturingCard = ({
   description: string;
 }) => {
   return (
-    <div className="group flex w-full cursor-pointer flex-col gap-3">
-      <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-gray-200">
+    <div className="group flex w-full cursor-pointer flex-col gap-6">
+      <div
+        className="
+    lg:h-94
+    md:h-85
+    sm:h-78
+    w-full
+    overflow-hidden
+    rounded-3xl
+    border
+    border-gray-200
+    relative
+  "
+      >
+        <Image src={'/advance-manufacturing/card-bg.jpg'} alt="title" fill className={`object-cover inset-0 z-10 opacity-80 ${image != "card_1.png" && "hidden"}`} />
         <Image
           src={`/advance-manufacturing/${image}`}
           alt={title}
           fill
           sizes="(max-width: 311px) 80vw, 50vw"
-          className="object-cover"
+          className={`${image === "card_1.png" ? "object-contain" : "object-cover"} z-20`}
         />
       </div>
-
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-3">
         <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
           {title}
         </h3>
