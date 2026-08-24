@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
+    "@tanstack/react-virtual": "^3.14.10",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",

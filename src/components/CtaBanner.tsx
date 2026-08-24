@@ -2,11 +2,11 @@ import { Section } from "./Section";
 
 export const CtaBanner = () => {
   return (
-    <Section>
+   <div className="py-22">
       <div className="section-container">
         {/* Main Banner Card */}
         <div
-          className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-8 flex flex-col md:flex-row justify-between items-center gap-8"
+          className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"
           style={{
             // 1. Linear Gradient (#569FF2 -> #0057B8)
             backgroundImage: "linear-gradient(to right, #569FF2, #0057B8)",
@@ -56,6 +56,6 @@ export const CtaBanner = () => {
           </div>
         </div>
       </div>
-    </Section>
+    </div>
   );
 };

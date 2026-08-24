@@ -16,6 +16,16 @@ export const Hero = () => {
     }
   };
 
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
   const handleVideoEnded = () => {
     setIsPlaying(false);
     if (videoRef.current) {
@@ -28,10 +38,10 @@ export const Hero = () => {
       <video
         ref={videoRef}
         src="/hero-video.mp4"
-        controls={isPlaying}
         playsInline
+        onClick={handleVideoClick}
         onEnded={handleVideoEnded}
-        className={`h-full w-full object-cover ${
+        className={`h-full w-full object-cover cursor-pointer ${
           isPlaying ? "block" : "hidden"
         }`}
       />
@@ -46,10 +56,11 @@ export const Hero = () => {
           </div>
           <Image
             className="h-full w-full object-cover"
-            src={"/hero_thumbnail.png"}
+            src="/hero_thumbnail.png"
             alt="hero"
             height={1080}
             width={1280}
+            priority
           />
         </>
       )}

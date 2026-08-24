@@ -65,6 +65,10 @@
     margin-right: auto;
   }
 
+  .carousel-section {
+    margin-left: max(0px, calc((100vw - var(--container-content)) / 2));
+  }
+
   .section-padding {
     padding-top: var(--section-y);
     padding-bottom: var(--section-y);
@@ -89,6 +93,7 @@
     --container-content: 1500px;
     --section-y: 120px;
     --header-y: 28px;
+
 
     --text-fluid-16: 16px;
     --text-fluid-24: 24px;

@@ -18,7 +18,7 @@ const XIcon = ({ size = 18 }: { size?: number }) => (
 
 export const Footer = () => {
   return (
-    <footer className="w-full flex flex-col mt-6">
+    <footer className="w-full flex flex-col ">
       <div className="w-full bg-linear-to-bl from-primary-light to-primary text-white">
         <div className="section-container lg:py-16 sm:py-12 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
