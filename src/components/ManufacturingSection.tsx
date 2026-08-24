@@ -61,14 +61,14 @@ export const ManufacturingCarousel = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <Section className="overflow-visible pt-(--section-y)" disablePaddingY>
+      <Section className="overflow-hidden pt-(--section-y)" disablePaddingX disablePaddingY asChild>
         <div
           className="
             mx-auto
             flex
             flex-col
             sm:flex-row
-            section-container
+            carousel-section
             items-start
             gap-12
             overflow-visible
@@ -78,7 +78,7 @@ export const ManufacturingCarousel = () => {
             className="
               w-full
               shrink-0
-              lg:max-w-[40%]
+              lg:max-w-[35%]
             "
           >
             <div className="flex flex-col gap-4">
@@ -106,7 +106,7 @@ export const ManufacturingCarousel = () => {
                     className="
                       min-w-0
                       flex-[0_0_100%]
-                      sm:flex-[0_0_50%]
+                      sm:flex-[0_0_33%]
                       px-3
                     "
                   >
@@ -125,7 +125,7 @@ export const ManufacturingCarousel = () => {
           aria-label="Previous slide"
           className="
             flex h-10 w-10 cursor-pointer items-center justify-center
-            rounded-full bg-black text-white
+            rounded-full bg-gray-400 text-white
             transition-colors hover:bg-primary
           "
         >
@@ -138,7 +138,7 @@ export const ManufacturingCarousel = () => {
           aria-label="Next slide"
           className="
             flex h-10 w-10 cursor-pointer items-center justify-center
-            rounded-full bg-black text-white
+            rounded-full bg-gray-400 text-white
             transition-colors hover:bg-primary
           "
         >
@@ -150,34 +150,28 @@ export const ManufacturingCarousel = () => {
 };
 
 const ManufacturingCard = ({
-  index,
   image,
   title,
   description,
 }: {
-  index: number;
   image: string;
   title: string;
   description: string;
 }) => {
   return (
-    <div className="flex w-full flex-col gap-3">
+    <div className="group flex w-full cursor-pointer flex-col gap-3">
       <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-gray-200">
         <Image
           src={`/advance-manufacturing/${image}`}
           alt={title}
           fill
-          sizes="(max-width: 640px) 80vw, 50vw"
+          sizes="(max-width: 311px) 80vw, 50vw"
           className="object-cover"
         />
       </div>
 
       <div className="flex flex-col gap-1">
-        <h3
-          className={`font-ce text-fluid-24 font-bold ${
-            index === 0 ? "text-primary" : "text-text-primary"
-          }`}
-        >
+        <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
           {title}
         </h3>
 

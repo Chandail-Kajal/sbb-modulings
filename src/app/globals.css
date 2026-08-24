@@ -65,9 +65,10 @@
     margin-right: auto;
   }
 
-  .carousel-section {
-    margin-left: max(0px, calc((100vw - var(--container-content)) / 2));
+ .carousel-section {
+    margin-left: calc((100vw - var(--container-content)) / 2);
   }
+
 
   .section-padding {
     padding-top: var(--section-y);
