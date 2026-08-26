@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
 import Image from "next/image";
 import { Section } from "./Section";
+import Link from "next/link";
 
 export const ManufacturingCarousel = () => {
   const advanceManufacturingSectionCards = [
@@ -14,24 +15,28 @@ export const ManufacturingCarousel = () => {
       title: "Injection Moulding",
       description:
         "High-capacity injection moulding with machines ranging from small to 2800 tons.",
+      link:"/injection-moulding"
     },
     {
       image: "card_2.jpg",
       title: "Assembly",
       description:
         "Dedicated assembly capabilities for AC components and automotive parts.",
+      link:"/assembly"
     },
     {
       image: "card_3.png",
       title: "Component Manufacturing",
       description:
         "Injection-moulded components for automotive, HVAC, white goods, & industrial applications.",
+      link:"/component-manufacturing"
     },
     {
       image: "card_4.jpg",
       title: "Packaging & Traceability",
       description:
         "Box-packed units with MRP labelling, barcode printing, and product traceability.",
+      link:"/packaging-tracebility"
     },
   ];
 
@@ -166,10 +171,12 @@ const ManufacturingCard = ({
   image,
   title,
   description,
+  link
 }: {
   image: string;
   title: string;
   description: string;
+  link:string
 }) => {
   return (
     <div className="group flex w-full cursor-pointer flex-col gap-6">
@@ -196,9 +203,11 @@ const ManufacturingCard = ({
         />
       </div>
       <div className="flex flex-col gap-3">
+        <Link href={link}>
         <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
           {title}
         </h3>
+        </Link>
 
         <p className="font-neue text-fluid-16 font-normal leading-snug text-text-secondary">
           {description}

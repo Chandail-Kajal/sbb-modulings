@@ -60,13 +60,13 @@ export const IndustrialApplications = () => {
           <div className="flex flex-col gap-8 relative">
             <div className="order-1 relative bg-primary text-white p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
-                <span className="text-5xl lg:text-6xl font-bold block mb-4">
+                <span className="text-fluid-96 font-bold block mb-1">
                   {industries[0].number}
                 </span>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-fluid-24 font-semibold mb-3">
                   {industries[0].title}
                 </h3>
-                <p className="text-xs leading-relaxed opacity-90">
+                <p className="text-fluid-16 leading-snug text-primary-foreground">
                   {industries[0].description}
                 </p>
               </div>
@@ -100,13 +100,13 @@ export const IndustrialApplications = () => {
 
             <div className="order-1 lg:order-2 relative bg-white text-text-primary border border-gray-100 z-10 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
-                <span className="text-5xl lg:text-6xl font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b]">
+                <span className="text-fluid-96 font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b] font-neue">
                   {industries[1].number}
                 </span>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-fluid-24 font-semibold mb-3 font-neue">
                   {industries[1].title}
                 </h3>
-                <p className="text-xs text-text-secondary leading-relaxed">
+                <p className="text-fluid-16 text-text-secondary leading-snug font-ce">
                   {industries[1].description}
                 </p>
               </div>
@@ -118,13 +118,13 @@ export const IndustrialApplications = () => {
           <div className="flex flex-col gap-8 relative">
             <div className="order-1 relative bg-white text-text-primary border border-gray-100 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
-                <span className="text-5xl lg:text-6xl font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b]">
+                <span className="text-fluid-96 font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b] font-neue">
                   {industries[2].number}
                 </span>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-fluid-24 font-semibold mb-3 font-neue">
                   {industries[2].title}
                 </h3>
-                <p className="text-xs text-text-secondary leading-relaxed">
+                <p className="text-fluid-16 text-text-secondary leading-snug font-ce">
                   {industries[2].description}
                 </p>
               </div>
@@ -159,13 +159,13 @@ export const IndustrialApplications = () => {
 
             <div className="order-1 lg:order-2 relative bg-white text-text-primary border border-gray-100 p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between min-h-75">
               <div>
-                <span className="text-5xl lg:text-6xl font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b]">
+                <span className="text-fluid-96 font-extrabold block mb-4 text-transparent [-webkit-text-stroke:1.5px_#3b3b3b] font-neue">
                   {industries[3].number}
                 </span>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-fluid-24 font-semibold mb-3 font-neue">
                   {industries[3].title}
                 </h3>
-                <p className="text-xs text-text-secondary leading-relaxed">
+                <p className="text-fluid-16 text-text-secondary leading-snug font-ce">
                   {industries[3].description}
                 </p>
               </div>

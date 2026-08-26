@@ -12,6 +12,7 @@
   --text-secondary: #4d4d4d;
   --text-primary: #3b3b3b;
   --text-muted: #7c7c7c;
+  --text-para:#717171;
   --container-content: 1500px;
   --section-y: 120px;
   --header-y: 28px;
@@ -31,6 +32,7 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
+  --color-text-para:var(--text-para);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
