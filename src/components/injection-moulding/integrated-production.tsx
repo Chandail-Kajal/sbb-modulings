@@ -12,17 +12,17 @@ export function IntegratedProduction() {
         <div className="flex flex-col w-full lg:max-w-[40%] font-sans text-neutral-800">
           {/* Header */}
           <div className="flex flex-col gap-2">
-            <p className="text-xl sm:text-2xl font-light text-neutral-500 tracking-tight">
+            <p className="text-fluid-24 font-light text-neutral-500 tracking-tight">
               Finished Assembly
             </p>
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15]">
+            <h2 className="text-fluid-40 font-bold tracking-tight text-neutral-900 leading-none">
               Integrated Production <br />
               Beyond <span className="text-[#0052cc]">Injection Moulding</span>
             </h2>
           </div>
 
           {/* Paragraphs */}
-          <div className="mt-8 flex flex-col gap-5 text-sm sm:text-base text-neutral-500 font-normal leading-relaxed">
+          <div className="mt-8 flex flex-col gap-5 text-fluid-16 text-neutral-500 font-normal leading-snug">
             <p>
               Our injection moulding operations work alongside dedicated assembly
               capabilities to support complete product requirements.
