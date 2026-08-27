@@ -52,7 +52,7 @@ export function Requirements() {
                 <div className="flex flex-col w-full lg:max-w-xl font-sans text-neutral-800">
                     {/* Header */}
                     <div className="flex flex-col gap-2">
-                        <p className="text-fluid-24 font-light font-neue text-neutral-500 tracking-tight">
+                        <p className="text-fluid-24 font-light font-neue text-neutral-500 tracking-tight mt-4 sm:mt-0">
                             Manufacturing Excellence
                         </p>
                         <h2 className="text-fluid-40 font-bold tracking-tight text-neutral-900 leading-none font-neue">

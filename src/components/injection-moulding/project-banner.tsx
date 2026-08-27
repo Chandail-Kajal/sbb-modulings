@@ -32,7 +32,7 @@ export const ProjectBanner = () => {
               experienced teams, multiple facilities, and integrated assembly capabilities to support production requirements across automotive, HVAC, white goods,
               and industrial applications.
             </p>
-            <div className="pt-2 flex flex-row gap-4">
+            <div className="pt-2 flex sm:flex-row flex-col gap-4">
               <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
                 Request A Quote
               </button>
