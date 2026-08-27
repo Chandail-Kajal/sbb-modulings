@@ -52,10 +52,10 @@ export function Requirements() {
                 <div className="flex flex-col w-full lg:max-w-xl font-sans text-neutral-800">
                     {/* Header */}
                     <div className="flex flex-col gap-2">
-                        <p className="text-xl sm:text-2xl font-light font-neue text-neutral-500 tracking-tight">
+                        <p className="text-fluid-24 font-light font-neue text-neutral-500 tracking-tight">
                             Manufacturing Excellence
                         </p>
-                        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15] font-neue">
+                        <h2 className="text-fluid-40 font-bold tracking-tight text-neutral-900 leading-none font-neue">
                             A Manufacturing <br />
                             Partner Built Around <br />
                             Your Requirements
@@ -63,7 +63,7 @@ export function Requirements() {
                     </div>
 
                     {/* Description */}
-                    <p className="mt-6 mb-8 text-sm sm:text-base text-neutral-500 font-normal  font-ce leading-relaxed">
+                    <p className="mt-6 mb-8 text-fluid-16  text-neutral-500 font-normal  font-ce leading-snug">
                         SBB Mouldings combines injection moulding, assembly, and supporting
                         manufacturing operations to provide an integrated production solution.
                     </p>
@@ -86,7 +86,7 @@ export function Requirements() {
                                         className="w-full flex items-center justify-between gap-4 text-left group focus:outline-none"
                                     >
                                         <h3
-                                            className={`text-xl sm:text-2xl font-normal tracking-tight font-neue transition-colors duration-200 ${isOpen
+                                            className={`text-fluid-24 leading-none font-normal tracking-tight font-neue transition-colors duration-200 ${isOpen
                                                     ? "text-[#1d70b8]"
                                                     : "text-neutral-700 group-hover:text-neutral-900"
                                                 }`}
@@ -126,7 +126,7 @@ export function Requirements() {
                                             }`}
                                     >
                                         <div className="overflow-hidden">
-                                            <p className="pr-8 text-xs sm:text-sm text-neutral-500 font-ce leading-relaxed max-w-lg">
+                                            <p className="pr-8 text-fluid-16  text-neutral-500 font-ce leading-snug max-w-lg">
                                                 {item.subtitle}
                                             </p>
                                         </div>
