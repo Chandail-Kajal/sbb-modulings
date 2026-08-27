@@ -15,28 +15,28 @@ export const ManufacturingCarousel = () => {
       title: "Injection Moulding",
       description:
         "High-capacity injection moulding with machines ranging from small to 2800 tons.",
-      link:"/injection-moulding"
+      link: "/injection-moulding"
     },
     {
       image: "card_2.jpg",
       title: "Assembly",
       description:
         "Dedicated assembly capabilities for AC components and automotive parts.",
-      link:"/assembly"
+      link: "/assembly"
     },
     {
       image: "card_3.png",
       title: "Component Manufacturing",
       description:
         "Injection-moulded components for automotive, HVAC, white goods, & industrial applications.",
-      link:"/component-manufacturing"
+      link: "/component-manufacturing"
     },
     {
       image: "card_4.jpg",
       title: "Packaging & Traceability",
       description:
         "Box-packed units with MRP labelling, barcode printing, and product traceability.",
-      link:"/packaging-tracebility"
+      link: "/packaging-tracebility"
     },
   ];
 
@@ -176,12 +176,13 @@ const ManufacturingCard = ({
   image: string;
   title: string;
   description: string;
-  link:string
+  link: string
 }) => {
   return (
-    <div className="group flex w-full cursor-pointer flex-col gap-6">
-      <div
-        className="
+    <Link href={link}>
+      <div className="group flex w-full cursor-pointer flex-col gap-6">
+        <div
+          className="
     lg:h-94
     md:h-85
     sm:h-78
@@ -192,27 +193,26 @@ const ManufacturingCard = ({
     border-gray-200
     relative
   "
-      >
-        <Image src={'/advance-manufacturing/card-bg.jpg'} alt="title" fill className={`object-cover inset-0 z-10 opacity-80 ${image != "card_1.png" && "hidden"}`} />
-        <Image
-          src={`/advance-manufacturing/${image}`}
-          alt={title}
-          fill
-          sizes="(max-width: 311px) 80vw, 50vw"
-          className={`${image === "card_1.png" ? "object-contain" : "object-cover"} z-20`}
-        />
-      </div>
-      <div className="flex flex-col gap-3">
-        <Link href={link}>
-        <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
-          {title}
-        </h3>
-        </Link>
+        >
+          <Image src={'/advance-manufacturing/card-bg.jpg'} alt="title" fill className={`object-cover inset-0 z-10 opacity-80 ${image != "card_1.png" && "hidden"}`} />
+          <Image
+            src={`/advance-manufacturing/${image}`}
+            alt={title}
+            fill
+            sizes="(max-width: 311px) 80vw, 50vw"
+            className={`${image === "card_1.png" ? "object-contain" : "object-cover"} z-20`}
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-ce text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
+            {title}
+          </h3>
 
-        <p className="font-neue text-fluid-16 font-normal leading-snug text-text-secondary">
-          {description}
-        </p>
+          <p className="font-neue text-fluid-16 font-normal leading-snug text-text-secondary">
+            {description}
+          </p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
