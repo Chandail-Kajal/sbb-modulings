@@ -44,7 +44,7 @@ export function AdvantageSection() {
     );
 
     return (
-        <Section className="overflow-hidden py-(--section-y)" disablePaddingX disablePaddingY asChild>
+        <Section className="overflow-hidden py-(--section-y)" disablePaddingX disablePaddingY asChild >
             <div className="flex flex-col gap-6  carousel-section overflow-hidden">
                 <div>
                     <p className="font-neue text-fluid-24">Injection Moulding Advantages</p>

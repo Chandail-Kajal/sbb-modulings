@@ -26,7 +26,7 @@ export function ManufacturingCapacity() {
 
   return (
     <Section>
-      <div className="flex flex-col items-center text-center font-sans max-w-5xl mx-auto px-4 py-8">
+      <div className="flex flex-col items-center text-center font-sans max-w-5xl mx-auto px-4 py-8 section-container">
         {/* Header Section */}
         <p className="text-xl sm:text-2xl font-light text-neutral-500 tracking-tight mb-2">
           Our Production Infrastructure

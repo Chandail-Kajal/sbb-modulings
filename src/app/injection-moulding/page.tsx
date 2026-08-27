@@ -45,7 +45,7 @@ export default function Injection() {
             <Header />
             <Hero />
             <Section>
-                <div className="flex flex-col gap-16">
+                <div className="flex flex-col gap-16 section-container">
                     {/* <div
                         className="bg-black/80 w-full h-120"
                         style={{
@@ -82,7 +82,7 @@ export default function Injection() {
                 </div>
             </Section>
             <Section disablePaddingY>
-                <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-row justify-between items-center section-container">
                     <div className="flex flex-col max-w-[37%] gap-8 text-text-para">
                         <div className="">
                             <p className="text-fluid-24 font-neue text-text-primary font-normal">Advanced Injection Moulding Solutions</p>

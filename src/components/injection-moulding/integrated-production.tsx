@@ -7,7 +7,7 @@ import React from "react";
 export function IntegratedProduction() {
   return (
     <Section disablePaddingY>
-      <div className="flex flex-col lg:flex-row justify-between items-center gap-10  ">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-10 section-container ">
         {/* Left Side: Text Content */}
         <div className="flex flex-col w-full lg:max-w-[40%] font-sans text-neutral-800">
           {/* Header */}

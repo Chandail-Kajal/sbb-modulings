@@ -36,7 +36,7 @@ export function Requirements() {
 
     return (
         <Section disablePaddingY>
-            <div className="flex flex-col lg:flex-row justify-between items-start ">
+            <div className="flex flex-col lg:flex-row justify-between items-start section-container ">
                 {/* Left Side: Image */}
                 <div className="w-full lg:max-w-[45%] overflow-hidden rounded-3xl shadow-xl">
                     <Image
