@@ -1,7 +1,14 @@
+import { Cards } from "@/components/assembly/cards";
 import { CompleteAssemble } from "@/components/assembly/complete-assemble";
+
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Section } from "@/components/Section";
+import AssemblyProcess from "@/components/assembly/AssemblyProcess";
+import { Engineering } from "@/components/assembly/engineering";
+import { Packaging } from "@/components/assembly/packaging";
+import WhyUs from "@/components/assembly/chooseUS";
+import { AssemblyBanner } from "@/components/assembly/assemblyBanner";
 
 export default function Assembly() {
     return (
@@ -78,6 +85,13 @@ export default function Assembly() {
                     </div>
                 </div>
             </Section>
+            <Cards/>
+
+           <AssemblyProcess/>
+           <Engineering/>
+           <Packaging/>
+           <WhyUs/>
+           <AssemblyBanner/>
             <Footer />
         </main>
 
