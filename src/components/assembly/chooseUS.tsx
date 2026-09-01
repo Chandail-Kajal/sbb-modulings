@@ -3,15 +3,11 @@
 import React, { useState } from "react";
 import { Section } from "../Section";
 
-
-
 interface AccordionItem {
   id: string;
   title: string;
   description: string;
 }
-
-
 
 const whyUsItems: AccordionItem[] = [
   {
@@ -46,35 +42,7 @@ const whyUsItems: AccordionItem[] = [
   },
 ];
 
-const MetricBlock = ({
-  title,
-  subtitle,
-}: {
-  title: string | null;
-  subtitle: string;
-}) => {
-  return (
-    <div className="flex flex-col justify-center items-center text-center px-4 py-6 md:py-4 min-h-[90px]">
-      {title ? (
-        <>
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#1e293b] leading-none">
-            {title}
-          </h3>
-          <p className="mt-2 text-xs sm:text-sm text-neutral-500 font-normal leading-snug">
-            {subtitle}
-          </p>
-        </>
-      ) : (
-        <p className="text-xs sm:text-sm text-neutral-700 font-medium leading-relaxed max-w-[200px]">
-          {subtitle}
-        </p>
-      )}
-    </div>
-  );
-};
-
 export function WhyUs() {
-  // Start with no card selected by default so all cards are white initially
   const [openId, setOpenId] = useState<string | null>(null);
 
   const handleCardClick = (id: string) => {
@@ -83,24 +51,20 @@ export function WhyUs() {
 
   return (
     <div>
-      <div className="w-full py-16 lg:py-24 bg-[#f0f6ff]/40 overflow-hidden">
+      <Section className="bg-primary-light/10 py-12" disablePaddingY>
         <div className="section-container flex flex-col items-center">
-          
-          {/* Top Metrics Grid */}
-
-
           {/* Section Header */}
           <div className="text-center mb-12">
-            <p className="text-fluid-16 uppercase  text-slate-500 font-semibold mb-2">
+            <p className="text-fluid-24 font-neue uppercase text-[#3B3B3B] font-semibold mb-2">
               CHOOSE US
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1e293b]">
+            <h2 className="text-fluid-40 font-neue font-bold leading-none text-[#1e293b]">
               Why <span className="text-[#0055b8]">SBB Moldings?</span>
             </h2>
           </div>
 
           {/* Accordion List Cards */}
-          <div className="w-full max-w-4xl flex flex-col gap-3.5">
+          <div className="w-full lg:px-16 flex flex-col gap-3.5">
             {whyUsItems.map((item) => {
               const isOpen = openId === item.id;
 
@@ -108,17 +72,28 @@ export function WhyUs() {
                 <div
                   key={item.id}
                   onClick={() => handleCardClick(item.id)}
-                  className={`group relative w-full rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-300 select-none border ${
+                  className={`group relative w-full rounded-2xl p-5 sm:p-6 cursor-pointer overflow-hidden transition-all duration-300 select-none border ${
                     isOpen
                       ? "bg-[#0055b8] text-white border-transparent shadow-[0_10px_25px_rgba(0,85,184,0.3)]"
-                      : "bg-[#ffffff] text-[#1e293b] border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-[#0055b8] hover:text-white hover:border-transparent hover:shadow-[0_8px_20px_rgba(0,85,184,0.25)] hover:-translate-y-0.5"
+                      : "text-[#1e293b] bg-white border-slate-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-[#0055b8] hover:text-white hover:border-transparent hover:shadow-[0_8px_20px_rgba(0,85,184,0.25)] hover:-translate-y-0.5"
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-4">
-                    {/* Title & Description Container */}
+                  {/* Background Image Layer: visible by default, fades out on open or hover */}
+                  <div
+                    className={`absolute inset-0 bg-cover bg-center transition-opacity duration-300 pointer-events-none ${
+                      isOpen ? "opacity-0" : "opacity-30 group-hover:opacity-0"
+                    }`}
+                    style={{
+                      backgroundImage: "url('/assembly/faqbg.jpg')",
+                    }}
+                  />
+
+                  {/* Content Container (relative z-10 ensures text sits above the background layer) */}
+                  <div className="relative z-10 flex items-center justify-between gap-4">
+                    {/* Title & Description */}
                     <div className="flex flex-col text-left pr-4">
                       <h3
-                        className={`text-base sm:text-lg lg:text-xl font-medium tracking-tight leading-snug transition-colors duration-200 ${
+                        className={`text-fluid-24 font-neue font-medium tracking-tight leading-snug transition-colors duration-200 ${
                           isOpen ? "text-white" : "text-[#1e293b] group-hover:text-white"
                         }`}
                       >
@@ -134,7 +109,7 @@ export function WhyUs() {
                         }`}
                       >
                         <p
-                          className={`text-xs sm:text-sm leading-relaxed transition-colors duration-200 ${
+                          className={`text-fluid-24 font-neue leading-relaxed transition-colors duration-200 ${
                             isOpen
                               ? "text-blue-100"
                               : "text-slate-500 group-hover:text-blue-100"
@@ -173,9 +148,8 @@ export function WhyUs() {
               );
             })}
           </div>
-
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
