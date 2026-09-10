@@ -26,10 +26,10 @@ export const ManufacturingCarousel = () => {
     },
     {
       image: "card_3.png",
-      title: "Component Manufacturing",
+      title: "Manufacturing Capabilities",
       description:
         "Injection-moulded components for automotive, HVAC, white goods, & industrial applications.",
-      link: "/component-manufacturing"
+      link: "/manufacturing-capabilities",
     },
     {
       image: "card_4.jpg",

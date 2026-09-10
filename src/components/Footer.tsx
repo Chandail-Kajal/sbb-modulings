@@ -107,7 +107,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/contact-us"
                       className="hover:text-white transition-colors"
                     >
                       Contact Us

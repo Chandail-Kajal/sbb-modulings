@@ -28,8 +28,8 @@ export function Engineering() {
               <h2 className="text-fluid-40 font-extrabold tracking-tight text-[#2b77c9] leading-none drop-shadow-md font-neue">
                 Mass Production
               </h2>
-            </div>
-
+            </div>                                                                                                                                                                                                      
+                  
             {/* Right Paragraphs Column (Right-Aligned on Desktop) */}
             <div max-w-xl text-right>
             <div className="max-w-xl w-full  text-slate-200/90 text-fluid-16 leading-snug  drop-shadow font-ce flex flex-col gap-4 text-right">
