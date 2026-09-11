@@ -4,6 +4,7 @@ import ControlledManufacturing from "@/components/manufacturing-capabilities/con
 import ManufacturingHero from "@/components/manufacturing-capabilities/manufacturingHero";
 import Production from "@/components/manufacturing-capabilities/production";
 import TechnicalExcellence from "@/components/manufacturing-capabilities/technical-excellence";
+import WhatsNext from "@/components/manufacturing-capabilities/whats-next";
 import Image from "next/image";
 
 export default function ManufacturingCapabilities() {
@@ -26,6 +27,7 @@ export default function ManufacturingCapabilities() {
             </div>
             <ControlledManufacturing/>
             <TechnicalExcellence/>
+            <WhatsNext/>
             <Footer />
 
         </div>
