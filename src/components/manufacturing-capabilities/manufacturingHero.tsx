@@ -45,7 +45,7 @@ export default function ManufacturingHero({
             delay: 0.3,
             ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier ease-out
           }}
-          className="absolute left-0 top-10 sm:top-12 lg:-top-13 w-1/2 xl:w-full xl:max-w-180 xl:-top-36 max-w-150 pointer-events-none select-none z-[1]"
+          className="absolute hidden sm:block left-0 top-10 sm:top-12 lg:-top-13 w-1/2 xl:w-full xl:max-w-180 xl:-top-36 max-w-150 pointer-events-none select-none z-[1]"
         >
           <Image
             src={humanHandUrl}
@@ -68,7 +68,7 @@ export default function ManufacturingHero({
             delay: 0.3,
             ease: [0.22, 1, 0.36, 1], // Smooth cubic-bezier ease-out
           }}
-          className="absolute right-0 top-10 sm:top-10 lg:-top-10 lg:w-1/2 xl:w-full xl:max-w-180 xl:-top-32 max-w-150 pointer-events-none select-none z-[1]"
+          className="absolute hidden sm:block right-0 top-10 sm:top-10 lg:-top-10 lg:w-1/2 xl:w-full xl:max-w-180 xl:-top-32 max-w-150 pointer-events-none select-none z-[1]"
         >
           <Image
             src={roboticHandUrl}
