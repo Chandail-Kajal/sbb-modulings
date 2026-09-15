@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Section } from "../Section";
 
 interface LocationItem {
   id: number;
@@ -53,20 +54,17 @@ const locations: LocationItem[] = [
 
 export const CompanyLocations: React.FC = () => {
   return (
-    <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-12">
-        {/* Section Heading */}
+    <Section>
+      <div className="section-container space-y-12">
         <div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-800">
             Company location
           </h2>
         </div>
 
-        {/* Locations Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {locations.map((loc) => (
             <div key={loc.id} className="flex flex-col space-y-5">
-              {/* Capsule / Pill Shaped Image Frame */}
               <div
                 className={`relative w-full aspect-[2.1/1] rounded-full overflow-hidden shadow-sm ${
                   loc.hasBorder ? "ring-2 ring-[#0060df]" : ""
@@ -80,21 +78,14 @@ export const CompanyLocations: React.FC = () => {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-
-              {/* Text Info */}
               <div className="space-y-1">
-                {/* Subtitle / Unit Label */}
-                <p className="text-xs sm:text-sm text-neutral-500 font-medium">
+                <p className="text-fluid-24 text-neutral-500 font-normal">
                   {loc.tagline}
                 </p>
-
-                {/* Location Name */}
-                <h3 className="text-base sm:text-lg font-bold text-[#0060df] tracking-tight">
+                <h3 className="text-fluid-32 font-semibold text-[#0060df] tracking-tight">
                   {loc.name}
                 </h3>
-
-                {/* Address Lines */}
-                <div className="pt-2 text-[11px] sm:text-xs text-neutral-600 leading-snug space-y-0.5 font-normal">
+                <div className="lg:pt-3 text-fluid-16 text-neutral-600 leading-snug space-y-0.5 font-normal">
                   {loc.addressLines.map((line, idx) => (
                     <p key={idx}>{line}</p>
                   ))}
@@ -104,7 +95,7 @@ export const CompanyLocations: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

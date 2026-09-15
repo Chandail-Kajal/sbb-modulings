@@ -58,7 +58,7 @@ export default function AboutUs() {
   return (
     <div>
       <Header />
-      <Section >
+      <Section>
         <div className="section-container font-neue">
           <div className="flex flex-col items-center text-center space-y-2 mb-10">
             <p className="text-fluid-24 text-neutral-500 font-normal">
@@ -154,7 +154,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="flex justify-end items-center gap-3 mb-6">
+          <div className="flex justify-center sm:justify-end items-center gap-3 mb-6">
             <button
               type="button"
               onClick={() => handleScroll("left")}

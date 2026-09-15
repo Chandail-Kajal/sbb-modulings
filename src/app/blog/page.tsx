@@ -154,7 +154,7 @@ export default function Blog() {
             </div>
           </div>
 
-          <div className="flex justify-end items-center gap-3 mb-6">
+          <div className="flex justify-center sm:justify-end items-center gap-3 mb-6">
             <button
               type="button"
               onClick={() => handleScroll("left")}

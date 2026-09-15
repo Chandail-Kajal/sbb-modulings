@@ -48,10 +48,9 @@ export default function TechnicalExcellence() {
           src="/map-bg.jpg"
           alt="Abstract background pattern"
           fill
-          className="object-cover h-full opacity-75"
+          className="object-cover h-full opacity-25"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-b from-white/70 via-white/80 to-white/95" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8">
