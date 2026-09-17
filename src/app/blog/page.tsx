@@ -100,8 +100,29 @@ export default function Blog() {
             />
           </div>
 
-          <div className="space-y-6 font-ce text-neutral-600 text-fluid-16 leading-snug mb-16">
+          {/* Centered Image-Style Text Block (#717171) */}
+          <div className="w-full mx-auto px-4 sm:px-6 text-center space-y-6 font-ce text-[#717171] text-fluid-16 leading-relaxed mb-16">
             <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since 1966, when designers at Letraset and James Mosley,
+              the librarian at St Bride Printing Library in London, took a 1914
+              Cicero translation and scrambled it to make dummy text for
+              Letraset&apos;s Body Type sheets. It has survived not only many
+              decades, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised thanks to these sheets
+              and more recently with desktop publishing software like Aldus
+              PageMaker and Microsoft Word including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since 1966, when designers at Letraset and James Mosley,
+              the librarian at St Bride Printing Library in London, took a 1914
+              Cicero translation and scrambled it to make dummy text for
+              Letraset&apos;s Body Type sheets. It has survived not only many
+              decades, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised thanks to these sheets
+              and more recently with desktop publishing software like Aldus
+              PageMaker and Microsoft Word including versions of Lorem Ipsum.
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry&apos;s standard dummy
               text ever since 1966, when designers at Letraset and James Mosley,
@@ -122,36 +143,30 @@ export default function Blog() {
               Cicero translation and scrambled it to make dummy text for
               Letraset&apos;s Body Type sheets. It has survived not only many
               decades, but also the leap into electronic typesetting, remaining
-              essentially unchanged.
+              essentially unchanged. It was popularised thanks to these sheets
+              and more recently with desktop publishing software like Aldus
+              PageMaker and Microsoft Word including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since 1966, when designers at Letraset and James Mosley,
+              the librarian at St Bride Printing Library in London, took a 1914
+              Cicero translation and scrambled it to make dummy text for
+              Letraset&apos;s Body Type sheets. It has survived not only many
+              decades, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised thanks to these sheets
+              and more recently with desktop publishing software like Aldus
+              PageMaker and Microsoft Word including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since 1966, when designers at Letraset and James Mosley,
+              the librarian at St Bride Printing Library in London, took a 1914
+              Cicero translation and scrambled it to make dummy text for
+              Letraset&apos;s Body Type sheets. It has survived not only many
+              decades, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised thanks to these sheets
+              and more recently with desktop publishing software like Aldus
+              PageMaker and Microsoft Word including versions of Lorem Ipsum.
             </p>
-
-            <div className="space-y-2 pt-4">
-              <h3 className="font-neue text-fluid-24 font-bold text-[#0057B8]">
-                Precision Assembly. Built for Production.
-              </h3>
-              <p className="text-fluid-16 leading-snug">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since 1966, when designers at Letraset and James
-                Mosley, the librarian at St Bride Printing Library in London,
-                took a 1914 Cicero translation and scrambled it to make dummy
-                text for Letraset&apos;s Body Type sheets.
-              </p>
-            </div>
-
-            <div className="space-y-2 pt-4">
-              <h3 className="font-neue text-lg font-bold text-[#0057B8]">
-                Precision Assembly. Built for Production.
-              </h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since 1966, when designers at Letraset and James
-                Mosley, the librarian at St Bride Printing Library in London,
-                took a 1914 Cicero translation and scrambled it to make dummy
-                text for Letraset&apos;s Body Type sheets.
-              </p>
-            </div>
           </div>
 
           <div className="flex justify-center sm:justify-end items-center gap-3 mb-6">
@@ -173,6 +188,7 @@ export default function Blog() {
               <FaChevronRight className="w-3.5 h-3.5 text-neutral-800 group-hover:text-white transition-colors duration-200" />
             </button>
           </div>
+
           <div
             ref={scrollContainerRef}
             className="flex items-start gap-6 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
@@ -192,7 +208,6 @@ export default function Blog() {
                     sizes="(max-width: 768px) 85vw, 33vw"
                   />
                 </div>
-
                 <div className="space-y-1.5">
                   <h3 className="font-bold text-neutral-900 text-fluid-24 leading-snug">
                     {card.title}
