@@ -18,25 +18,25 @@ export default function ContactUsSection() {
 
           {/* Right Information Block */}
           <div className="flex flex-col items-start lg:items-end text-left lg:text-right space-y-3.5 max-w-[720px] pb-1">
-            <h2 className="text-[32px] sm:text-[36px] lg:text-[38px] font-normal tracking-[-0.02em] leading-snug text-[#374151]">
-              Get in touch with{" "}
-              <span className="font-bold text-[#0B57D0]">SBB Mouldings</span>
-            </h2>
+  <h2 className="text-[32px] sm:text-[36px] lg:text-[38px] font-normal tracking-[-0.02em] leading-snug text-[#374151]">
+    Get in touch with{" "}
+    <span className="font-bold text-[#0B57D0]">SBB Mouldings</span>
+  </h2>
 
-            <p className="text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.4] font-normal text-[#595959] tracking-tight">
-              Whether you&apos;re evaluating us as a Tier-1 or Tier-2 supplier, planning a vendor audit, or exploring a new injection moulding or assembly program, our team is ready to help.
-            </p>
-          </div>
+  <p className="text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.4] font-normal text-[#595959] tracking-tight">
+    Whether you&apos;re evaluating us as a Tier-1 or Tier-2 supplier, planning a vendor audit, or exploring a new injection moulding or assembly program, our team is ready to help.
+  </p>
+</div>
         </div>
         {/* ================= Content Grid ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-14">
           {/* Form Card */}
-          <div className="lg:col-span-8 bg-white border border-neutral-200 rounded-[28px] p-6 sm:p-10 flex flex-col justify-between shadow-sm">
+          <div className="lg:col-span-8 bg-[#FBFBFB] border border-neutral-200 rounded-[28px] p-6 sm:p-10 flex flex-col justify-between shadow-sm">
             <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
               {/* Row 1: Name & Company Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-neutral-700">
+                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
                     Name
                   </label>
                   <input
@@ -45,7 +45,7 @@ export default function ContactUsSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-neutral-700">
+                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
                     Company Name
                   </label>
                   <input
@@ -57,7 +57,7 @@ export default function ContactUsSection() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-neutral-700">
+                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
                     Email Address
                   </label>
                   <input
@@ -66,7 +66,7 @@ export default function ContactUsSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-neutral-700">
+                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
                     Phone Number
                   </label>
                   <input
@@ -78,8 +78,8 @@ export default function ContactUsSection() {
 
               {/* Row 3: Inline Label & Field */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <label className="text-sm font-semibold text-neutral-700 sm:w-1/3">
-                  Mchine Type
+                <label className="text-xl font-semibold text-neutral-700 sm:w-1/3 font-neue tracking-wider">
+                  Machine Type
                 </label>
                 <input
                   type="text"
@@ -89,7 +89,7 @@ export default function ContactUsSection() {
 
               {/* Row 4: Large Field / Textarea */}
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-neutral-700">
+                <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
                   Message
                 </label>
                 <textarea
