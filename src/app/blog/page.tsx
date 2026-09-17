@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -46,31 +46,108 @@ const cardsData: CardItem[] = [
 ];
 
 export default function Blog() {
-  // Triple the data so loop auto-scrolling is seamless and continuous
-  const displayCards = [...cardsData, ...cardsData, ...cardsData];
+  const displayCards = useMemo(
+    () => [...cardsData, ...cardsData, ...cardsData, ...cardsData],
+    []
+  );
+
+  // Tracks active hovering across either the viewport or control buttons
+  const isHovered = useRef(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const autoScrollPlugin = useMemo(
+    () =>
+      AutoScroll({
+        speed: 1,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false, // Handled manually for synchronized 3s resumption
+        startDelay: 0,
+      }),
+    []
+  );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
       align: "start",
-      dragFree: true,
+      slidesToScroll: 1,
+      skipSnaps: false,
     },
-    [
-      AutoScroll({
-        speed: 1,
-        stopOnInteraction: true,  // Pauses auto-scrolling when user swipes/drags
-        stopOnMouseEnter: true,   // Pauses on hover
-      }),
-    ]
+    [autoScrollPlugin]
   );
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  // Guard: if the plugin restarts itself (e.g. via internal settle listener)
+  // while the user is hovering, immediately re-stop it.
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onAutoScrollPlay = () => {
+      if (isHovered.current) {
+        const autoScroll = emblaApi.plugins()?.autoScroll;
+        if (autoScroll) autoScroll.stop();
+      }
+    };
+
+    emblaApi.on("autoScroll:play", onAutoScrollPlay);
+    return () => {
+      emblaApi.off("autoScroll:play", onAutoScrollPlay);
+    };
   }, [emblaApi]);
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
+  // Shared pause logic: stops scroll immediately and cancels pending resumption
+  const handleMouseEnter = useCallback(() => {
+    isHovered.current = true;
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    const autoScroll = emblaApi?.plugins()?.autoScroll;
+    if (autoScroll) autoScroll.stop();
   }, [emblaApi]);
+
+  // Shared resume logic: sets 3-second delay before playing
+  const handleMouseLeave = useCallback(() => {
+    isHovered.current = false;
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    timerRef.current = setTimeout(() => {
+      if (!isHovered.current) {
+        const autoScroll = emblaApi?.plugins()?.autoScroll;
+        if (autoScroll) autoScroll.play();
+      }
+    }, 3000);
+  }, [emblaApi]);
+
+  // Advance by 1 card, stop kinetic drift, and queue 3-second resume
+  const handleButtonClick = useCallback(
+    (direction: "prev" | "next") => {
+      if (!emblaApi) return;
+
+      const autoScroll = emblaApi.plugins()?.autoScroll;
+      if (autoScroll) autoScroll.stop();
+
+      const engine = emblaApi.internalEngine();
+      engine.animation.stop();
+
+      if (timerRef.current) clearTimeout(timerRef.current);
+
+      const currentSnap = emblaApi.selectedScrollSnap();
+      const targetSnap = direction === "next" ? currentSnap + 1 : currentSnap - 1;
+      emblaApi.scrollTo(targetSnap, false);
+
+      timerRef.current = setTimeout(() => {
+        if (!isHovered.current) {
+          const activeAutoScroll = emblaApi.plugins()?.autoScroll;
+          if (activeAutoScroll) activeAutoScroll.play();
+        }
+      }, 3000);
+    },
+    [emblaApi]
+  );
 
   return (
     <div>
@@ -123,11 +200,12 @@ export default function Blog() {
           {/* Body Content */}
           <div className="space-y-6 font-ce text-neutral-600 text-fluid-16 leading-snug mb-16 w-full">
             <p className="w-full text-center">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
-            </p>
-
-            <p className="w-full text-center">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since 1966, when designers at Letraset and James Mosley, the
+              librarian at St Bride Printing Library in London, took a 1914
+              Cicero translation and scrambled it to make dummy text for
+              Letraset's Body Type sheets.
             </p>
 
             <div className="space-y-2 pt-4 w-full">
@@ -135,46 +213,46 @@ export default function Blog() {
                 Precision Assembly. Built for Production.
               </h3>
               <p className="w-full text-center text-fluid-16 leading-snug">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
-              </p>
-            </div>
-
-            <div className="space-y-2 pt-4 w-full">
-              <h3 className="w-full text-left font-neue text-fluid-24 font-bold text-[#0057B8]">
-                Precision Assembly. Built for Production.
-              </h3>
-              <p className="w-full text-center">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since 1966, when designers at Letraset and James
+                Mosley, the librarian at St Bride Printing Library in London.
               </p>
             </div>
           </div>
 
           {/* Carousel & Controls Container */}
           <div className="flex flex-col w-full">
-            {/* Slider Controls: order-2 on mobile (bottom), order-1 on desktop (top) */}
-            <div className="order-2 sm:order-1 flex justify-center sm:justify-end items-center gap-3 mt-6 sm:mt-0 sm:mb-6">
+            {/* Slider Controls */}
+            <div
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="order-2 sm:order-1 flex justify-center sm:justify-end items-center gap-3 mt-6 sm:mt-0 sm:mb-6"
+            >
               <button
                 type="button"
-                onClick={scrollPrev}
+                onClick={() => handleButtonClick("prev")}
                 aria-label="Previous slide"
-                className="group w-10 h-10 rounded-full bg-neutral-200 hover:bg-black active:scale-95 flex items-center justify-center transition-colors duration-200"
+                className="group w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 bg-neutral-200 hover:bg-black active:scale-95 cursor-pointer"
               >
-                <FaChevronLeft className="w-3.5 h-3.5 text-neutral-800 group-hover:text-white transition-colors duration-200" />
+                <FaChevronLeft className="w-3.5 h-3.5 transition-colors duration-200 text-neutral-800 group-hover:text-white" />
               </button>
 
               <button
                 type="button"
-                onClick={scrollNext}
+                onClick={() => handleButtonClick("next")}
                 aria-label="Next slide"
-                className="group w-10 h-10 rounded-full bg-neutral-200 hover:bg-black active:scale-95 flex items-center justify-center transition-colors duration-200"
+                className="group w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 bg-neutral-200 hover:bg-black active:scale-95 cursor-pointer"
               >
-                <FaChevronRight className="w-3.5 h-3.5 text-neutral-800 group-hover:text-white transition-colors duration-200" />
+                <FaChevronRight className="w-3.5 h-3.5 transition-colors duration-200 text-neutral-800 group-hover:text-white" />
               </button>
             </div>
 
-            {/* Swipeable & Auto-scrolling Viewport */}
+            {/* Viewport */}
             <div
               ref={emblaRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               className="order-1 sm:order-2 overflow-hidden select-none cursor-grab active:cursor-grabbing pb-4"
             >
               <div className="flex -ml-6 touch-pan-y">
@@ -189,8 +267,8 @@ export default function Blog() {
                         alt={card.imageAlt}
                         fill
                         draggable={false}
-                        className="object-cover object-center"
-                        sizes="(max-width: 768px) 85vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-center pointer-events-none"
+                        sizes="(max-width: 768px) 85vw, (max-width: 1024px) 48vw, 32vw"
                       />
                     </div>
 
