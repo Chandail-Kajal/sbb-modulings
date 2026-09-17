@@ -41,7 +41,13 @@ export function IntegratedProduction() {
         </div>
 
         {/* Right Side: Image */}
-        <div className="w-full lg:max-w-[45%] overflow-hidden rounded-[2.5rem] shadow-2xl">
+        {/* Right Side: Image */}
+        <div
+          className="w-full lg:max-w-[45%] overflow-hidden rounded-[2rem]"
+          style={{
+            boxShadow: "0 20px 30px -10px rgba(0, 0, 0, 0.28), 0 10px 15px -5px rgba(0, 0, 0, 0.12)"
+          }}
+        >
           <Image
             height={1080}
             width={1920}

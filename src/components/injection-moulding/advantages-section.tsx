@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { RiStackFill } from "react-icons/ri";
@@ -44,8 +45,8 @@ export function AdvantageSection() {
     );
 
     return (
-        <Section className="overflow-hidden py-(--section-y)" disablePaddingX disablePaddingY asChild >
-            <div className="flex flex-col gap-6  carousel-section overflow-hidden">
+        <Section className="overflow-hidden py-(--section-y)" disablePaddingX disablePaddingY asChild>
+            <div className="flex flex-col gap-6 carousel-section overflow-hidden">
                 <div>
                     <p className="font-neue text-fluid-24">Injection Moulding Advantages</p>
                     <h4 className="font-neue text-fluid-40 font-bold leading-none">
@@ -57,10 +58,10 @@ export function AdvantageSection() {
                 <div className="overflow-visible lg:mt-8 mt-4" ref={emblaRef}>
                     {/* Embla Container */}
                     <div className="-ml-6 flex touch-pan-y py-2">
-                        {[...advantages, ...advantages, ...advantages].map((item) => (
+                        {[...advantages, ...advantages, ...advantages].map((item, index) => (
                             <div
-                                key={item.title}
-                                className="min-w-0 flex-[0_0_100%] pl-6 sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%]"
+                                key={`${item.title}-${index}`}
+                                className="min-w-0 flex-[0_0_72%] pl-6 sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%]"
                             >
                                 <AdvantageCard {...item} />
                             </div>
@@ -83,14 +84,26 @@ const AdvantageCard = ({
 }) => {
     return (
         <div
-            className="group relative h-100 w-full overflow-hidden rounded-4xl bg-white text-text-primary transition-colors duration-300 hover:text-primary-foreground lg:h-125"
+            className="group relative h-100 w-full overflow-hidden rounded-4xl bg-white text-text-primary transition-colors duration-300 hover:text-white lg:h-125"
             style={{
                 boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.25)",
             }}
         >
+            {/* Background Image & 70% White Overlay */}
+            <div className="pointer-events-none absolute inset-0 z-0">
+                <Image
+                    src="/map-bg.jpg"
+                    alt="map background"
+                    fill
+                    className="object-cover"
+                    priority
+                />
+                <div className="absolute inset-0 bg-white/70" />
+            </div>
+
             {/* Hover gradient */}
             <div
-                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{
                     backgroundImage: "linear-gradient(to right, #569FF2, #0057B8)",
                 }}
@@ -106,13 +119,19 @@ const AdvantageCard = ({
 
             {/* Content */}
             <div className="relative z-20 mx-auto flex h-full max-w-[80%] flex-col gap-6 pt-6 font-neue">
-                <RiStackFill className="size-30" />
+                <RiStackFill className="size-30 text-black transition-colors duration-300 group-hover:text-white" />
 
-                <h5 className="text-fluid-40 font-bold leading-none">{title}</h5>
+                <h5 className="text-fluid-40 font-bold leading-none transition-colors duration-300 group-hover:text-white">
+                    {title}
+                </h5>
 
-                <p className="text-fluid-24 leading-none">{subtitle}</p>
+                <p className="text-fluid-24 leading-none transition-colors duration-300 group-hover:text-white">
+                    {subtitle}
+                </p>
 
-                <p className="font-ce text-fluid-16 leading-snug">{description}</p>
+                <p className="font-ce text-fluid-16 leading-snug transition-colors duration-300 group-hover:text-white">
+                    {description}
+                </p>
             </div>
         </div>
     );

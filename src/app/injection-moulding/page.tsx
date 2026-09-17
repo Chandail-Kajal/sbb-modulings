@@ -112,16 +112,17 @@ export default function Injection() {
                                 {keyHighlights.map((hlt) => (
                                     <div
                                         key={hlt.title}
-                                        className="group flex flex-row gap-6 items-start cursor-pointer"
+                                        tabIndex={0}
+                                        className="group flex flex-row gap-6 items-start cursor-pointer transition-colors text-black hover:text-[#0057B8] active:text-[#0057B8] focus:text-[#0057B8] focus:outline-none"
                                     >
-                                        <div>
+                                        <div className="transition-colors group-hover:text-[#0057B8] group-active:text-[#0057B8]">
                                             <MouldIcon />
                                         </div>
                                         <div className="flex flex-col gap-3">
-                                            <h5 className="leading-none font-bold text-fluid-24 transition-colors group-hover:text-primary">
+                                            <h5 className="leading-none font-bold text-fluid-24 transition-colors text-inherit">
                                                 {hlt.title}
                                             </h5>
-                                            <p className="text-fluid-16 text-text-para">{hlt.subtitle}</p>
+                                            <p className="text-fluid-16 text-inherit opacity-90">{hlt.subtitle}</p>
                                         </div>
                                     </div>
                                 ))}
