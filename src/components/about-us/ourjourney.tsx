@@ -148,7 +148,7 @@ export function OurJourney() {
                           ? "w-4 h-4 bg-white border-[3px] border-[#0052cc] ring-2 ring-[#0052cc]/20"
                           : isPassed
                             ? "w-3 h-3 bg-[#0052cc] border-2 border-white"
-                            : "w-3 h-3 bg-white border-[2px] border-[#212529] hover:border-[#0052cc]"
+                            : "w-3 h-3 bg-white border-2 border-[#212529] hover:border-[#0052cc]"
                       }`}
                     />
                   </button>

@@ -19,7 +19,6 @@ const processTiles = [
     textPos: { x: 345, y: 405 },
     d: "M 267 342 Q 267 332 274 326 L 338 276 Q 349 268 356 276 L 450 435 Q 455 445 444 445 L 277 445 Q 267 445 267 435 Z",
   },
-
   {
     id: "assembly",
     name: "Assembly",
@@ -38,7 +37,6 @@ const processTiles = [
     textPos: { x: 500, y: 295 },
     d: "M 495 225 Q 500 220 505 225 L 590 282 Q 598 288 593 298 L 507 441 Q 503 448 497 448 Q 493 448 489 441 L 407 298 Q 402 288 410 282 Z",
   },
-
   {
     id: "packaging",
     name: "Packaging",
@@ -70,57 +68,56 @@ export default function ProcessDiagram() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            {/* Drop Shadow */}
+            {/* Exact Figma Drop Shadow: X: 10, Y: 15, Blur: 15, #000000 30% */}
             <filter
-              id="tileShadow"
+              id="figmaShadow"
               x="-20%"
               y="-20%"
-              width="140%"
-              height="150%"
+              width="150%"
+              height="160%"
             >
               <feDropShadow
-                dx="0"
-                dy="7"
-                stdDeviation="5"
-                floodColor="#00183b"
-                floodOpacity="0.35"
+                dx="10"
+                dy="15"
+                stdDeviation="7.5"
+                floodColor="#000000"
+                floodOpacity="0.30"
               />
             </filter>
 
-            {/* Radial 3D Blue Shading */}
-            <radialGradient
-              id="tileLighting"
-              cx="50%"
-              cy="20%"
-              r="80%"
-              fx="50%"
-              fy="10%"
+            {/* Exact Figma Linear Gradient: #569FF2 -> #0057B8 */}
+            <linearGradient
+              id="figmaLinearGrad"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
             >
-              <stop offset="0%" stopColor="#1872e4" />
-              <stop offset="55%" stopColor="#0d59bf" />
-              <stop offset="100%" stopColor="#044199" />
-            </radialGradient>
+              <stop offset="0%" stopColor="#569FF2" />
+              <stop offset="100%" stopColor="#0057B8" />
+            </linearGradient>
 
-            <filter id="grainNoise" x="0%" y="0%" width="100%" height="100%">
+            {/* Fine Grain Texture matching Image 1 */}
+            <filter id="tileGrain" x="0%" y="0%" width="100%" height="100%">
               <feTurbulence
                 type="fractalNoise"
-                baseFrequency="0.8"
+                baseFrequency="0.75"
                 numOctaves="3"
                 stitchTiles="stitch"
                 result="noise"
               />
               <feColorMatrix
                 type="matrix"
-                values="0 0 0 0 1   
-                        0 0 0 0 1   
-                        0 0 0 0 1   
-                        0 0 0 0.07 0"
+                values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.18 0"
                 in="noise"
-                result="coloredNoise"
+                result="darkNoise"
               />
               <feComposite
                 operator="in"
-                in="coloredNoise"
+                in="darkNoise"
                 in2="SourceGraphic"
               />
             </filter>
@@ -131,29 +128,32 @@ export default function ProcessDiagram() {
               key={tile.id}
               className="group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5"
             >
+              {/* Base Shape with Figma Shadow and Figma Linear Gradient */}
               <path
                 d={tile.d}
-                fill="url(#tileLighting)"
-                filter="url(#tileShadow)"
+                fill="url(#figmaLinearGrad)"
+                filter="url(#figmaShadow)"
                 className="transition-all duration-300 group-hover:brightness-105"
               />
 
+              {/* Textured Grain Surface Overlay */}
               <path
                 d={tile.d}
-                fill="#ffffff"
-                filter="url(#grainNoise)"
+                fill="url(#figmaLinearGrad)"
+                filter="url(#tileGrain)"
                 pointerEvents="none"
               />
 
+              {/* Text Label */}
               <text
                 x={tile.textPos.x}
                 y={tile.textPos.y}
                 fill="#ffffff"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                fontSize="14.5"
-                fontWeight="500"
-                letterSpacing="0.2px"
+                fontSize="15"
+                fontWeight="600"
+                letterSpacing="0.25px"
                 className="pointer-events-none select-none font-sans"
               >
                 {tile.name}
@@ -169,7 +169,7 @@ export default function ProcessDiagram() {
 export function ProductionProcess() {
   return (
     <Section
-      className="relative overflow-hidden py-8  sm:py-10 lg:py-14 bg-white"
+      className="relative overflow-hidden py-8 sm:py-10 lg:py-14 bg-white"
       disablePaddingY
     >
       <div className="section-container">
