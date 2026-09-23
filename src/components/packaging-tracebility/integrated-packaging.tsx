@@ -40,21 +40,22 @@ export function IntegratedPackaging() {
   const startX = useRef(0);
   const isDragging = useRef(false);
 
+  // Animation duration increased to 1200ms for slow & gentle transition
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setActiveIndex((prev) => (prev + 1) % cards.length);
-    setTimeout(() => setIsAnimating(false), 450);
+    setTimeout(() => setIsAnimating(false), 1200);
   };
 
   const handlePrev = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setActiveIndex((prev) => (prev - 1 + cards.length) % cards.length);
-    setTimeout(() => setIsAnimating(false), 450);
+    setTimeout(() => setIsAnimating(false), 1200);
   };
 
-  // Touch Swipe Handlers (Mobile / Tablets)
+  // Touch Handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     startX.current = e.touches[0].clientX;
   };
@@ -63,13 +64,13 @@ export function IntegratedPackaging() {
     const endX = e.changedTouches[0].clientX;
     const diff = startX.current - endX;
     if (diff > 45) {
-      handleNext(); // swipe left -> next card (infinite)
+      handleNext();
     } else if (diff < -45) {
-      handlePrev(); // swipe right -> prev card (infinite)
+      handlePrev();
     }
   };
 
-  // Mouse Drag Handlers (Desktop)
+  // Mouse Drag Handlers
   const handleMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
     startX.current = e.clientX;
@@ -86,10 +87,8 @@ export function IntegratedPackaging() {
     }
   };
 
-  // Infinite Left Card calculation: current index se 1 peeche circular wrap
   const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
-  const leftCard = cards[prevIndex];
-  const rightCard = cards[activeIndex];
+  const nextCardIndex = (activeIndex + 1) % cards.length;
 
   return (
     <Section
@@ -106,70 +105,90 @@ export function IntegratedPackaging() {
           </h2>
         </div>
 
-        {/* 2-Card Infinite Swipe Surface */}
+        {/* Swipe Track */}
         <div
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
-          className="flex flex-col lg:flex-row items-center justify-between gap-6 xl:gap-8 w-full cursor-grab active:cursor-grabbing"
+          className="relative w-full h-[200px] sm:h-[220px] md:h-[235px] cursor-grab active:cursor-grabbing"
         >
-          <div
-            onClick={handlePrev}
-            className="w-full lg:w-[38%] xl:w-[36%] h-[200px] sm:h-[220px] md:h-[235px] rounded-lg sm:rounded-xl bg-[#f1f3f5] text-[#23272e] p-2 sm:p-2 flex items-center shadow-sm transition-all duration-500 ease-out cursor-pointer hover:bg-[#eaecee]"
-          >
-            <div className="relative shrink-0 w-[42%] sm:w-[40%] h-full overflow-hidden rounded-lg sm:rounded-xl pointer-events-none">
-              <Image
-                key={`left-img-${leftCard.id}`}
-                src="/packaging/image1.jpg"
-                alt={leftCard.title}
-                fill
-                className="object-cover transition-opacity duration-300"
-              />
-            </div>
+          {cards.map((card, idx) => {
+            const isRightActive = idx === activeIndex;
+            const isLeftInactive = idx === prevIndex;
+            const isUpcoming = idx === nextCardIndex;
 
-            {/* Left Content */}
-            <div className="ml-4 sm:ml-5 flex flex-col justify-start flex-1 pr-2 pointer-events-none h-full gap-4 py-4">
-              <h3 className="font-bold text-[#0057b7] text-fluid-24 leading-snug tracking-tight">
-                {leftCard.title}
-              </h3>
-              <p className="mt-2 text-fluid-16 leading-snug text-[#666c75] line-clamp-3 sm:line-clamp-4">
-                {leftCard.desc}
-              </p>
-            </div>
-          </div>
+            let stateClasses = "opacity-0 pointer-events-none scale-90 z-0";
 
-          <div
-            onClick={handleNext}
-            className="w-full lg:w-[62%] xl:w-[64%] h-[200px] sm:h-[220px] md:h-[235px] rounded-lg sm:rounded-xl bg-[#0057b7] text-white p-2 sm:p-2 flex items-center shadow-xl transition-all duration-500 ease-out cursor-pointer"
-          >
-            <div className="relative shrink-0 w-[52%] sm:w-[50%] h-full overflow-hidden rounded-lg sm:rounded-xl pointer-events-none">
-              <Image
-                key={`right-img-${rightCard.id}`}
-                src="/packaging/image1.jpg"
-                alt={rightCard.title}
-                fill
-                priority
-                className="object-cover scale-110 transition-transform duration-700 ease-out"
-              />
-            </div>
+            if (isLeftInactive) {
+              stateClasses =
+                "left-0 w-full lg:w-[38%] xl:w-[36%] bg-[#f1f3f5] text-[#23272e] shadow-sm opacity-100 z-10 cursor-pointer hover:bg-[#eaecee]";
+            } else if (isRightActive) {
+              stateClasses =
+                "left-0 lg:left-[40%] xl:left-[38%] w-full lg:w-[60%] xl:w-[62%] bg-[#0057b7] text-white shadow-xl opacity-100 z-20 cursor-pointer";
+            } else if (isUpcoming) {
+              stateClasses =
+                "left-[105%] w-full lg:w-[60%] xl:w-[62%] bg-[#0057b7] text-white opacity-0 pointer-events-none z-0";
+            }
 
-            <div className="ml-5 sm:ml-7 flex flex-col justify-start flex-1 pr-3 sm:pr-6 pointer-events-none h-full py-4 gap-6">
-              <h3 className="font-bold text-white text-lg sm:text-xl xl:text-[23px] leading-snug tracking-tight">
-                {rightCard.title}
-              </h3>
-              <p className="mt-2.5 text-xs sm:text-[13px] xl:text-[14px] leading-relaxed text-white/90 line-clamp-4">
-                {rightCard.desc}
-              </p>
-            </div>
-          </div>
+            return (
+              <div
+                key={card.id}
+                onClick={() => {
+                  if (isLeftInactive) handlePrev();
+                  if (isRightActive) handleNext();
+                }}
+                className={`absolute top-0 h-full rounded-lg sm:rounded-xl p-2 sm:p-2 flex items-center transition-all duration-1200 ease-in-out ${stateClasses}`}
+              >
+                {/* Inner Image: Slow morph of container width & scale */}
+                <div
+                  className={`relative shrink-0 h-full overflow-hidden rounded-lg sm:rounded-xl pointer-events-none transition-all duration-1200 ease-in-out ${
+                    isRightActive
+                      ? "w-[52%] sm:w-[50%]"
+                      : "w-[42%] sm:w-[40%]"
+                  }`}
+                >
+                  <Image
+                    src="/packaging/image1.jpg"
+                    alt={card.title}
+                    fill
+                    priority={isRightActive || isLeftInactive}
+                    className={`object-cover transition-transform duration-1200 ease-in-out ${
+                      isRightActive ? "scale-110" : "scale-100"
+                    }`}
+                  />
+                </div>
+
+                {/* Text Content: Slow color transitions */}
+                <div className="ml-4 sm:ml-5 flex flex-col justify-start flex-1 pr-2 pointer-events-none h-full py-4 gap-3 sm:gap-4 overflow-hidden">
+                  <h3
+                    className={`font-bold transition-colors duration-1000 ease-in-out leading-snug tracking-tight ${
+                      isRightActive
+                        ? "text-white text-lg sm:text-xl xl:text-[23px]"
+                        : "text-[#0057b7] text-fluid-24"
+                    }`}
+                  >
+                    {card.title}
+                  </h3>
+                  <p
+                    className={`text-fluid-16 leading-snug line-clamp-3 sm:line-clamp-4 transition-colors duration-1000 ease-in-out ${
+                      isRightActive ? "text-white/90" : "text-[#666c75]"
+                    }`}
+                  >
+                    {card.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
+        {/* Dynamic Progress Indicator */}
         <div className="mt-8 sm:mt-12 flex items-center gap-4 max-w-full leading-none font-semibold text-[#8c94a0]">
-          <span className="text-fluid-29">{rightCard.id}</span>
+          <span className="text-fluid-29">{cards[activeIndex].id}</span>
           <div className="relative flex-1 h-1 bg-[#e4e7eb] rounded-full overflow-hidden">
             <div
-              className="absolute top-0 left-0 h-full bg-[#0057b7] transition-all duration-500 rounded-full"
+              className="absolute top-0 left-0 h-full bg-[#0057b7] transition-all duration-1200 ease-in-out rounded-full"
               style={{
                 width: `${((activeIndex + 1) / cards.length) * 100}%`,
               }}

@@ -22,31 +22,31 @@ export const leaders: Leader[] = [
   {
     name: "Mr. Narshi Chauhan",
     role: "Managing Director",
-    bio: "Provides leadership and strategic direction for the company's continued manufacturing growth and development.",
+    bio: ":  A Computer Engineering graduate from Kurukshetra University, Narshi joined SB Felts in 2012 and led its transformation from a struggling unit into a leading supplier of NVH and filter products before co-founding SBB Mouldings.",
     largeImage: DEFAULT_IMAGE,
     cardImage: DEFAULT_IMAGE,
     avatarImage: DEFAULT_IMAGE,
   },
   {
-    name: "Ayesha Kapoor",
-    role: "Operations Director",
-    bio: "Drives technical excellence, plant automation, and manufacturing operations across our multi-facility production network.",
+    name: "Lalit Bansal ",
+    role: "Director",
+    bio: "A Certified Financial Analyst (CFA Institute) with an MBA from the University of Notre Dame (Indiana, USA) and a B.Tech in Electronics & Communication from Kurukshetra University, Lalit founded Panipat Texo Fabs Pvt Ltd in 2013 after a career spanning public and private sector enterprises.",
     largeImage: DEFAULT_IMAGE,
     cardImage: DEFAULT_IMAGE,
     avatarImage: DEFAULT_IMAGE,
   },
   {
-    name: "Martin Feldman",
-    role: "Head of Engineering",
-    bio: "Specializes in high-precision tooling, plastic injection mould design, and end-to-end component validation.",
+    name: "Ravi Arya ",
+    role: "Business Lead",
+    bio: "A Mechanical Engineer with tooling specialization from YMCA Faridabad, Ravi brings 27 years of Tier-1 automotive experience across development, process improvement, NVH, sheet metal, injection moulding and greenfield assembly-line setup",
     largeImage: DEFAULT_IMAGE,
     cardImage: DEFAULT_IMAGE,
     avatarImage: DEFAULT_IMAGE,
   },
   {
-    name: "Neha Raghav",
-    role: "Quality Assurance Lead",
-    bio: "Oversees stringent automotive standards, defect-free production runs, and comprehensive testing protocols.",
+    name: "Amitabh Srivastava ",
+    role: "Operations Lead",
+    bio: "CIPET-trained in Hyderabad, Amitabh has 20 years of experience across automotive body parts, lighting, industrial and air-conditioning products, from development through to production.",
     largeImage: DEFAULT_IMAGE,
     cardImage: DEFAULT_IMAGE,
     avatarImage: DEFAULT_IMAGE,
@@ -272,7 +272,7 @@ export function OurTeam() {
             />
 
             <div className="pointer-events-none absolute bottom-[64px] left-0 z-20 hidden w-full -translate-y-1/2 md:block">
-              <div className="pointer-events-auto absolute left-6 flex items-center gap-10 lg:left-12">
+              <div className="pointer-events-auto absolute left-6 flex items-center gap-48 lg:left-12">
                 <AnimatePresence
                   mode="popLayout"
                   custom={direction}
@@ -297,7 +297,7 @@ export function OurTeam() {
               </div>
 
               {/* Right Avatars */}
-              <div className="pointer-events-auto absolute right-6 flex items-center gap-10 lg:right-12">
+              <div className="pointer-events-auto absolute right-6 flex items-center gap-48 lg:right-12">
                 <AnimatePresence
                   mode="popLayout"
                   custom={direction}

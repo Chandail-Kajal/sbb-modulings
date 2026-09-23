@@ -110,7 +110,7 @@ export const Footer = () => {
                 <ul className="flex flex-col gap-2.5 text-fluid-16 leading-snug text-primary-foreground font-ce">
                   <li>
                     <Link
-                      href="#"
+                      href="/injection-moulding"
                       className="hover:text-white transition-colors"
                     >
                       Injection Moulding
@@ -118,7 +118,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/assembly"
                       className="hover:text-white transition-colors"
                     >
                       Assembly Operations
@@ -126,7 +126,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/packaging-tracebility"
                       className="hover:text-white transition-colors"
                     >
                       Packaging & Traceability
@@ -134,10 +134,10 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="manufacturing-capabilities"
                       className="hover:text-white transition-colors"
                     >
-                      Manufacturing Infrastructure
+                      Manufacturing Capabilities
                     </Link>
                   </li>
                 </ul>

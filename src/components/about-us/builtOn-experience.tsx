@@ -15,10 +15,10 @@ export function BuiltOnExperience() {
             </div>
             <div className="relative z-10 section-container text-center">
                 <h2 className="text-fluid-47 font-extrabold text-[#212529] tracking-tight font-neue">
-                    <span>Built on </span>
-                    <span className="text-[#0052cc]">Experience. </span>
-                    <span>Driven by </span>
-                    <span className="text-[#0052cc]">Capability.</span>
+                    <span>Two Manufacturing  </span>
+                    <span className="text-[#0052cc]">Legacies, </span>
+                    <span>One Focused  </span>
+                    <span className="text-[#0052cc]">Mission</span>
                 </h2>
 
                 <div className="mt-6 sm:mt-8 space-y-4 text-fluid-18 leading-relaxed text-[#928b8b] font-ce">
@@ -31,13 +31,12 @@ export function BuiltOnExperience() {
                     </p>
 
                     <p>
-                        Since its establishment, the company has steadily expanded its manufacturing infrastructure and production capabilities.
-                        <br className="hidden sm:inline" />
-                        {" "}What began with an initial injection moulding facility has grown into a multi-facility manufacturing operation supporting injection moulding, assembly, and finished goods warehousing.
+                        formed to diversify into injection moulding and assembly for the white goods and automotive industries. 
+                        
                     </p>
 
                     <p>
-                        Today, SBB Mouldings operates with 45+ professionals across management, engineering, supervision, and manufacturing functions.
+                        The company&lsquo;s first unit went into operation in Bawal, Rewari shortly after, and has since grown into a three-facility operation — adding a second unit in 2021 and a third, 4,000 sqm facility in December 2024 dedicated to new moulding capacity, assembly and finished-goods warehousing.
                     </p>
                 </div>
             </div>

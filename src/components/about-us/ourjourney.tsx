@@ -20,16 +20,16 @@ const journeyData: JourneyItem[] = [
     label: "Joint Venture",
     title: "SBB Mouldings Established",
     description:
-      "The company was incorporated as a 50:50 joint venture between SB Felts and Panipat Texo Fabs Pvt. Ltd.",
+      "SBB Mouldings incorporated as a 50:50 JV between SB Felts and Panipat Texo Fabs",
     imageSrc: "",
   },
   {
     yearPrefix: "20",
-    yearHighlight: "18",
+    yearHighlight: "19",
     label: "Manufacturing Facility",
     title: "Initial Manufacturing Facility",
     description:
-      "Set up an initial injection moulding facility to support manufacturing and assembly operations.",
+      "Unit 1 (Bawal Sector-3) commissioned; first machines installed",
     imageSrc: "",
   },
   {
@@ -38,7 +38,16 @@ const journeyData: JourneyItem[] = [
     label: "Expansion",
     title: "Second Manufacturing Unit",
     description:
-      "A second facility was commissioned to enhance production capabilities and storage space.",
+      "Unit 2 (Sangwari) added — 3,500 sqm",
+    imageSrc: "",
+  },
+   {
+    yearPrefix: "20",
+    yearHighlight: "23",
+    label: "Certification",
+    title: "Industry-Focused",
+    description:
+      "ISO 9001:2015 and IATF 16949:2016 certification achieved",
     imageSrc: "",
   },
   {
@@ -47,16 +56,16 @@ const journeyData: JourneyItem[] = [
     label: "Warehousing",
     title: "Third Facility Added",
     description:
-      "Added infrastructure to support assembly, tool room capabilities, and finished goods warehousing.",
+      "Unit 3 (Bawal Sector-14) added — 4,000 sqm for new moulding, assembly & warehousing",
     imageSrc: "",
   },
   {
-    yearPrefix: "To",
-    yearHighlight: "day",
+    yearPrefix: "20",
+    yearHighlight: "26",
     label: "Ongoing Growth",
     title: " ",
     description:
-      "Continuous investment in high-tonnage machinery, advanced infrastructure, and skilled engineering teams.",
+      "Revenue reaches ₹150 Cr, roughly 6x FY19-20 levels",
     imageSrc: "",
   },
 ];
@@ -83,9 +92,9 @@ export function OurJourney() {
             </span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center mb-16 lg:mb-20 min-h-[220px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-14 items-center mb-16 lg:mb-20 min-h-55">
           <div className="md:col-span-4 flex items-center justify-start">
-            <div className="w-full max-w-[340px] aspect-[16/10] bg-[#d9d9d9] rounded-md relative overflow-hidden shadow-sm">
+            <div className="w-full max-w-85 aspect-16/10 bg-[#d9d9d9] rounded-md relative overflow-hidden shadow-sm">
               {activeItem.imageSrc && (
                 <Image
                   src={activeItem.imageSrc}
