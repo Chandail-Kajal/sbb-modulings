@@ -1,12 +1,13 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
 import { Section } from "../Section";
+import Image from "next/image";
 
 interface StepItem {
   id: string;
   title: string;
   desc: string;
   defaultActive?: boolean;
-  // Precise large screen coordinate placement (% based from top/left)
   desktopPos: string;
 }
 
@@ -16,28 +17,24 @@ const steps: StepItem[] = [
     title: "Understanding",
     desc: "We understand the component, application, and production requirement.",
     defaultActive: true,
-    // Step 1: Bottom left, directly underneath the text block
     desktopPos: "lg:left-[8%] lg:top-[53%] xl:left-[8.5%] xl:top-[54%]",
   },
   {
     id: "02",
     title: "Engineering",
     desc: "We evaluate the appropriate manufacturing and machine capability.",
-    // Step 2: Elevated between 1 and 3
     desktopPos: "lg:left-[27.5%] lg:top-[33%] xl:left-[28%] xl:top-[33.5%]",
   },
   {
     id: "03",
     title: "Manufacturing",
     desc: "We use our injection moulding and production infrastructure to manufacture the required components.",
-    // Step 3: Highest elevated apex
     desktopPos: "lg:left-[47%] lg:top-[12%] xl:left-[47.5%] xl:top-[12.5%]",
   },
   {
     id: "04",
     title: "Assembly",
     desc: "Where required, components can move into dedicated assembly operations.",
-    // Step 4: Vertically below Manufacturing
     desktopPos: "lg:left-[47.5%] lg:top-[54%] xl:left-[48%] xl:top-[54.5%]",
   },
   {
@@ -48,103 +45,170 @@ const steps: StepItem[] = [
   },
 ];
 
-export function OurApproach() {
+function HexagonCard({
+  title,
+  desc,
+  isActive,
+  isHovered,
+  imageUrl = "/about-us/hexagon-bg.jpg", // 1. Added a prop for your background image URL
+}: {
+  title: string;
+  desc: string;
+  isActive?: boolean;
+  isHovered?: boolean;
+  imageUrl?: string;
+}) {
+  const isDark = isActive || isHovered;
+
   return (
-    <Section
-      className="relative overflow-hidden bg-white"
-      // disablePaddingY
-    >
+    <div className="relative w-full h-full flex items-center justify-center">
+      <svg
+        viewBox="0 0 320 280"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`w-full overflow-hidden h-full transition-all duration-300 ${
+          isDark
+            ? "drop-shadow-[0_16px_28px_rgba(0,87,183,0.28)]"
+            : "drop-shadow-[0_10px_20px_rgba(184,210,238,0.35)]"
+        }`}
+      >
+        <defs>
+          {/* 2. Create a pattern that scales to fill the shape */}
+          <pattern
+            id="hex-bg-image"
+            patternUnits="userSpaceOnUse"
+            width="320"
+            height="280"
+          >
+            <image
+              href={imageUrl}
+              width="320"
+              height="280"
+              preserveAspectRatio="xMidYMid slice"
+              className="object-cover"
+            />
+
+            <rect width="320" height="280" fill="black" fillOpacity="0.04" />
+          </pattern>
+
+          <linearGradient id="sheenBand" x1="20%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+            <stop offset="45%" stopColor="#ffffff" stopOpacity="0.45" />
+            <stop offset="55%" stopColor="#ffffff" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        <path
+          d="
+            M 100 20
+            L 220 20
+            Q 236 20, 244 32
+            L 298 126
+            Q 304 140, 298 154
+            L 244 248
+            Q 236 260, 220 260
+            L 100 260
+            Q 84 260, 76 248
+            L 22 154
+            Q 16 140, 22 126
+            L 76 32
+            Q 84 20, 100 20
+            Z
+          "
+          fill="url(#hex-bg-image)"
+          stroke={isDark ? "#0057b7" : "#b8d2ee"}
+          strokeWidth={10}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          className="transition-colors duration-300"
+        />
+      </svg>
+
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10 xl:px-12 select-none pointer-events-none">
+        <h3 className="font-bold leading-snug tracking-tight text-fluid-24 text-[#0057B8] max-w-50 drop-shadow-md">
+          {title}
+        </h3>
+        <p className="mt-2 text-fluid-16 text-[#4D4D4D] leading-relaxed max-w-52.5 drop-shadow-sm">
+          {desc}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function OurApproach() {
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  return (
+    <Section className="relative overflow-hidden bg-white py-16">
       <div className="relative section-container">
-        <div className="relative hidden lg:block w-full h-190 xl:h-215 2xl:h-235">
-          <div className="absolute left-[8.5%] top-[12%] max-w-107.5 z-10 select-none">
-            <span className="block text-fluid-24 font-light text-[#7a7a7a] tracking-tight">
+        <div className="relative hidden lg:block w-full h-190 xl:h-210 2xl:h-225">
+          <div className="absolute left-0 top-[12%] z-10 select-none">
+            <span className="block text-2xl font-light text-[#7a7a7a] tracking-tight">
               Our Approach
             </span>
-            <h2 className="mt-1 text-fluid-40 font-extrabold text-[#22252a] leading-none tracking-[-0.03em]">
+            <h2 className="mt-1 text-4xl xl:text-5xl font-extrabold text-[#22252a] leading-tight tracking-[-0.03em]">
               Understand. Engineer.
               <br />
               Manufacture. Deliver.
             </h2>
-            <p className="mt-5 text-fluid-16 leading-snug text-[#737373] max-w-xl">
+            <p className="mt-5 text-base leading-relaxed text-[#737373] max-w-sm">
               We believe effective manufacturing starts with understanding the
               requirement.
             </p>
           </div>
 
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className={`group absolute w-72.5 xl:w-83.75 2xl:w-92.5 aspect-[1/1.12] transition-transform duration-300 hover:scale-[1.03] z-20 cursor-pointer ${step.desktopPos}`}
-            >
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src="/about-us/ourapproach.png"
-                  alt={`${step.title} step`}
-                  fill
-                  className={`object-contain transition-all duration-300 pointer-events-none select-none ${
-                    step.defaultActive
-                      ? "filter hue-rotate-[0deg] saturate-[3] contrast-[1.25] brightness-[0.85] drop-shadow-[0_16px_28px_rgba(0,82,204,0.25)]"
-                      : "opacity-95 filter hue-rotate-0 saturate-100 brightness-100 group-hover:saturate-[3] group-hover:contrast-[1.25] group-hover:brightness-[0.85] group-hover:drop-shadow-[0_16px_28px_rgba(0,82,204,0.25)]"
-                  }`}
-                  priority
+          {steps.map((step) => {
+            const isHovered = hoveredId === step.id;
+            return (
+              <div
+                key={step.id}
+                onMouseEnter={() => setHoveredId(step.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className={`group absolute w-74 xl:w-78 2xl:w-85 aspect-320/280 transition-transform duration-300 hover:scale-[1.03] z-20 cursor-pointer ${step.desktopPos}`}
+              >
+                <HexagonCard
+                  title={step.title}
+                  desc={step.desc}
+                  isActive={step.defaultActive}
+                  isHovered={isHovered}
                 />
               </div>
-
-              <div className="relative z-10 h-full w-full px-12 xl:px-14 2xl:px-16 flex flex-col items-center justify-center text-center select-none pointer-events-none">
-                <h3 className="text-fluid-24 font-bold text-[#0057b7] leading-snug tracking-tight  2xl:max-w-53">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-fluid-16 leading-snug text-[#55595d] max-w-47.5 xl:max-w-50 2xl:max-w-53">
-                  {step.desc}
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
+        {/* Mobile / Tablet Layout */}
         <div className="block lg:hidden">
           <div className="max-w-xl text-left mb-10">
-            <span className="text-fluid-24 font-light text-[#7a7a7a]">
+            <span className="text-xl sm:text-2xl font-light text-[#7a7a7a]">
               Our Approach
             </span>
-            <h2 className="mt-1 text-fluid-40 font-extrabold text-[#22252a] leading-tight tracking-tight">
+            <h2 className="mt-1 text-3xl sm:text-4xl font-extrabold text-[#22252a] leading-tight tracking-tight">
               Understand. Engineer.
               <br />
               Manufacture. Deliver.
             </h2>
-            <p className="mt-3 text-fluid-16 text-[#737373] max-w-sm">
+            <p className="mt-3 text-sm sm:text-base text-[#737373] max-w-sm">
               We believe effective manufacturing starts with understanding the
               requirement.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-x-4 justify-items-center">
             {steps.map((step) => (
               <div
                 key={step.id}
-                className="group relative w-80 sm:w-72.5 aspect-[1/1.12] transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
+                onMouseEnter={() => setHoveredId(step.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className="group relative w-[290px] sm:w-[310px] aspect-[320/280] transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
               >
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src="/about-us/ourapproach.png"
-                    alt={step.title}
-                    fill
-                    className={`object-contain transition-all duration-300 ${
-                      step.defaultActive
-                        ? "filter saturate-[3] contrast-[1.25] brightness-[0.85] drop-shadow-[0_12px_22px_rgba(0,82,204,0.2)]"
-                        : "group-hover:saturate-[3] group-hover:contrast-[1.25] group-hover:brightness-[0.85] group-hover:drop-shadow-[0_12px_22px_rgba(0,82,204,0.2)]"
-                    }`}
-                  />
-                </div>
-
-                <div className="relative z-10 h-full w-full px-10 flex flex-col items-center justify-center text-center">
-                  <h3 className="text-base font-bold text-[#0057b7] leading-snug max-w-45">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-[12px] leading-relaxed text-[#55595d] max-w-45">
-                    {step.desc}
-                  </p>
-                </div>
+                <HexagonCard
+                  title={step.title}
+                  desc={step.desc}
+                  isActive={step.defaultActive}
+                  isHovered={hoveredId === step.id}
+                />
               </div>
             ))}
           </div>
