@@ -34,14 +34,12 @@ const cards: PackagingCard[] = [
 ];
 
 export function IntegratedPackaging() {
-  // activeIndex tracks the active big card on the right (defaults to index 1 = card 02)
   const [activeIndex, setActiveIndex] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const startX = useRef(0);
   const isDragging = useRef(false);
 
-  // Infinite Next: 4 ke baad wapas 1 pe loop
   const handleNext = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -49,7 +47,6 @@ export function IntegratedPackaging() {
     setTimeout(() => setIsAnimating(false), 450);
   };
 
-  // Infinite Prev: 1 ke pehle wapas 4 pe loop
   const handlePrev = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -95,13 +92,17 @@ export function IntegratedPackaging() {
   const rightCard = cards[activeIndex];
 
   return (
-    <Section className="relative overflow-hidden py-14 sm:py-20 lg:py-24 bg-white select-none" disablePaddingY>
-      <div className="mx-auto w-full max-w-[1780px] px-6 sm:px-10 lg:px-16 xl:px-24">
-        
+    <Section
+      className="relative overflow-hidden py-14 sm:py-20 lg:py-24 bg-white select-none"
+      disablePaddingY
+    >
+      <div className="mx-auto w-full section-container">
         {/* Section Heading */}
         <div className="text-left mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#23272e] leading-[1.12] tracking-tight">
-            Integrated Packaging<br />Solutions
+          <h2 className="text-fluid-47 font-bold text-[#23272e] leading-[1.12] tracking-tight">
+            Integrated Packaging
+            <br />
+            Solutions
           </h2>
         </div>
 
@@ -113,13 +114,11 @@ export function IntegratedPackaging() {
           onMouseUp={handleMouseUp}
           className="flex flex-col lg:flex-row items-center justify-between gap-6 xl:gap-8 w-full cursor-grab active:cursor-grabbing"
         >
-          {/* LEFT CARD: Smaller, Inactive, Infinite Loop backward on click */}
           <div
             onClick={handlePrev}
-            className="w-full lg:w-[38%] xl:w-[36%] h-[200px] sm:h-[220px] md:h-[235px] rounded-[24px] sm:rounded-[28px] bg-[#f1f3f5] text-[#23272e] p-3.5 sm:p-4 flex items-center shadow-sm transition-all duration-500 ease-out cursor-pointer hover:bg-[#eaecee]"
+            className="w-full lg:w-[38%] xl:w-[36%] h-[200px] sm:h-[220px] md:h-[235px] rounded-lg sm:rounded-xl bg-[#f1f3f5] text-[#23272e] p-2 sm:p-2 flex items-center shadow-sm transition-all duration-500 ease-out cursor-pointer hover:bg-[#eaecee]"
           >
-            {/* Left Image (Smaller) */}
-            <div className="relative shrink-0 w-[42%] sm:w-[40%] h-full overflow-hidden rounded-[18px] sm:rounded-[22px] pointer-events-none">
+            <div className="relative shrink-0 w-[42%] sm:w-[40%] h-full overflow-hidden rounded-lg sm:rounded-xl pointer-events-none">
               <Image
                 key={`left-img-${leftCard.id}`}
                 src="/packaging/image1.jpg"
@@ -130,23 +129,21 @@ export function IntegratedPackaging() {
             </div>
 
             {/* Left Content */}
-            <div className="ml-4 sm:ml-5 flex flex-col justify-center flex-1 pr-2 pointer-events-none">
-              <h3 className="font-bold text-[#0057b7] text-base sm:text-lg leading-snug tracking-tight">
+            <div className="ml-4 sm:ml-5 flex flex-col justify-start flex-1 pr-2 pointer-events-none h-full gap-4 py-4">
+              <h3 className="font-bold text-[#0057b7] text-fluid-24 leading-snug tracking-tight">
                 {leftCard.title}
               </h3>
-              <p className="mt-2 text-xs sm:text-[12.5px] leading-relaxed text-[#666c75] line-clamp-3 sm:line-clamp-4">
+              <p className="mt-2 text-fluid-16 leading-snug text-[#666c75] line-clamp-3 sm:line-clamp-4">
                 {leftCard.desc}
               </p>
             </div>
           </div>
 
-          {/* RIGHT CARD: Bigger, Active Royal Blue with Zoomed Image, Infinite Loop forward on click */}
           <div
             onClick={handleNext}
-            className="w-full lg:w-[62%] xl:w-[64%] h-[240px] sm:h-[270px] md:h-[295px] rounded-[24px] sm:rounded-[28px] bg-[#0057b7] text-white p-4 sm:p-5 flex items-center shadow-xl transition-all duration-500 ease-out cursor-pointer"
+            className="w-full lg:w-[62%] xl:w-[64%] h-[200px] sm:h-[220px] md:h-[235px] rounded-lg sm:rounded-xl bg-[#0057b7] text-white p-2 sm:p-2 flex items-center shadow-xl transition-all duration-500 ease-out cursor-pointer"
           >
-            {/* Right Image (Bigger & Scale-110 Zoomed) */}
-            <div className="relative shrink-0 w-[52%] sm:w-[50%] h-full overflow-hidden rounded-[18px] sm:rounded-[22px] pointer-events-none">
+            <div className="relative shrink-0 w-[52%] sm:w-[50%] h-full overflow-hidden rounded-lg sm:rounded-xl pointer-events-none">
               <Image
                 key={`right-img-${rightCard.id}`}
                 src="/packaging/image1.jpg"
@@ -157,8 +154,7 @@ export function IntegratedPackaging() {
               />
             </div>
 
-            {/* Right Content */}
-            <div className="ml-5 sm:ml-7 flex flex-col justify-center flex-1 pr-3 sm:pr-6 pointer-events-none">
+            <div className="ml-5 sm:ml-7 flex flex-col justify-start flex-1 pr-3 sm:pr-6 pointer-events-none h-full py-4 gap-6">
               <h3 className="font-bold text-white text-lg sm:text-xl xl:text-[23px] leading-snug tracking-tight">
                 {rightCard.title}
               </h3>
@@ -169,10 +165,9 @@ export function IntegratedPackaging() {
           </div>
         </div>
 
-        {/* Dynamic Progress Bar synced with infinite active card index */}
-        <div className="mt-8 sm:mt-12 flex items-center gap-4 max-w-full text-xs sm:text-sm font-semibold text-[#8c94a0]">
-          <span>{rightCard.id}</span>
-          <div className="relative flex-1 h-[2px] bg-[#e4e7eb] rounded-full overflow-hidden">
+        <div className="mt-8 sm:mt-12 flex items-center gap-4 max-w-full leading-none font-semibold text-[#8c94a0]">
+          <span className="text-fluid-29">{rightCard.id}</span>
+          <div className="relative flex-1 h-1 bg-[#e4e7eb] rounded-full overflow-hidden">
             <div
               className="absolute top-0 left-0 h-full bg-[#0057b7] transition-all duration-500 rounded-full"
               style={{
@@ -180,9 +175,8 @@ export function IntegratedPackaging() {
               }}
             />
           </div>
-          <span>0{cards.length}</span>
+          <span className="text-fluid-29">0{cards.length}</span>
         </div>
-
       </div>
     </Section>
   );
