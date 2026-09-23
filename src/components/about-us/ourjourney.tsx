@@ -41,7 +41,7 @@ const journeyData: JourneyItem[] = [
       "Unit 2 (Sangwari) added — 3,500 sqm",
     imageSrc: "",
   },
-   {
+  {
     yearPrefix: "20",
     yearHighlight: "23",
     label: "Certification",
@@ -63,9 +63,18 @@ const journeyData: JourneyItem[] = [
     yearPrefix: "20",
     yearHighlight: "26",
     label: "Ongoing Growth",
-    title: " ",
+    title: "Scale & Market Leadership",
     description:
       "Revenue reaches ₹150 Cr, roughly 6x FY19-20 levels",
+    imageSrc: "",
+  },
+  {
+    yearPrefix: "20",
+    yearHighlight: "27",
+    label: "Future Horizons",
+    title: "Next Phase Expansion",
+    description:
+      "Advanced automation lines, enhanced green manufacturing, and new market reach",
     imageSrc: "",
   },
 ];
@@ -74,8 +83,8 @@ export function OurJourney() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = journeyData[activeIndex];
 
-  // Percentage position along the line for each of the 5 points
-  const stepPositions = [20, 38, 55, 72, 90];
+  // Percentage position along the line for each of the 7 points
+  const stepPositions = [10, 23, 37, 50, 63, 77, 90];
   const activePositionPercent = stepPositions[activeIndex];
 
   return (
@@ -85,7 +94,7 @@ export function OurJourney() {
           <p className="text-fluid-29 font-normal text-[#555557] mb-1">
             Our Journey
           </p>
-          <h2 className="text-fluid-47 font-extrabold leading-none tracking-tight ">
+          <h2 className="text-fluid-47 font-extrabold leading-none tracking-tight">
             <span className="text-[#212529] block">Growing Through</span>
             <span className="text-[#0052cc] block">
               Manufacturing Excellence
