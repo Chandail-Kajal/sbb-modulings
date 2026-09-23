@@ -44,43 +44,38 @@ const steps: StepItem[] = [
     id: "05",
     title: "Packaging & Traceability",
     desc: "Finished products can be packaged, labelled, and managed according to applicable customer requirements.",
-    // Step 5: Right anchor aligned with Engineering height
     desktopPos: "lg:left-[67%] lg:top-[33%] xl:left-[67.5%] xl:top-[33.5%]",
   },
 ];
 
 export function OurApproach() {
   return (
-    <Section className="relative overflow-hidden py-12 sm:py-16 lg:py-0 bg-white" disablePaddingY>
-      {/* Container calibrated for ultrawide 16:9 ratio letterbox canvasing */}
-      <div className="relative mx-auto w-full max-w-[1780px] 2xl:max-w-[1920px] px-6 sm:px-10 lg:px-12 xl:px-16">
-        
-        {/* ========================================================================= */}
-        {/* LARGE & ULTRAWIDE CANVAS (lg and above): True 1:1 Aspect Canvas Match      */}
-        {/* ========================================================================= */}
-        <div className="relative hidden lg:block w-full h-[760px] xl:h-[860px] 2xl:h-[940px]">
-          
-          {/* Header Block: Placed top-left precisely matching screenshot canvas[cite: 7] */}
-          <div className="absolute left-[8.5%] top-[12%] max-w-[430px] z-10 select-none">
-            <span className="block text-[21px] xl:text-[23px] font-light text-[#7a7a7a] tracking-tight">
+    <Section
+      className="relative overflow-hidden bg-white"
+      // disablePaddingY
+    >
+      <div className="relative section-container">
+        <div className="relative hidden lg:block w-full h-190 xl:h-215 2xl:h-235">
+          <div className="absolute left-[8.5%] top-[12%] max-w-107.5 z-10 select-none">
+            <span className="block text-fluid-24 font-light text-[#7a7a7a] tracking-tight">
               Our Approach
             </span>
-            <h2 className="mt-1 text-[38px] xl:text-[44px] 2xl:text-[48px] font-extrabold text-[#22252a] leading-[1.08] tracking-[-0.03em]">
-              Understand. Engineer.<br />
+            <h2 className="mt-1 text-fluid-40 font-extrabold text-[#22252a] leading-none tracking-[-0.03em]">
+              Understand. Engineer.
+              <br />
               Manufacture. Deliver.
             </h2>
-            <p className="mt-5 text-[13.5px] xl:text-[14.5px] leading-[1.5] text-[#737373] max-w-[280px]">
-              We believe effective manufacturing starts with understanding the requirement.
+            <p className="mt-5 text-fluid-16 leading-snug text-[#737373] max-w-xl">
+              We believe effective manufacturing starts with understanding the
+              requirement.
             </p>
           </div>
 
-          {/* 5 Hexagons: Sized up with direct border color highlighting on hover */}
           {steps.map((step) => (
             <div
               key={step.id}
-              className={`group absolute w-[290px] xl:w-[335px] 2xl:w-[370px] aspect-[1/1.12] transition-transform duration-300 hover:scale-[1.03] z-20 cursor-pointer ${step.desktopPos}`}
+              className={`group absolute w-72.5 xl:w-83.75 2xl:w-92.5 aspect-[1/1.12] transition-transform duration-300 hover:scale-[1.03] z-20 cursor-pointer ${step.desktopPos}`}
             >
-              {/* Hexagon Image Container: Light blue by default, shifts to deep royal blue on active / hover */}
               <div className="absolute inset-0 z-0">
                 <Image
                   src="/about-us/ourapproach.png"
@@ -95,12 +90,11 @@ export function OurApproach() {
                 />
               </div>
 
-              {/* Text: Padded deeply to fit safely inside the hexagon geometry[cite: 7] */}
               <div className="relative z-10 h-full w-full px-12 xl:px-14 2xl:px-16 flex flex-col items-center justify-center text-center select-none pointer-events-none">
-                <h3 className="text-[16px] xl:text-[18px] 2xl:text-[19px] font-bold text-[#0057b7] leading-snug tracking-tight">
+                <h3 className="text-fluid-24 font-bold text-[#0057b7] leading-snug tracking-tight  2xl:max-w-53">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] leading-[1.4] text-[#55595d] max-w-[190px] xl:max-w-[215px] 2xl:max-w-[235px]">
+                <p className="mt-2 text-fluid-16 leading-snug text-[#55595d] max-w-47.5 xl:max-w-50 2xl:max-w-53">
                   {step.desc}
                 </p>
               </div>
@@ -108,26 +102,27 @@ export function OurApproach() {
           ))}
         </div>
 
-        {/* ========================================================================= */}
-        {/* RESPONSIVE FALLBACK (< lg): Tablet and Mobile Fluid Stack                 */}
-        {/* ========================================================================= */}
         <div className="block lg:hidden">
           <div className="max-w-xl text-left mb-10">
-            <span className="text-lg font-light text-[#7a7a7a]">Our Approach</span>
-            <h2 className="mt-1 text-3xl sm:text-4xl font-extrabold text-[#22252a] leading-tight tracking-tight">
-              Understand. Engineer.<br />
+            <span className="text-fluid-24 font-light text-[#7a7a7a]">
+              Our Approach
+            </span>
+            <h2 className="mt-1 text-fluid-40 font-extrabold text-[#22252a] leading-tight tracking-tight">
+              Understand. Engineer.
+              <br />
               Manufacture. Deliver.
             </h2>
-            <p className="mt-3 text-sm text-[#737373] max-w-sm">
-              We believe effective manufacturing starts with understanding the requirement.
+            <p className="mt-3 text-fluid-16 text-[#737373] max-w-sm">
+              We believe effective manufacturing starts with understanding the
+              requirement.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center">
             {steps.map((step) => (
               <div
                 key={step.id}
-                className="group relative w-[270px] sm:w-[290px] aspect-[1/1.12] transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
+                className="group relative w-80 sm:w-72.5 aspect-[1/1.12] transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
               >
                 <div className="absolute inset-0 z-0">
                   <Image
@@ -143,10 +138,10 @@ export function OurApproach() {
                 </div>
 
                 <div className="relative z-10 h-full w-full px-10 flex flex-col items-center justify-center text-center">
-                  <h3 className="text-base font-bold text-[#0057b7] leading-snug">
+                  <h3 className="text-base font-bold text-[#0057b7] leading-snug max-w-45">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-[12px] leading-relaxed text-[#55595d] max-w-[190px]">
+                  <p className="mt-2 text-[12px] leading-relaxed text-[#55595d] max-w-45">
                     {step.desc}
                   </p>
                 </div>
@@ -154,7 +149,6 @@ export function OurApproach() {
             ))}
           </div>
         </div>
-
       </div>
     </Section>
   );

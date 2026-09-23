@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Section } from "../Section";
 
 export type Leader = {
   name: string;
@@ -150,7 +151,7 @@ export function OurTeam() {
       setDirection(dir);
       setActive((current) => (current + dir + count) % count);
     },
-    [count]
+    [count],
   );
 
   const current = leaders[active]!;
@@ -167,11 +168,7 @@ export function OurTeam() {
   const select = (index: number) => {
     const diff = index - active;
     const dir =
-      diff === 0
-        ? direction
-        : (diff + count) % count <= count / 2
-        ? 1
-        : -1;
+      diff === 0 ? direction : (diff + count) % count <= count / 2 ? 1 : -1;
 
     setDirection(dir);
     setActive(index);
@@ -203,30 +200,27 @@ export function OurTeam() {
         }
       `}</style>
 
-      <section
+      <Section
         aria-label="Leadership team"
-        className="relative w-full overflow-hidden bg-white pb-20 pt-12 lg:pb-28 lg:pt-16"
+        className="relative w-full overflow-hidden bg-white sm:py-20"
+        disablePaddingY
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* HEADER ROW */}
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
+        <div className="mx-auto section-container">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
             <div>
-              <span className="text-xs font-semibold text-slate-500">
-                Leadership
-              </span>
-              <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-[#1E2229] sm:text-3xl lg:text-[34px] lg:leading-tight">
+              <span className="text-fluid-24 text-slate-500">Leadership</span>
+              <h2 className="mt-1 font-extrabold tracking-tight text-[#1E2229] text-fluid-40 leading-none">
                 Experience Behind Every <br />
                 <span className="text-[#0E58BD]">Production Decision</span>
               </h2>
             </div>
-            <p className="max-w-[320px] text-right text-[11px] leading-relaxed text-slate-500 max-md:text-left sm:text-xs">
+            <p className="max-w-[320px] sm:text-right text-fluid-16 text-slate-500">
               Our leadership combines expertise in automotive manufacturing,
               tooling, engineering, operations, and business management.
             </p>
           </div>
 
-          {/* DYNAMIC ROLE SUBHEADING */}
-          <div className="relative z-20 mt-12 sm:mt-16">
+          <div className="z-20 absolute top-[30%]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.p
                 key={`role-${active}`}
@@ -236,19 +230,17 @@ export function OurTeam() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="text-base font-semibold tracking-wide text-slate-500 sm:text-lg"
+                className="text-fluid-24 font-semibold tracking-wide text-slate-500"
               >
                 {current.role}
               </motion.p>
             </AnimatePresence>
           </div>
 
-          {/* MAIN STAGE */}
-          <div className="relative mt-2 h-[520px] sm:h-[580px] lg:h-[620px]">
-            {/* BACKGROUND WATERMARK MARQUEE */}
+          <div className="relative mt-2 h-100 sm:h-110 lg:h-120">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-1/2 top-[46%] z-0 w-screen -translate-x-1/2 -translate-y-1/2 select-none overflow-hidden"
+              className="pointer-events-none absolute left-1/2 top-[40%] z-0 w-screen -translate-x-1/2 -translate-y-1/2 select-none overflow-hidden"
             >
               <div className="leadership-marquee-track">
                 <div className="flex shrink-0">
@@ -274,17 +266,18 @@ export function OurTeam() {
               </div>
             </div>
 
-            {/* FULL-WIDTH GREY BASELINE (passes through center of avatars) */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute bottom-[64px] left-1/2 z-10 hidden h-[1px] w-screen -translate-x-1/2 bg-[#E2E8F0] md:block"
+              className="pointer-events-none absolute bottom-4 left-1/2 z-10 hidden h-0.5 w-screen -translate-x-1/2 bg-[#E2E8F0] md:block"
             />
 
-            {/* SIDE AVATARS (DESKTOP) */}
             <div className="pointer-events-none absolute bottom-[64px] left-0 z-20 hidden w-full -translate-y-1/2 md:block">
-              {/* Left Avatars */}
               <div className="pointer-events-auto absolute left-6 flex items-center gap-10 lg:left-12">
-                <AnimatePresence mode="popLayout" custom={direction} initial={false}>
+                <AnimatePresence
+                  mode="popLayout"
+                  custom={direction}
+                  initial={false}
+                >
                   {leftSide.map((person) => (
                     <motion.div
                       key={`left-${person.name}`}
@@ -305,7 +298,11 @@ export function OurTeam() {
 
               {/* Right Avatars */}
               <div className="pointer-events-auto absolute right-6 flex items-center gap-10 lg:right-12">
-                <AnimatePresence mode="popLayout" custom={direction} initial={false}>
+                <AnimatePresence
+                  mode="popLayout"
+                  custom={direction}
+                  initial={false}
+                >
                   {rightSide.map((person) => (
                     <motion.div
                       key={`right-${person.name}`}
@@ -325,8 +322,7 @@ export function OurTeam() {
               </div>
             </div>
 
-            {/* CUTOUT HERO PORTRAIT */}
-            <div className="pointer-events-none absolute bottom-[125px] left-1/2 z-10 h-[380px] w-[320px] -translate-x-1/2 sm:bottom-[125px] sm:h-[480px] sm:w-[420px] lg:bottom-[115px] lg:h-[560px] lg:w-[480px]">
+            <div className="pointer-events-none absolute  left-1/2 z-10 h-70 w-95 -translate-x-1/2  sm:h-95 sm:w-165  lg:h-105 lg:w-180">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`hero-${active}`}
@@ -349,8 +345,7 @@ export function OurTeam() {
               </AnimatePresence>
             </div>
 
-            {/* FLOATING LEADER CARD */}
-            <div className="absolute bottom-5 left-1/2 z-30 w-[calc(100%-32px)] max-w-[390px] -translate-x-1/2 sm:w-[390px]">
+            <div className="absolute bottom-0 left-1/2 z-30 w-[calc(100%-32px)] max-w-95 sm:h-40 -translate-x-1/2 sm:w-80">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.article
                   key={`card-${active}`}
@@ -360,26 +355,26 @@ export function OurTeam() {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.35, ease: "easeOut" }}
-                  className="relative w-full rounded-2xl border border-slate-100 bg-white p-5 pb-8 shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
+                  className="relative w-full rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
                 >
-                  <div className="flex items-start gap-4">
-                    {/* Small Inset Thumbnail */}
-                    <div className="relative -mt-9 h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border-2 border-white bg-slate-100 shadow-md">
+                  <div className="flex items-start gap-4 min-h-20">
+                    <div className="relative -mt-9 h-24 w-24 shrink-0 overflow-hidden rounded-xl border-2 border-white bg-slate-100 shadow-md">
                       <Image
                         src={current.cardImage}
                         alt={current.name}
                         fill
-                        sizes="72px"
+                        sizes="480px"
                         className="object-cover object-top"
                       />
                     </div>
 
-                    {/* Meta & Socials */}
                     <div className="min-w-0 flex-1 pt-0.5">
                       <h3 className="truncate text-sm font-bold text-slate-900">
                         {current.name}
                       </h3>
-                      <p className="text-[11px] text-slate-400">{current.role}</p>
+                      <p className="text-[11px] text-slate-400">
+                        {current.role}
+                      </p>
 
                       <div className="mt-2 flex items-center gap-2.5 text-slate-800">
                         <a
@@ -407,15 +402,13 @@ export function OurTeam() {
                     </div>
                   </div>
 
-                  {/* Bio Paragraph */}
-                  <p className="mt-3 text-[11px] leading-relaxed text-slate-600">
+                  <p className="mb-3 text-[11px] leading-relaxed text-slate-600">
                     {current.bio}
                   </p>
                 </motion.article>
               </AnimatePresence>
 
-              {/* DOCKED ARROWS PILL */}
-              <div className="absolute -bottom-3.5 left-1/2 z-40 flex h-7 w-28 -translate-x-1/2 items-center justify-between rounded-full bg-[#0E58BD] px-1 shadow-md">
+              <div className="absolute bottom-0 left-1/2 sm:-bottom-10 sm:left-60 z-40 flex h-7 w-28 -translate-x-1/2 items-center justify-between rounded-full bg-[#0E58BD] px-1 shadow-md">
                 <button
                   type="button"
                   onClick={() => go(-1)}
@@ -437,7 +430,7 @@ export function OurTeam() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </>
   );
 }
