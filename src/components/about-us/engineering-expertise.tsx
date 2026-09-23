@@ -8,17 +8,17 @@ export function EngineeringExpertise() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
           <div className="lg:col-span-6 xl:col-span-5 flex flex-col z-10">
-            <div className="flex flex-col font-sans">
-              <p className="text-fluid-24 font-normal text-[#595959] leading-snug mb-2">
+            <div className="flex flex-col font-neue font-semibold">
+              <p className="text-fluid-29 font-normal text-[#595959] leading-snug mb-2">
                 About SBB Mouldings
               </p>
-              <h2 className="text-fluid-40 font-extrabold tracking-tight leading-none">
+              <h2 className="text-fluid-47 font-extrabold tracking-tight leading-none">
                 <span className="text-[#1f2428] block">Engineering Expertise.</span>
                 <span className="text-[#0052cc] block">Manufacturing Excellence.</span>
               </h2>
             </div>
 
-            <div className="mt-8 flex flex-col gap-6 text-fluid-16 leading-snug text-[#6a737d]">
+            <div className="mt-8 flex flex-col gap-6 text-fluid-18 leading-snug text-[#6a737d]">
               <p>
                 Established in 2018, SBB Mouldings Pvt. Ltd. is a growing injection moulding and assembly company serving the Automotive, HVAC &amp; Air Conditioning, White Goods, and Industrial sectors.
               </p>

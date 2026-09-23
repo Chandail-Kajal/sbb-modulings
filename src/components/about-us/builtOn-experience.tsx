@@ -14,20 +14,20 @@ export function BuiltOnExperience() {
                 />
             </div>
             <div className="relative z-10 section-container text-center">
-                <h2 className="text-fluid-40 font-extrabold text-[#212529] tracking-tight">
+                <h2 className="text-fluid-47 font-extrabold text-[#212529] tracking-tight font-neue">
                     <span>Built on </span>
                     <span className="text-[#0052cc]">Experience. </span>
                     <span>Driven by </span>
                     <span className="text-[#0052cc]">Capability.</span>
                 </h2>
 
-                <div className="mt-6 sm:mt-8 space-y-4 text-fluid-16 leading-relaxed text-[#595959]">
+                <div className="mt-6 sm:mt-8 space-y-4 text-fluid-18 leading-relaxed text-[#928b8b] font-ce">
                     <p>
                         SBB Mouldings was incorporated in{" "}
-                        <strong className="font-semibold text-[#2b2b2b]">October 2018</strong> as a{" "}
-                        <strong className="font-semibold text-[#2b2b2b]">50:50 joint venture</strong> between{" "}
-                        <strong className="font-semibold text-[#2b2b2b]">SB Felts</strong> and{" "}
-                        <strong className="font-semibold text-[#2b2b2b]">Panipat Texo Fabs Pvt. Ltd.</strong>
+                        <strong className="font-semibold text-[#6b6868]">October 2018</strong> as a{" "}
+                        <strong className="font-semibold text-[#6b6868]">50:50 joint venture</strong> between{" "}
+                        <strong className="font-semibold text-[#6b6868]">SB Felts</strong> and{" "}
+                        <strong className="font-semibold text-[#6b6868]">Panipat Texo Fabs Pvt. Ltd.</strong>
                     </p>
 
                     <p>

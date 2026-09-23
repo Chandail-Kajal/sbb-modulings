@@ -73,10 +73,10 @@ export function OurJourney() {
     <Section className="w-full bg-gray-50">
       <div className="section-container flex flex-col">
         <div className="flex flex-col mb-14 lg:mb-16 font-neue">
-          <p className="text-fluid-24 font-normal text-[#6c757d] mb-1">
+          <p className="text-fluid-29 font-normal text-[#555557] mb-1">
             Our Journey
           </p>
-          <h2 className="text-fluid-40 font-extrabold leading-none tracking-tight ">
+          <h2 className="text-fluid-47 font-extrabold leading-none tracking-tight ">
             <span className="text-[#212529] block">Growing Through</span>
             <span className="text-[#0052cc] block">
               Manufacturing Excellence
@@ -98,10 +98,10 @@ export function OurJourney() {
           </div>
 
           <div className="md:col-span-8 flex flex-col justify-center max-w-xl">
-            <h3 className="text-fluid-32 font-bold text-[#212529] tracking-tight font-ce">
+            <h3 className="text-fluid-47 font-bold text-[#212529] tracking-tight font-ce">
               {activeItem.title}
             </h3>
-            <p className="mt-3 text-fluid-16 leading-relaxed text-[#6c757d]">
+            <p className="mt-3 text-fluid-18 leading-relaxed text-[#6c757d]">
               {activeItem.description}
             </p>
           </div>
