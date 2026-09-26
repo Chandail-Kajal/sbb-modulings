@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Section } from "../Section";
 
 type Industry = {
   image: string;
@@ -40,16 +41,15 @@ const industries: Industry[] = [
 
 export function IndustriesWeServe() {
   return (
-    <div className="w-full">
+    <Section disablePaddingY>
       <div className="section-container py-12 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-10">
           {industries.map((industry) => (
             <div
               key={industry.title}
-              className="overflow-hidden rounded-2xl p-7 shadow-sm sm:p-8 lg:p-10"
-              style={{ backgroundColor: "#F3F7FD" }}
+              className="overflow-hidden rounded-3xl p-6 shadow-sm sm:p-6 lg:p-10 bg-[#FAFCFF]"
             >
-              <div className="relative h-60 w-full overflow-hidden rounded-xl sm:h-72 lg:h-80">
+              <div className="relative h-40 w-full overflow-hidden rounded-3xl sm:h-50 lg:h-60">
                 <Image
                   src={industry.image}
                   alt={industry.imageAlt}
@@ -58,20 +58,17 @@ export function IndustriesWeServe() {
                 />
               </div>
 
-              <h3
-                className="mt-5 text-fluid-24 font-bold font-neue lg:mt-6"
-                style={{ color: "#0057B8" }}
-              >
+              <h3 className="mt-5 text-fluid-47 font-bold leading-none font-neue lg:mt-6 text-primary">
                 {industry.title}
               </h3>
 
-              <p className="mt-2.5 text-fluid-18 leading-relaxed text-neutral-600 font-ce">
+              <p className="lg:mt-4 text-fluid-18 leading-snug text-[#5D5D5D] font-ce">
                 {industry.description}
               </p>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
