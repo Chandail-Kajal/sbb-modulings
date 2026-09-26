@@ -45,20 +45,20 @@ export function Consistency() {
         <p className="text-fluid-24 font-light text-neutral-500 tracking-tight mb-2 font-neue">
           Our quality process
         </p>
-        <h2 className="text-fluid-40 font-bold tracking-tight text-[#212529] leading-none font-neue">
-          Built for Consistency.
-          <br />
+        <h2 className="text-fluid-40 font-bold tracking-tight text-[#212529] leading-tight sm:leading-none font-neue">
+          Built for Consistency.{" "}
+          <br className="hidden sm:inline" />
           Designed for Confidence.
         </h2>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 lg:gap-0">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-0">
           {items.map((item, index) => (
             <div
               key={item.description}
-              className={`group flex w-full h-full flex-col justify-start gap-6 cursor-pointer p-4 sm:p-5 lg:p-6 select-none transition-all duration-200 ${
+              className={`group flex w-full h-full flex-col justify-start gap-4 sm:gap-6 cursor-pointer p-4 sm:p-5 lg:p-6 select-none transition-all duration-200 rounded-2xl lg:rounded-none bg-neutral-50/50 sm:bg-transparent ${
                 index !== 0 ? "lg:border-l lg:border-neutral-200" : ""
               }`}
             >
-              <div className="relative h-18 w-18 sm:h-20 sm:w-20 lg:h-22 lg:w-22 shrink-0 transition-transform duration-200 ease-out group-hover:scale-105">
+              <div className="relative h-16 w-16 sm:h-20 sm:w-20 lg:h-22 lg:w-22 shrink-0 transition-transform duration-200 ease-out group-hover:scale-105">
                 <Image
                   src={item.iconGray}
                   alt={item.iconAlt}
@@ -75,7 +75,7 @@ export function Consistency() {
                 />
               </div>
 
-              <p className="text-fluid-16 leading-snug text-[#495057] transition-colors duration-200 group-hover:text-[#000000] font-normal font-ce">
+              <p className="text-fluid-16 leading-relaxed sm:leading-snug text-[#495057] transition-colors duration-200 group-hover:text-[#000000] font-normal font-ce">
                 {item.description}
               </p>
             </div>

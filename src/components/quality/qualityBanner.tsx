@@ -5,7 +5,7 @@ export const QualityBanner = () => {
     <Section disablePaddingY className="pb-(--section-y)">
       <div className="section-container">
         <div
-          className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"
+          className="relative w-full rounded-3xl sm:rounded-4xl overflow-hidden p-6 sm:px-10 sm:py-8 lg:px-16 lg:py-12 flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8"
           style={{
             backgroundImage:
               "linear-gradient(135deg, #4b92e7 0%, #1562b8 100%)",
@@ -18,29 +18,29 @@ export const QualityBanner = () => {
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
             }}
           />
-          <div className="flex flex-col gap-6 lg:gap-8 max-w-xl z-10 text-white">
-            <h2 className="text-fluid-40 font-bold leading-none font-neue">
-              Access Qur Quality Documentation
+          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 max-w-xl z-10 text-white w-full md:w-auto text-left">
+            <h2 className="text-fluid-40 font-bold leading-tight font-neue">
+              Access Our Quality Documentation
             </h2>
 
-            <p className="text-fluid-16 text-white/80 leading-snug max-w-lg font-ce">
+            <p className="text-fluid-16 text-white/80 leading-relaxed max-w-lg font-ce">
               Download our certification and quality documentation, or schedule
-              a facility audit to see  our systems in action.
+              a facility audit to see our systems in action.
             </p>
-            <div className="pt-2 flex sm:flex-row flex-col gap-4">
-              <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+              <button className="w-full sm:w-auto text-center bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-5 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
                 Request Our Quality Documentation
               </button>
-              <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-               Schedule a Facility Audit
+              <button className="w-full sm:w-auto text-center bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-5 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
+                Schedule a Facility Audit
               </button>
             </div>
           </div>
 
           {/* Masked Graphic */}
-          <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-full min-h-50 flex items-center justify-center z-10">
+          <div className="relative w-full md:w-1/2 h-40 sm:h-52 md:h-64 flex items-center justify-center z-10">
             <div
-              className="bg-white w-full h-64"
+              className="bg-white w-full h-full"
               style={{
                 WebkitMaskImage: "url('/CtaBanner.png')",
                 maskImage: "url('/CtaBanner.png')",
@@ -48,8 +48,8 @@ export const QualityBanner = () => {
                 maskRepeat: "no-repeat",
                 WebkitMaskSize: "contain",
                 maskSize: "contain",
-                WebkitMaskPosition: "right",
-                maskPosition: "right",
+                WebkitMaskPosition: "center",
+                maskPosition: "center",
               }}
             />
           </div>
