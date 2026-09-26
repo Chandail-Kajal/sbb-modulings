@@ -1,32 +1,31 @@
+import { Section } from "../Section";
+
 export const QualityBanner = () => {
   return (
-    <div className="py-22">
+    <Section>
       <div className="section-container">
-        {/* Main Banner Card */}
         <div
           className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"
           style={{
-            backgroundImage: "linear-gradient(135deg, #4b92e7 0%, #1562b8 100%)",
+            backgroundImage:
+              "linear-gradient(135deg, #4b92e7 0%, #1562b8 100%)",
             boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.25)",
           }}
         >
-          {/* Monotone Noise Overlay */}
           <div
             className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-25"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
             }}
           />
-
-          {/* Content */}
-          <div className="flex flex-col gap-4 max-w-xl z-10 text-white">
-            <h2 className="text-fluid-32 font-bold leading-[1.15] font-neue">
+          <div className="flex flex-col gap-6 lg:gap-8 max-w-xl z-10 text-white">
+            <h2 className="text-fluid-47 font-bold leading-none font-neue">
               Access Qur Quality Documentation
-             
             </h2>
-            
-            <p className="text-fluid-16 text-white/80 leading-snug max-w-lg font-ce">
-            Download our certification and quality documentation, or schedule a facility audit to see <br/> our systems in action.
+
+            <p className="text-fluid-18 text-white/80 leading-snug max-w-lg font-ce">
+              Download our certification and quality documentation, or schedule
+              a facility audit to see  our systems in action.
             </p>
             <div className="pt-2 flex sm:flex-row flex-col gap-4">
               <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
@@ -56,6 +55,6 @@ export const QualityBanner = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };

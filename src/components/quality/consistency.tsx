@@ -42,17 +42,14 @@ export function Consistency() {
   return (
     <Section className="py-16 sm:py-20 lg:py-28" disablePaddingY>
       <div className="section-container">
-        {/* Eyebrow + heading */}
-        <p className="text-fluid-24 font-light text-neutral-500 tracking-tight mb-2 font-neue">
+        <p className="text-fluid-29 font-light text-neutral-500 tracking-tight mb-2 font-neue">
           Our quality process
         </p>
-        <h2 className="text-fluid-47 font-extrabold tracking-tight text-[#212529] leading-[1.15] font-neue">
+        <h2 className="text-fluid-47 font-bold tracking-tight text-[#212529] leading-none font-neue">
           Built for Consistency.
           <br />
           Designed for Confidence.
         </h2>
-
-        {/* 4-Column Items row */}
         <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 lg:gap-0">
           {items.map((item, index) => (
             <div
@@ -61,9 +58,7 @@ export function Consistency() {
                 index !== 0 ? "lg:border-l lg:border-neutral-200" : ""
               }`}
             >
-              {/* SVG Icon Badge: Exact Gray by default, Exact Blue on full card hover */}
               <div className="relative h-18 w-18 sm:h-20 sm:w-20 lg:h-22 lg:w-22 shrink-0 transition-transform duration-200 ease-out group-hover:scale-105">
-                {/* Default Gray SVG */}
                 <Image
                   src={item.iconGray}
                   alt={item.iconAlt}
@@ -71,7 +66,6 @@ export function Consistency() {
                   height={96}
                   className="h-full w-full object-contain transition-opacity duration-200 group-hover:opacity-0"
                 />
-                {/* Hover Blue SVG */}
                 <Image
                   src={item.iconBlue}
                   alt={item.iconAlt}
@@ -81,8 +75,7 @@ export function Consistency() {
                 />
               </div>
 
-              {/* Description */}
-              <p className="text-fluid-16 leading-relaxed text-[#495057] transition-colors duration-200 group-hover:text-neutral-900 font-normal font-ce">
+              <p className="text-fluid-18 leading-snug text-[#495057] transition-colors duration-200 group-hover:text-[#000000] font-normal font-ce">
                 {item.description}
               </p>
             </div>
