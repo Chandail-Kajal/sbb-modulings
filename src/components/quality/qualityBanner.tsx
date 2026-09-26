@@ -29,10 +29,10 @@ export const QualityBanner = () => {
             </p>
             <div className="pt-2 flex sm:flex-row flex-col gap-4">
               <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-                Request A Quote
+                Request Our Quality Documentation
               </button>
               <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-                Contact Our Team
+               Schedule a Facility Audit
               </button>
             </div>
           </div>
