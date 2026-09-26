@@ -38,7 +38,7 @@ export default function Products() {
           </div>
           <div className="mt-8 flex items-center gap-4">
             <button
-              className="flex h-12 w-12 items-center justify-center rounded-ful bg-white text-neutral-700 transition-colors hover:bg-neutral-100"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-neutral-700 transition-colors hover:bg-neutral-100"
               aria-label="Previous product"
             >
               <svg
@@ -47,7 +47,7 @@ export default function Products() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="size-8 stroke-2"
+                className="size-8 stroke-2 sm:stroke-3"
               >
                 <path
                   strokeLinecap="round"
@@ -66,7 +66,7 @@ export default function Products() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="size-8 stroke-2"
+                className="size-8 stroke-2 sm:stroke-3"
               >
                 <path
                   strokeLinecap="round"
