@@ -13,14 +13,14 @@ export default function ManufacturingCapabilities() {
             <Header />
             <ManufacturingHero />
             <Production />
-            <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen overflow-hidden mb-10">
-                <div className="relative w-full aspect-21/9 md:aspect-3.5/1">
+            <div className="relative w-full overflow-hidden mb-10">
+                <div className="relative w-full xl:h-120 lg:h-115 md:h-110 sm:h-100 h-95">
                     <Image
                         src="/manufacturing-machine.png"
                         alt="Manufacturing facility and injection moulding machinery"
                         fill
                         priority
-                        className="object-cover object-center"
+                        className="object-cover object-center w-full"
                         sizes="100vw"
                     />
                 </div>
