@@ -31,7 +31,7 @@ const certificates: Cert[] = [
 
 export function Certificate() {
   return (
-    <Section className="w-full">
+    <Section className="w-full pb-(--section-y)" disablePaddingY>
       <div className="section-container">
         <div className="relative flex flex-col pt-8 sm:pt-12 lg:flex-row lg:items-end">
           <div className="relative z-10 h w-full shrink-0 overflow-hidden rounded-[26px] bg-neutral-900 shadow-lg sm:h-120 lg:h-145 lg:w-[40%] xl:w-[38%]">
