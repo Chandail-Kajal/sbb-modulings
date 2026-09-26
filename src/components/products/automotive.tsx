@@ -3,17 +3,17 @@ import { Section } from "../Section";
 
 export function Automotive() {
   return (
-    <Section>
+    <Section disablePaddingY>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-[1.5fr_1fr] sm:gap-8 items-stretch">
         {/* Left Column */}
         <div className="flex flex-col justify-between gap-6 sm:gap-8">
           <div>
-            <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl lg:text-4xl">
+            <h2 className="text-47 font-bold leading-none text-neutral-900 sm:text-3xl lg:text-4xl">
               Automotive parts
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-neutral-500 sm:text-base max-w-xl">
-              Injection-moulded automotive components, including door-visor parts
-              supplied for high-volume assembly programs.
+            <p className="mt-3 text-18 leading-snug text-neutral-500 sm:text-base max-w-xl">
+              Injection-moulded automotive components, including door-visor
+              parts supplied for high-volume assembly programs.
             </p>
           </div>
 
@@ -28,8 +28,7 @@ export function Automotive() {
           </div>
         </div>
 
-        {/* Right Column (Full Height) */}
-        <div className="relative min-h-[260px] w-full overflow-hidden rounded-2xl sm:h-full sm:min-h-0 sm:rounded-[22px]">
+        <div className="relative min-h-65 w-full overflow-hidden rounded-2xl sm:h-full sm:min-h-0 sm:rounded-[22px]">
           <Image
             src="/products/car.jpg"
             alt="Vehicle back seats viewed from the front row"

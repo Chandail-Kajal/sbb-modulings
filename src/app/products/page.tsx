@@ -25,7 +25,7 @@ export default function Products() {
               cassette AC units.
             </p>
           </div>
-          <div className="relative mt-10 w-5xl mx-auto overflow-hidden rounded-2xl sm:mt-12 lg:mt-14">
+          <div className="relative mt-10 w-full max-w-6xl mx-auto overflow-hidden rounded-2xl sm:mt-12 lg:mt-14">
             <div className="relative w-full h-70 sm:h-100 lg:h-130 xl:h-100">
               <Image
                 src="/products/ac.jpg"
@@ -80,102 +80,108 @@ export default function Products() {
       </Section>
       <Automotive />
       <CasseteAc />
-      <Section>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Split AC components
-          </h2>
-          <p className="mt-3 text-sm text-neutral-500 sm:text-base">
-            Indoor unit (IDU) components and assemblies, produced at volumes up
-            to 1,400 units/day
-          </p>
-        </div>
-
-        <div className="relative mt-8 aspect-[16/6] w-full overflow-hidden rounded-2xl">
-          <Image
-            src="/products/repair.jpg"
-            alt="Technician servicing the internal components of a split AC indoor unit"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-      </Section>
-      <Section>
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Decorative panels
-          </h2>
-          <p className="mt-3 text-sm text-neutral-500 sm:text-base">
-            A dedicated 150-part decorative panel assembly, built across 17
-            main-line and 13 sub-assembly stations — the first line of its kind
-            set up in India for this part.
-          </p>
-        </div>
-
-        <div className="relative mt-8 aspect-[16/6] w-full overflow-hidden rounded-2xl">
-          <Image
-            src="/products/decorativetiles.jpg"
-            alt="Three decorative inlaid panels with geometric patterns laid on a wooden floor"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-      </Section>
-      <Section disablePaddingY className="pb-(--section-y)">
-      <div className="section-container">
-        <div
-          className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, #4b92e7 0%, #1562b8 100%)",
-            boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.25)",
-          }}
-        >
-          <div
-            className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-25"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            }}
-          />
-          <div className="flex flex-col gap-6 lg:gap-8 max-w-xl z-10 text-white">
-            <h2 className="text-fluid-47 font-bold leading-none font-neue">
-             Request a Product Catalogue
+      <Section disablePaddingY>
+        <div className="section-container">
+          <div className="max-w-3xl">
+            <h2 className="text-fluid-47 leading-none font-bold text-neutral-900 ">
+              Split AC components
             </h2>
-
-            <p className="text-fluid-18 text-white/80 leading-snug max-w-lg font-ce">
-             Get detailed specifications, images and more information about our volumes up to 1400 units/day.
+            <p className="mt-3 text-fluid-18 leading-snug text-neutral-500 ">
+              Indoor unit (IDU) components and assemblies, produced at volumes
+              up to 1,400 units/day
             </p>
-            <div className="pt-2 flex sm:flex-row flex-col gap-4">
-              <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-               Request a Product Catalogue
-              </button>
-              <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-               Discuss Your Component
-              </button>
-            </div>
           </div>
 
-          {/* Masked Graphic */}
-          <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-full min-h-50 flex items-center justify-center z-10">
-            <div
-              className="bg-white w-full h-64"
-              style={{
-                WebkitMaskImage: "url('/CtaBanner.png')",
-                maskImage: "url('/CtaBanner.png')",
-                WebkitMaskRepeat: "no-repeat",
-                maskRepeat: "no-repeat",
-                WebkitMaskSize: "contain",
-                maskSize: "contain",
-                WebkitMaskPosition: "right",
-                maskPosition: "right",
-              }}
+          <div className="relative mt-8 aspect-16/6 w-full overflow-hidden rounded-3xl">
+            <Image
+              src="/products/repair.jpg"
+              alt="Technician servicing the internal components of a split AC indoor unit"
+              fill
+              className="object-cover"
+              sizes="100vw"
             />
           </div>
         </div>
-      </div>
-    </Section>
+      </Section>
+      <Section>
+        <div className="section-container">
+          <div className="max-w-3xl">
+            <h2 className="font-bold text-neutral-900 leading-none text-fluid-47">
+              Decorative panels
+            </h2>
+            <p className="mt-3 text-fluid-18 leading-snug text-neutral-500">
+              A dedicated 150-part decorative panel assembly, built across 17
+              main-line and 13 sub-assembly stations — the first line of its
+              kind set up in India for this part.
+            </p>
+          </div>
+
+          <div className="relative mt-8 aspect-16/6 w-full overflow-hidden rounded-3xl">
+            <Image
+              src="/products/decorativetiles.jpg"
+              alt="Three decorative inlaid panels with geometric patterns laid on a wooden floor"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        </div>
+      </Section>
+      <Section disablePaddingY className="pb-(--section-y)">
+        <div className="section-container">
+          <div
+            className="relative w-full rounded-4xl overflow-hidden p-8 sm:py-20 sm:px-12 lg:py-28 lg:px-24 flex flex-col md:flex-row justify-between items-center gap-8"
+            style={{
+              backgroundImage:
+                "linear-gradient(135deg, #4b92e7 0%, #1562b8 100%)",
+              boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.25)",
+            }}
+          >
+            <div
+              className="pointer-events-none absolute inset-0 mix-blend-multiply opacity-25"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              }}
+            />
+            <div className="flex flex-col gap-6 lg:gap-8 max-w-3xl z-10 text-white">
+              <h2 className="text-fluid-47 font-bold leading-none font-neue">
+                Request a Product Catalogue
+              </h2>
+
+              <p className="text-fluid-18 text-white/80 leading-snug font-ce">
+                Get detailed specifications, images and more information about
+                our volumes up to 1400 units/day.
+              </p>
+              <div className="pt-2 flex sm:flex-row flex-col gap-4">
+                <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
+                  Request a Product Catalogue
+                </button>
+                <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
+                  Discuss Your Component
+                </button>
+              </div>
+            </div>
+
+            {/* Masked Graphic */}
+            <div className="relative w-full md:w-[40%] h-48 sm:h-64 md:h-full min-h-50 flex items-center justify-center z-10">
+              <div
+                className="bg-white w-full h-64"
+                style={{
+                  WebkitMaskImage: "url('/CtaBanner.png')",
+                  maskImage: "url('/CtaBanner.png')",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                  WebkitMaskPosition: "right",
+                  maskPosition: "right",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+      <Footer />
     </div>
   );
 }
