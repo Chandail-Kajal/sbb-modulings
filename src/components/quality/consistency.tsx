@@ -40,7 +40,7 @@ const items: QualityItem[] = [
 
 export function Consistency() {
   return (
-    <Section className="py-16 sm:py-20 lg:py-28" disablePaddingY>
+    <Section disablePaddingY>
       <div className="section-container">
         <p className="text-fluid-29 font-light text-neutral-500 tracking-tight mb-2 font-neue">
           Our quality process

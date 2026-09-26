@@ -2,7 +2,7 @@ import { Section } from "../Section";
 
 export const QualityBanner = () => {
   return (
-    <Section>
+    <Section disablePaddingY className="pb-(--section-y)">
       <div className="section-container">
         <div
           className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"

@@ -43,7 +43,7 @@ export default function Quality() {
       </Section>
       <Certificate />
       <Consistency />
-      <Section>
+      <Section >
         <div className="flex flex-col items-center text-center font-neue section-container">
           <h2 className="text-fluid-47 font-bold tracking-tight text-neutral-900 leading-tight">
             Why it <span className="text-[#0052cc]">matters to you</span>
