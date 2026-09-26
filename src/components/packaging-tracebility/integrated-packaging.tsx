@@ -98,7 +98,7 @@ export function IntegratedPackaging() {
       <div className="mx-auto w-full section-container">
         {/* Section Heading */}
         <div className="text-left mb-8 sm:mb-12">
-          <h2 className="text-fluid-47 font-bold text-[#23272e] leading-[1.12] tracking-tight">
+          <h2 className="text-fluid-40 font-bold text-[#23272e] leading-[1.12] tracking-tight">
             Integrated Packaging
             <br />
             Solutions
@@ -185,7 +185,7 @@ export function IntegratedPackaging() {
 
         {/* Dynamic Progress Indicator */}
         <div className="mt-8 sm:mt-12 flex items-center gap-4 max-w-full leading-none font-semibold text-[#8c94a0]">
-          <span className="text-fluid-29">{cards[activeIndex].id}</span>
+          <span className="text-fluid-24">{cards[activeIndex].id}</span>
           <div className="relative flex-1 h-1 bg-[#e4e7eb] rounded-full overflow-hidden">
             <div
               className="absolute top-0 left-0 h-full bg-[#0057b7] transition-all duration-1200 ease-in-out rounded-full"
@@ -194,7 +194,7 @@ export function IntegratedPackaging() {
               }}
             />
           </div>
-          <span className="text-fluid-29">0{cards.length}</span>
+          <span className="text-fluid-24">0{cards.length}</span>
         </div>
       </div>
     </Section>

@@ -42,10 +42,10 @@ export function Consistency() {
   return (
     <Section disablePaddingY>
       <div className="section-container">
-        <p className="text-fluid-29 font-light text-neutral-500 tracking-tight mb-2 font-neue">
+        <p className="text-fluid-24 font-light text-neutral-500 tracking-tight mb-2 font-neue">
           Our quality process
         </p>
-        <h2 className="text-fluid-47 font-bold tracking-tight text-[#212529] leading-none font-neue">
+        <h2 className="text-fluid-40 font-bold tracking-tight text-[#212529] leading-none font-neue">
           Built for Consistency.
           <br />
           Designed for Confidence.
@@ -75,7 +75,7 @@ export function Consistency() {
                 />
               </div>
 
-              <p className="text-fluid-18 leading-snug text-[#495057] transition-colors duration-200 group-hover:text-[#000000] font-normal font-ce">
+              <p className="text-fluid-16 leading-snug text-[#495057] transition-colors duration-200 group-hover:text-[#000000] font-normal font-ce">
                 {item.description}
               </p>
             </div>

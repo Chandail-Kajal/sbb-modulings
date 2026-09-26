@@ -14,14 +14,14 @@ export function BuiltOnExperience() {
                 />
             </div>
             <div className="relative z-10 section-container text-center">
-                <h2 className="text-fluid-47 font-extrabold text-[#212529] tracking-tight font-neue">
+                <h2 className="text-fluid-40 font-extrabold text-[#212529] tracking-tight font-neue">
                     <span>Two Manufacturing  </span>
                     <span className="text-[#0052cc]">Legacies, </span>
                     <span>One Focused  </span>
                     <span className="text-[#0052cc]">Mission</span>
                 </h2>
 
-                <div className="mt-6 sm:mt-8 space-y-4 text-fluid-18 leading-relaxed text-[#928b8b] font-ce">
+                <div className="mt-6 sm:mt-8 space-y-4 text-fluid-16 leading-relaxed text-[#928b8b] font-ce">
                     <p>
                         SBB Mouldings was incorporated in{" "}
                         <strong className="font-semibold text-[#6b6868]">October 2018</strong> as a{" "}

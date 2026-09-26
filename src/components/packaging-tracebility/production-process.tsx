@@ -183,7 +183,7 @@ export function ProductionProcess() {
           </div>
 
           <div className="max-w-md lg:text-right pt-1">
-            <p className="text-fluid-18 leading-[1.65] text-[#737373]">
+            <p className="text-fluid-16 leading-[1.65] text-[#737373]">
               Packaging and traceability are considered as part of the overall
               manufacturing activities rather than as a separate final-stage
               activity.
@@ -194,7 +194,7 @@ export function ProductionProcess() {
         <ProcessDiagram />
 
         <div className="text-center pt-2 sm:pt-4">
-          <p className="text-fluid-18 text-[#737373]">
+          <p className="text-fluid-16 text-[#737373]">
             This integrated approach helps preserve controlled flow from
             manufactured components to finished products.
           </p>

@@ -58,11 +58,11 @@ export function IndustriesWeServe() {
                 />
               </div>
 
-              <h3 className="mt-5 text-fluid-47 font-bold leading-none font-neue lg:mt-6 text-primary">
+              <h3 className="mt-5 text-fluid-40 font-bold leading-none font-neue lg:mt-6 text-primary">
                 {industry.title}
               </h3>
 
-              <p className="lg:mt-4 text-fluid-18 leading-snug text-[#5D5D5D] font-ce">
+              <p className="lg:mt-4 text-fluid-16 leading-snug text-[#5D5D5D] font-ce">
                 {industry.description}
               </p>
             </div>

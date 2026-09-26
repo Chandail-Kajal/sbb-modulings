@@ -19,11 +19,11 @@ export const QualityBanner = () => {
             }}
           />
           <div className="flex flex-col gap-6 lg:gap-8 max-w-xl z-10 text-white">
-            <h2 className="text-fluid-47 font-bold leading-none font-neue">
+            <h2 className="text-fluid-40 font-bold leading-none font-neue">
               Access Qur Quality Documentation
             </h2>
 
-            <p className="text-fluid-18 text-white/80 leading-snug max-w-lg font-ce">
+            <p className="text-fluid-16 text-white/80 leading-snug max-w-lg font-ce">
               Download our certification and quality documentation, or schedule
               a facility audit to see  our systems in action.
             </p>

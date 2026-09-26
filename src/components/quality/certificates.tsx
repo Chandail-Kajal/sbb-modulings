@@ -45,10 +45,10 @@ export function Certificate() {
             <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/15 to-transparent" />
 
             <div className="absolute left-7 top-7 z-10 text-white sm:left-9 sm:top-9 lg:left-10 lg:top-10">
-              <p className="text-fluid-29 font-normal text-white/85 font-neue leading-none">
+              <p className="text-fluid-24 font-normal text-white/85 font-neue leading-none">
                 Certifications
               </p>
-              <h2 className="mt-1.5 text-fluid-47 font-bold tracking-tight text-white leading-none font-neue">
+              <h2 className="mt-1.5 text-fluid-40 font-bold tracking-tight text-white leading-none font-neue">
                 Our Certifications
               </h2>
             </div>
@@ -81,10 +81,10 @@ export function Certificate() {
 
                 {/* Standard */}
                 <div className="pr-16 sm:pr-20 ">
-                  <p className="text-fluid-18 font-normal text-[#525252] font-ce">
+                  <p className="text-fluid-16 font-normal text-[#525252] font-ce">
                     Standard
                   </p>
-                  <p className="mt-1.5 text-fluid-29 font-bold tracking-tight text-neutral-900 font-neue">
+                  <p className="mt-1.5 text-fluid-24 font-bold tracking-tight text-neutral-900 font-neue">
                     {cert.standard}
                   </p>
                 </div>
@@ -92,10 +92,10 @@ export function Certificate() {
                 <div className="my-4 sm:my-5 lg:my-4" />
 
                 <div>
-                  <p className="text-fluid-18 font-normal text-[#525252] font-ce">
+                  <p className="text-fluid-16 font-normal text-[#525252] font-ce">
                     Certificate No.
                   </p>
-                  <p className="mt-1.5 text-fluid-29 font-bold tracking-tight text-neutral-900 font-neue">
+                  <p className="mt-1.5 text-fluid-24 font-bold tracking-tight text-neutral-900 font-neue">
                     {cert.certNo}
                   </p>
                 </div>
@@ -103,10 +103,10 @@ export function Certificate() {
                 <div className="my-4 sm:my-5 lg:my-5.5 border-t border-neutral-300" />
 
                 <div>
-                  <p className="text-fluid-18 font-normal text-[#525252] font-ce">
+                  <p className="text-fluid-16 font-normal text-[#525252] font-ce">
                     Certifying body
                   </p>
-                  <p className="mt-1.5 text-fluid-29 font-bold tracking-tight text-neutral-900 font-neue">
+                  <p className="mt-1.5 text-fluid-24 font-bold tracking-tight text-neutral-900 font-neue">
                     {cert.certifyingBody}
                   </p>
                 </div>
@@ -114,10 +114,10 @@ export function Certificate() {
                 <div className="my-4 sm:my-5 lg:my-5.5 border-t border-neutral-300" />
 
                 <div>
-                  <p className="text-fluid-18 font-normal text-[#525252] font-ce">
+                  <p className="text-fluid-16 font-normal text-[#525252] font-ce">
                     Valid until
                   </p>
-                  <p className="mt-1.5 text-fluid-29 font-bold tracking-tight text-neutral-900 font-neue">
+                  <p className="mt-1.5 text-fluid-24 font-bold tracking-tight text-neutral-900 font-neue">
                     {cert.validUntil}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export function Certificate() {
           </div>
         </div>
 
-        <p className="mt-8 text-fluid-18 text-[#717171] font-ce sm:mt-10">
+        <p className="mt-8 text-fluid-16 text-[#717171] font-ce sm:mt-10">
           Certificates expire 26 Oct 2026 — confirm renewal status before
           publishing this page, and update the &quot;valid until&quot; date once
           the renewed certificate is issued.

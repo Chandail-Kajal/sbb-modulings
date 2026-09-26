@@ -27,7 +27,7 @@ export function CasseteAc() {
   return (
     <Section>
       <div className="section-container">
-        <h2 className="text-fluid-47 font-bold text-neutral-900 sm:text-3xl">
+        <h2 className="text-fluid-40 font-bold text-neutral-900 sm:text-3xl">
           Cassette AC — final assembled units
         </h2>
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-[340px_1fr]">
