@@ -9,7 +9,7 @@ export default function Industries() {
     <div>
       <Header />
 
-      <Section>
+      <Section disablePaddingY className="pt-(--section-y)">
         <div className="flex flex-col items-center text-center font-neue section-container">
           <p className="text-fluid-29 font-light text-neutral-500 tracking-tight mb-2">
             Industries We Serve
