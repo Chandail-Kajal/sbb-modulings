@@ -14,7 +14,7 @@ function Card({
 }) {
   return (
     <div className={`relative overflow-hidden rounded-2xl ${className}`}>
-      <div className="absolute inset-0 bg-primary/30 z-10"></div>
+      <div className="absolute hover:opacity-0 opacity-100 transition-opacity duration-150 inset-0 bg-primary/30 z-10"></div>
       <Image src={src} alt={alt} fill className="object-cover" sizes="33vw" />
       <span className="absolute left-5 top-5 text-fluid-24 z-11 font-semibold text-white sm:text-lg">
         {label}

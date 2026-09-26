@@ -26,12 +26,12 @@ export default function Products() {
             </p>
           </div>
           <div className="relative mt-10 w-full max-w-6xl mx-auto overflow-hidden rounded-2xl sm:mt-12 lg:mt-14">
-            <div className="relative w-full h-70 sm:h-100 lg:h-130 xl:h-100">
+            <div className="relative w-full h-70 sm:h-80 lg:h-85 xl:h-90">
               <Image
                 src="/products/ac.jpg"
                 alt="Cassette AC unit product"
                 fill
-                className="object-cover object-center w-full  rounded-2xl"
+                className="object-cover object-center h-full w-full rounded-2xl"
                 priority
               />
             </div>
