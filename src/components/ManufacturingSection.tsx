@@ -33,7 +33,7 @@ export const ManufacturingCarousel = () => {
     },
     {
       image: "card_4.jpg",
-      title: "Packaging & Traceability",
+      title: "Quality & Traceability",
       description:
         "ISO 9001:2015 and IATF 16949:2016 certified processes, with full component traceability, MRP labelling and barcode-based tracking on every shipment.",
       link: "/packaging-tracebility"
@@ -89,14 +89,14 @@ export const ManufacturingCarousel = () => {
           >
             <div className="flex flex-col gap-4">
               <h2 className="text-fluid-40 w-full font-bold leading-none text-text-primary">
-                Advanced Manufacturing Capabilities
+               What Are SBB <br/>Mouldings&apos; Core <br/>Capabilities? 
               </h2>
 
-              <p className="text-fluid-16 leading-snug text-text-secondary">
+              {/* <p className="text-fluid-16 leading-snug text-text-secondary">
                 SBB Mouldings delivers precision moulding and assembly solutions
                 across automotive, HVAC, white goods, and industrial
                 applications.
-              </p>
+              </p> */}
             </div>
           </div>
 

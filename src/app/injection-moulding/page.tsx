@@ -12,12 +12,12 @@ import Image from "next/image";
 import { RiStackFill } from "react-icons/ri";
 
 
-const MouldIcon = () => {
+const MouldIcon = ({ filled = false }: { filled?: boolean }) => {
     return (
         <>
-            {/* Outlined Icon: Visible by default, hidden on group hover */}
+            {/* Outlined Icon: Visible by default, hidden on group hover (or always hidden if `filled`) */}
             <svg
-                className="block group-hover:hidden"
+                className={filled ? "hidden" : "block group-hover:hidden"}
                 width="35"
                 height="35"
                 viewBox="0 0 35 35"
@@ -28,9 +28,9 @@ const MouldIcon = () => {
                 <path d="M14.0762 31.4491L12.5338 29.7377C12.0622 29.2143 11.7936 28.4753 11.7936 27.7008V24.7765C11.7936 24.034 12.0404 23.3227 12.4785 22.803L14.0762 20.9076V13.9278L12.4968 12.0958C12.0476 11.5746 11.7936 10.854 11.7936 10.1008V7.08486C11.7936 6.28813 12.0777 5.5302 12.573 5.00553L14.0762 3.41302V1.61184H2.28262V0H15.4077V4.14429L13.45 6.21845C13.2436 6.43708 13.1251 6.75294 13.1251 7.08486V10.1008C13.1251 10.4146 13.231 10.7149 13.4182 10.9321L15.4077 13.2399V21.5849L13.4104 23.9541C13.2279 24.1706 13.1251 24.4671 13.1251 24.7765V27.7008C13.1251 28.0235 13.2371 28.3314 13.4336 28.5495L15.4077 30.7401V35H2.28262C1.02197 35 0 33.7629 0 32.2368V2.76316C0 1.23711 1.02197 0 2.28262 0V1.61184C1.75735 1.61184 1.33153 2.1273 1.33153 2.76316V32.2368C1.33153 32.8727 1.75735 33.3882 2.28262 33.3882H14.0762V31.4491Z" fill="currentColor" />
             </svg>
 
-            {/* Filled Icon: Hidden by default, visible on group hover */}
+            {/* Filled Icon: Hidden by default, visible on group hover (or always visible if `filled`) */}
             <svg
-                className="hidden group-hover:block"
+                className={filled ? "block" : "hidden group-hover:block"}
                 width="35"
                 height="35"
                 viewBox="0 0 35 35"
@@ -44,38 +44,39 @@ const MouldIcon = () => {
     );
 };
 
+const machineClasses = [
+    {
+        title: "2,800 Ton (Haitian, 2-platen)",
+        count: 1,
+        use: "Largest-format automotive & HVAC components",
+    },
+    {
+        title: "600–2,300 Ton",
+        count: 18,
+        use: "Automotive body parts, cassette AC panels, white goods housings",
+    },
+    {
+        title: "250–450 Ton",
+        count: 4,
+        use: "Mid-size components, sub-assemblies",
+    },
+    {
+        title: "90 Ton",
+        count: 6,
+        use: "Small precision parts, fittings",
+    },
+];
+
 export default function Injection() {
-
-    const keyHighlights = [
-        { title: "90-2800 Tons", subtitle: "Injection moulding machine range" },
-        { title: "2800 Tons", subtitle: "Maximum machine capacity" },
-        { title: "3 Facilities in Bawal, Rewari   ", subtitle: "Manufacturing infrastructure" },
-        { title: "45+ Professionals", subtitle: "Engineering and plant operations team" },
-    ]
-
-
-
     return (
         <main className="min-h-screen w-full flex flex-col overflow-x-hidden">
             <Header />
             <Hero />
             <Section>
                 <div className="flex flex-col gap-16 section-container">
-                    {/* <div
-                        className="bg-black/80 w-full h-120"
-                        style={{
-                            WebkitMaskImage: "url('/CtaBanner.png')",
-                            maskImage: "url('/CtaBanner.png')",
-                            WebkitMaskRepeat: "no-repeat",
-                            maskRepeat: "no-repeat",
-                            WebkitMaskSize: "contain",
-                            maskSize: "contain",
-                            WebkitMaskPosition: "right",
-                            maskPosition: "right",
-                        }}
-                    /> */}
-
                     <Image src={"/injection-moulding/capacity.png"} alt={"image"} height={1080} width={1920} />
+
+                    {/* Heading + description */}
                     <div className="flex sm:flex-row flex-col justify-between items-start gap-6">
                         <div className="sm:max-w-lg w-full mx-auto sm:mx-0">
                             <h4 className="text-fluid-40 font-bold leading-none text-text-primary">
@@ -85,51 +86,117 @@ export default function Injection() {
                                     Demanding Applications
                                 </span>
                             </h4>
-
                         </div>
                         <div className="sm:max-w-[35%] w-full font-ce text-fluid-16 text-text-para sm:text-right leading-snug">
                             <p>
-                                A 29-machine fleet from 90 to 2,800 tons, backed by engineering support from tooling through to production — built for automotive, HVAC, white goods and industrial parts that can't afford inconsistency.
+                                A 29-machine fleet from 90 to 2,800 tons, backed by engineering support from tooling through to production — built for automotive, HVAC, white goods and industrial parts that can&lsquo;t afford inconsistency.
                             </p>
+                        </div>
+                    </div>
+
+                    {/* Value prop strip */}
+                    <div className="flex sm:flex-row flex-col justify-between items-start sm:items-center gap-8">
+                        <h5 className="text-fluid-40 font-bold leading-none text-text-primary sm:max-w-lg w-full">
+                            Value prop strip
+                        </h5>
+
+                        <div className="flex sm:flex-row flex-col gap-6 sm:gap-0 w-full sm:w-auto">
+                            {/* Stat 1 */}
+                            <div className="sm:pr-6">
+                                <p className="flex items-baseline gap-2 font-bold text-text-primary leading-none">
+                                    <span className="text-fluid-40">90–2,800</span>
+                                    <span className="text-fluid-16">Tons</span>
+                                </p>
+                                <p className="mt-3 font-ce text-fluid-16 text-text-para">machine range</p>
+                            </div>
+
+                            {/* Stat 2 */}
+                            <div className="sm:border-l sm:border-text-primary/60 sm:px-6">
+                                <p className="text-fluid-40 font-bold text-text-primary leading-none">3</p>
+                                <p className="mt-3 font-ce text-fluid-16 text-text-para">Facilities in Bawal, Rewari</p>
+                            </div>
+
+                            {/* Stat 3 */}
+                            <div className="sm:border-l sm:border-text-primary/60 sm:pl-6">
+                                <p className="text-fluid-40 font-bold text-text-primary leading-none">45+</p>
+                                <p className="mt-3 font-ce text-fluid-16 text-text-para">
+                                    Professionals across engineering &amp; operations
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </Section>
+
+            {/* Tonnage range / Machine class */}
             <Section disablePaddingY>
-                <div className="flex sm:flex-row flex-col justify-between items-center  section-container ">
-                    <div className="flex flex-col  sm:max-w-[37%] w-full gap-8 text-text-para">
-                        <div className="gap-4">
-                            <p className="text-fluid-24 font-neue text-text-primary font-normal">Advanced Injection Moulding Solutions</p>
-                            <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold" >Built for Precision.
-                                Ready for Scale.</h4>
+                <div className="flex sm:flex-row flex-col justify-between items-center gap-10 section-container">
+                    {/* Left content */}
+                    <div className="flex flex-col sm:max-w-[45%] w-full gap-8">
+                        <div className="flex flex-col gap-4">
+                            <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold">
+                                What Tonnage Range Can SBB Mouldings Handle?
+                            </h4>
+                            <p className="font-ce text-fluid-16 text-text-para leading-snug">
+                                SBB Mouldings runs a 29-machine injection moulding fleet spanning 90 to 2,800 tons — from a
+                                single 2,800-ton Haitian press for the largest components, through eighteen machines in the
+                                600–2,300 ton bracket, down to compact 90-ton presses for smaller precision parts. That range
+                                means a single production program — from a large HVAC housing to a small automotive clip — can
+                                often be run entirely within our own walls.
+                            </p>
                         </div>
-                        <p className="font-ce text-fluid-16">Our injection moulding operations combine high-capacity machinery, experienced professionals, and dedicated manufacturing infrastructure to produce reliable plastic components for demanding industrial applications.</p>
-                        <p className="font-ce text-fluid-16">From large injection-moulded automotive parts to components for air conditioning and white goods, our broad machine range provides the flexibility to support different component sizes and production requirements.</p>
+
                         <div className="flex flex-col gap-6">
-                            <h5 className="text-fluid-24 font-semibold text-text-primary">Key Highlights</h5>
-                            <div className="flex flex-col gap-8">
-                                {keyHighlights.map((hlt) => (
+                            <h5 className="text-fluid-24 font-semibold text-text-primary">Machine class</h5>
+
+                            <div className="flex flex-col gap-6">
+                                {machineClasses.map((item, i) => (
                                     <div
-                                        key={hlt.title}
+                                        key={item.title}
                                         tabIndex={0}
-                                        className="group flex flex-row gap-6 items-start cursor-pointer transition-colors text-black hover:text-[#0057B8] active:text-[#0057B8] focus:text-[#0057B8] focus:outline-none"
+                                        className="group flex flex-col gap-4 cursor-pointer focus:outline-none"
                                     >
-                                        <div className="transition-colors group-hover:text-[#0057B8] group-active:text-[#0057B8]">
-                                            <MouldIcon />
+                                        {/* Title row */}
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-text-primary group-hover:text-primary transition-colors">
+                                                <MouldIcon filled={i === 0} />
+                                            </span>
+                                            <h6 className="text-fluid-24 font-bold leading-none text-primary">
+                                                {item.title}
+                                            </h6>
                                         </div>
-                                        <div className="flex flex-col gap-3">
-                                            <h5 className="leading-none font-bold text-fluid-24 transition-colors text-inherit">
-                                                {hlt.title}
-                                            </h5>
-                                            <p className="text-fluid-16 text-inherit opacity-90">{hlt.subtitle}</p>
+
+                                        {/* Count | Typical use */}
+                                        <div className="flex items-stretch gap-4">
+                                            <div className="flex flex-col justify-center gap-1 w-14 shrink-0">
+                                                <span className="font-ce text-sm text-text-para">Count</span>
+                                                <span className="text-fluid-16 font-bold text-text-primary leading-none">
+                                                    {item.count}
+                                                </span>
+                                            </div>
+                                            <div className="w-px bg-text-para/40" />
+                                            <div className="flex flex-col justify-center gap-1">
+                                                <span className="font-ce text-sm text-text-para">Typical use</span>
+                                                <span className="text-fluid-16 font-bold text-text-primary leading-tight">
+                                                    {item.use}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
-                    <div className="object-contain overflow-hidden rounded-3xl shadow-black/50 shadow-lg sm:max-w-[42%] w-full mt-6 sm:mt-0">
-                        <Image height={1080} width={1920} src={"/injection-moulding/milling-machine.jpg"} className="lg:h-210 md:h-190 sm:h-170 h-150 " alt="machine" />
+
+                    {/* Right image */}
+                    <div className="overflow-hidden rounded-3xl shadow-black/30 shadow-lg sm:max-w-[45%] w-full">
+                        <Image
+                            height={1080}
+                            width={1920}
+                            src={"/injection-moulding/milling-machine.jpg"}
+                            className="w-full object-cover lg:h-210 md:h-190 sm:h-170 h-150"
+                            alt="Injection moulding machine"
+                        />
                     </div>
                 </div>
             </Section>
@@ -143,6 +210,3 @@ export default function Injection() {
         </main>
     )
 }
-
-
-

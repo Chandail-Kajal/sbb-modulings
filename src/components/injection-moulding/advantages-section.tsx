@@ -6,34 +6,30 @@ import Autoplay from "embla-carousel-autoplay";
 import { RiStackFill } from "react-icons/ri";
 import { Section } from "../Section";
 
-export function AdvantageSection() {
-    const advantages = [
-        {
-            title: "Capacity",
-            subtitle: "High-Capacity Moulding",
-            description:
-                "Our machine portfolio extends up to 2800 tons, enabling production of large and complex injection-moulded components.",
-        },
-        {
-            title: "Flexibility",
-            subtitle: "A Wide Range of Machine Sizes",
-            description:
-                "From 90-ton machines to high-capacity 2800-ton equipment, our range supports varied component and production requirements.",
-        },
-        {
-            title: "Production",
-            subtitle: "Built for High-Volume Manufacturing",
-            description:
-                "Our manufacturing infrastructure is designed to support demanding production volumes for automotive, HVAC, white goods, and industrial applications.",
-        },
-        {
-            title: "Expertise",
-            subtitle: "Experienced Engineering & Operations",
-            description:
-                "A team of 45+ professionals, including managers, engineers, and supervisors, supports plant operations and OEM-tailored requirements.",
-        },
-    ];
+type Advantage = {
+    title: string;
+    description: string;
+};
 
+const advantages: Advantage[] = [
+    {
+        title: "Does SBB Mouldings Support Tooling and Part Design?",
+        description:
+            "Yes — SBB Mouldings' engineering team works alongside customer engineering teams on tooling input, part and gate optimization, and material selection, so parts are designed for the realities of high-volume moulding before a single shot is made, not fixed after.",
+    },
+    {
+        title: "Does SBB Mouldings Handle Assembly After Moulding?",
+        description:
+            "Yes — moulded parts can move directly into SBB Mouldings' in-house assembly, welding and finishing, followed by quality inspection and traceable packaging, so a program moves from raw material to boxed finished good with fewer handoffs, fewer vendors, and tighter control over lead time and quality.",
+    },
+    {
+        title: "Where Does SBB Mouldings Run Injection Moulding?",
+        description:
+            "SBB Mouldings runs injection moulding across all three of its Bawal, Rewari units — 2,800 sqm, 3,500 sqm and a 4,000 sqm facility added in December 2024 for new moulding capacity, assembly and finished-goods warehousing — supported by a 25-ton overhead crane for large-tool and large-part handling.",
+    },
+];
+
+export function AdvantageSection() {
     // Initialize Embla with 1-card scroll step & loop enabled
     const [emblaRef] = useEmblaCarousel(
         {
@@ -73,18 +69,10 @@ export function AdvantageSection() {
     );
 }
 
-const AdvantageCard = ({
-    title,
-    description,
-    subtitle,
-}: {
-    title: string;
-    subtitle: string;
-    description: string;
-}) => {
+const AdvantageCard = ({ title, description }: Advantage) => {
     return (
         <div
-            className="group relative h-100 w-full overflow-hidden rounded-4xl bg-white text-text-primary transition-colors duration-300 hover:text-white lg:h-125"
+            className="group relative h-125 w-full overflow-hidden rounded-4xl bg-white text-text-primary transition-colors duration-300 hover:text-white"
             style={{
                 boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.25)",
             }}
@@ -121,15 +109,11 @@ const AdvantageCard = ({
             <div className="relative z-20 mx-auto flex h-full max-w-[80%] flex-col gap-6 pt-6 font-neue">
                 <RiStackFill className="size-30 text-black transition-colors duration-300 group-hover:text-white" />
 
-                <h5 className="text-fluid-40 font-bold leading-none transition-colors duration-300 group-hover:text-white">
+                <h5 className="text-fluid-24 font-bold leading-tight transition-colors duration-300 group-hover:text-white">
                     {title}
                 </h5>
 
-                <p className="text-fluid-24 leading-none transition-colors duration-300 group-hover:text-white">
-                    {subtitle}
-                </p>
-
-                <p className="font-ce text-fluid-16 leading-snug transition-colors duration-300 group-hover:text-white">
+                <p className="font-ce text-fluid-16 leading-snug text-text-para transition-colors duration-300 group-hover:text-white/90">
                     {description}
                 </p>
             </div>

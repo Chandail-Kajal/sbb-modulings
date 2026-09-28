@@ -5,27 +5,27 @@ import { Section } from "@/components/Section";
 interface Facility {
   id: number;
   address: string;
-  description: string;
+  // description: string;
 }
 
 const facilities: Facility[] = [
   {
     id: 1,
-    address: "84 km Stone, Sangwari Jarthal Road",
-    description:
-      "Sangwari: 84 KM Stone, Sangwari–Jarthal Road, Bawal, Rewari, Haryana 123501",
+    address: "Bawal Sector-3: Plot No. 8 & 9, Sector 3, HSIIDC, Bawal, Rewari, Haryana 123501",
+    // description:
+    //   "Sangwari: 84 KM Stone, Sangwari–Jarthal Road, Bawal, Rewari, Haryana 123501",
   },
   {
     id: 2,
-    address: "Plot No. 8 & 9, Sector 3, HSIIDC Bawal",
-    description:
-      "Bawal Sector-3: Plot No. 8 & 9, Sector 3, HSIIDC, Bawal, Rewari, Haryana 123501",
+    address: "Sangwari: 84 KM Stone, Sangwari–Jarthal Road, Bawal, Rewari, Haryana 123501",
+    // description:
+    //   "Bawal Sector-3: Plot No. 8 & 9, Sector 3, HSIIDC, Bawal, Rewari, Haryana 123501",
   },
   {
     id: 3,
-    address: "Plot No. 58, Sector 14, HSIIDC Bawal",
-    description:
-      " Bawal Sector-14: Plot No. 58, Sector 14, HSIIDC, Bawal, Rewari, Haryana 123501 (added Dec 2024 — moulding, assembly and FG warehousing)",
+    address: "Bawal Sector-14: Plot No. 58, Sector 14, HSIIDC, Bawal, Rewari, Haryana 123501",
+    // description:
+    //   " Bawal Sector-14: Plot No. 58, Sector 14, HSIIDC, Bawal, Rewari, Haryana 123501 (added Dec 2024 — moulding, assembly and FG warehousing)",
   },
 ];
 
@@ -74,9 +74,9 @@ export const StrategicFacilities = () => {
                   <h3 className="text-fluid-24 font-bold text-text-primary transition-colors duration-300 group-hover:text-primary">
                     {item.address}
                   </h3>
-                  <p className="text-fluid-16 text-text-secondary leading-snug">
+                  {/* <p className="text-fluid-16 text-text-secondary leading-snug">
                     {item.description}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             ))}

@@ -95,11 +95,11 @@ export default function ManufacturingHero({
           }}
           className="flex flex-col items-center justify-center font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-12 sm:mb-16"
         >
-          <span className="bg-gradient-to-r from-[#59636d] via-[#85929E] to-[#4b5563] bg-clip-text text-transparent drop-shadow-sm pb-1">
+          <span className="bg-linear-to-r from-[#59636d] via-[#85929E] to-[#4b5563] bg-clip-text text-transparent drop-shadow-sm pb-1">
             Manufacturing
           </span>
 
-          <span className="bg-gradient-to-r from-[#1d63c6] via-[#2573e0] to-[#5190e8] bg-clip-text text-transparent drop-shadow-sm">
+          <span className="bg-linear-to-r from-[#1d63c6] via-[#2573e0] to-[#5190e8] bg-clip-text text-transparent drop-shadow-sm">
             Capabilities
           </span>
         </motion.h1>

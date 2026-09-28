@@ -50,8 +50,7 @@ export const IndustrialApplications = () => {
             Serving Diverse Industrial Applications
           </h2>
           <p className="text-fluid-16 text-text-secondary max-w-xs text-left md:text-right">
-            SBB Mouldings delivers precision moulding and assembly solutions
-            across automotive, HVAC, white goods, and industrial applications.
+            SBB Mouldings serves four core industries.
           </p>
         </div>
 
