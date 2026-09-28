@@ -22,9 +22,9 @@ export const Header = () => {
     { label: "Services", link: "/manufacturing-capabilities", isServices: true },
     { label: "Blog", link: "/blog" },
     { label: "About Us", link: "/about-us" },
-    { label: "Quality & Certification", link: "/quality" },
+    { label: "Quality & Certification", link: "/quality-certifications" },
     { label: "Industries We Serve", link: "/industries" },
-    { label: "Our Work", link: "/products" },
+    { label: "Our Work", link: "/our-work" },
     { label: "Contact Us", link: "/contact-us" },
   ];
 
@@ -194,4 +194,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+};

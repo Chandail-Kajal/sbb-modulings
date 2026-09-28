@@ -49,7 +49,7 @@ export default function Injection() {
     const keyHighlights = [
         { title: "90-2800 Tons", subtitle: "Injection moulding machine range" },
         { title: "2800 Tons", subtitle: "Maximum machine capacity" },
-        { title: "3 Facilities", subtitle: "Manufacturing infrastructure" },
+        { title: "3 Facilities in Bawal, Rewari   ", subtitle: "Manufacturing infrastructure" },
         { title: "45+ Professionals", subtitle: "Engineering and plant operations team" },
     ]
 
@@ -89,8 +89,7 @@ export default function Injection() {
                         </div>
                         <div className="sm:max-w-[35%] w-full font-ce text-fluid-16 text-text-para sm:text-right leading-snug">
                             <p>
-                                SBB Mouldings provides high-capacity injection moulding solutions for automotive, HVAC, white goods, and industrial applications.
-                                With machines ranging from 90 tons to 2800 tons, multiple manufacturing facilities, and experienced engineering and operations teams, we support diverse component requirements from production to high-volume manufacturing.
+                                A 29-machine fleet from 90 to 2,800 tons, backed by engineering support from tooling through to production — built for automotive, HVAC, white goods and industrial parts that can't afford inconsistency.
                             </p>
                         </div>
                     </div>

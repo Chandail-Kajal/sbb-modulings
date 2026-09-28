@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { Automotive } from "@/components/products/automotive";
 import { CasseteAc } from "@/components/products/casseteAC";
 
-export default function Products() {
+export default function OurWork() {
   return (
     <div>
       <Header />

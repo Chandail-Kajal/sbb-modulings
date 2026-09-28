@@ -5,7 +5,7 @@ import { Consistency } from "@/components/quality/consistency";
 import { QualityBanner } from "@/components/quality/qualityBanner";
 import { Section } from "@/components/Section";
 
-export default function Quality() {
+export default function QualityCertifications() {
   return (
     <div>
       <Header />

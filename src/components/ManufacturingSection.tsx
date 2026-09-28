@@ -14,28 +14,28 @@ export const ManufacturingCarousel = () => {
       image: "card_1.png",
       title: "Injection Moulding",
       description:
-        "High-capacity injection moulding with machines ranging from small to 2800 tons.",
+        "A 29-machine fleet spanning 90 to 2,800 tons, including large-tonnage capacity for big-format automotive and HVAC components",
       link: "/injection-moulding"
     },
     {
       image: "card_2.jpg",
       title: "Assembly",
       description:
-        "Dedicated assembly capabilities for AC components and automotive parts.",
+        "Dedicated lines for cassette and split AC units and automotive sub-assemblies, running up to 1,600 units/car-sets per day.",
       link: "/assembly"
     },
     {
       image: "card_3.png",
       title: "Manufacturing Capabilities",
       description:
-        "Injection-moulded components for automotive, HVAC, white goods, & industrial applications.",
+        "Three purpose-built facilities in Bawal, Rewari, including a 25-ton overhead crane and dedicated finished-goods warehousing",
       link: "/manufacturing-capabilities",
     },
     {
       image: "card_4.jpg",
       title: "Packaging & Traceability",
       description:
-        "Box-packed units with MRP labelling, barcode printing, and product traceability.",
+        "ISO 9001:2015 and IATF 16949:2016 certified processes, with full component traceability, MRP labelling and barcode-based tracking on every shipment.",
       link: "/packaging-tracebility"
     },
   ];

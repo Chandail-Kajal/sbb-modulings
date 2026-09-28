@@ -201,7 +201,7 @@ export function OurApproach() {
                 key={step.id}
                 onMouseEnter={() => setHoveredId(step.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="group relative w-[290px] sm:w-[310px] aspect-[320/280] transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
+                className="group relative w-72.5 sm:w-77.5 aspect-320/280 transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
               >
                 <HexagonCard
                   title={step.title}

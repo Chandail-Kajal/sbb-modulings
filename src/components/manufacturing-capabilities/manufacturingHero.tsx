@@ -115,15 +115,11 @@ export default function ManufacturingHero({
             <span className="font-semibold text-[#1e61be]">
               Manufacturing Capability
             </span>{" "}
-            Built for Scale
+            Built to Scale
           </h2>
 
           <p className="text-fluid-16 leading-snug text-neutral-500 font-light w-full mx-auto">
-            SBB Mouldings combines advanced injection moulding, assembly
-            operations, experienced engineering teams, and dedicated
-            manufacturing infrastructure to support demanding production
-            requirements across automotive, HVAC, white goods, and industrial
-            applications.
+            SBB Mouldings combines high-capacity injection moulding, dedicated assembly operations, experienced engineering teams and purpose-built infrastructure to support demanding, high-volume production requirements — from tooling input through to traceable, packaged finished goods.
           </p>
 
           <p className="text-fluid-16 leading-snug text-neutral-500 font-light w-full mx-auto pt-1">

@@ -31,15 +31,10 @@ export default function Assembly() {
                     {/* Description Paragraphs */}
                     <div className="mt-6 max-w-3xl space-y-4 text-fluid-16 text-neutral-600 font-normal leading-relaxed">
                         <p>
-                            SBB Mouldings provides dedicated assembly solutions for automotive
-                            and air-conditioning applications, combining moulded components,
-                            structured production lines, experienced teams, and controlled
-                            manufacturing processes.
+                            Structured, high-volume assembly lines for cassette and split air-conditioning units and automotive sub-assemblies — running on moulded components from our own presses, with experienced line teams and controlled processes at every station.
                         </p>
                         <p>
-                            Our assembly capabilities support projects from initial development
-                            through mass production, helping customers achieve consistent quality
-                            and reliable production output.
+                            SBB Mouldings has built and run assembly lines from drawing stage through to mass production, including a decorative-panel line for a major Japanese AC manufacturer running 150 components across 17 main-line and 13 sub-assembly stations with a crew of 62 — the first line of its kind set up in India for that part.
                         </p>
                     </div>
 
@@ -57,15 +52,15 @@ export default function Assembly() {
 
 
             <CompleteAssemble />
-            
-            <CassetsSection/>
-            
 
-           <AssemblyProcess/>
-           <Engineering/>
-           <Packaging/>
-           <WhyUs/>
-           <AssemblyBanner/>
+            <CassetsSection />
+
+
+            <AssemblyProcess />
+            <Engineering />
+            <Packaging />
+            <WhyUs />
+            <AssemblyBanner />
             <Footer />
         </main>
 

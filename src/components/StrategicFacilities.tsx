@@ -13,19 +13,19 @@ const facilities: Facility[] = [
     id: 1,
     address: "84 km Stone, Sangwari Jarthal Road",
     description:
-      "Panasonic, Daikin, Mitsubishi, Blue Star, Lloyd/Havells and other AC assemblies",
+      "Sangwari: 84 KM Stone, Sangwari–Jarthal Road, Bawal, Rewari, Haryana 123501",
   },
   {
     id: 2,
     address: "Plot No. 8 & 9, Sector 3, HSIIDC Bawal",
     description:
-      "Panasonic, Daikin, Mitsubishi, Blue Star, Lloyd/Havells and other AC assemblies",
+      "Bawal Sector-3: Plot No. 8 & 9, Sector 3, HSIIDC, Bawal, Rewari, Haryana 123501",
   },
   {
     id: 3,
     address: "Plot No. 58, Sector 14, HSIIDC Bawal",
     description:
-      "Panasonic, Daikin, Mitsubishi, Blue Star, Lloyd/Havells and other AC assemblies",
+      " Bawal Sector-14: Plot No. 58, Sector 14, HSIIDC, Bawal, Rewari, Haryana 123501 (added Dec 2024 — moulding, assembly and FG warehousing)",
   },
 ];
 
