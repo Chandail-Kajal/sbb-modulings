@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable jsx-a11y/alt-text */
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -9,7 +11,7 @@ import { ProjectBanner } from "@/components/injection-moulding/project-banner";
 import { Requirements } from "@/components/injection-moulding/requirement";
 import { Section } from "@/components/Section";
 import Image from "next/image";
-import { RiStackFill } from "react-icons/ri";
+import { useState } from "react";
 
 
 const MouldIcon = ({ filled = false }: { filled?: boolean }) => {
@@ -66,6 +68,195 @@ const machineClasses = [
         use: "Small precision parts, fittings",
     },
 ];
+
+const totalMachines = machineClasses.reduce((sum, m) => sum + m.count, 0);
+
+/* ---------- tonnage showcase (interactive) ---------- */
+
+function TonnageShowcase() {
+    const [active, setActive] = useState(0);
+    const current = machineClasses[active];
+
+    return (
+        <div className="flex lg:flex-row flex-col justify-between items-start lg:items-center gap-12 lg:gap-16 section-container pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-32 lg:pb-32">
+            {/* Left content */}
+            <div className="flex flex-col lg:max-w-[48%] w-full gap-10">
+                <div className="flex flex-col gap-5">
+                    <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold">
+                        What Tonnage Range Can SBB Mouldings Handle?
+                    </h4>
+                    <p className="font-ce text-fluid-16 text-text-para leading-snug">
+                        SBB Mouldings runs a 29-machine injection moulding fleet spanning 90 to 2,800 tons — from a
+                        single 2,800-ton Haitian press for the largest components, through eighteen machines in the
+                        600–2,300 ton bracket, down to compact 90-ton presses for smaller precision parts. That range
+                        means a single production program — from a large HVAC housing to a small automotive clip — can
+                        often be run entirely within our own walls.
+                    </p>
+                </div>
+
+                <div className="flex flex-col gap-6">
+                    <div className="flex items-center justify-between">
+                        <h5 className="text-fluid-24 font-semibold text-text-primary">Machine class</h5>
+                        <span className="font-ce text-sm text-text-para">{totalMachines} machines total</span>
+                    </div>
+
+                    <div className="flex flex-col gap-5" role="list">
+                        {machineClasses.map((item, i) => {
+                            const isActive = i === active;
+                            const share = (item.count / totalMachines) * 100;
+
+                            return (
+                                <button
+                                    key={item.title}
+                                    type="button"
+                                    role="listitem"
+                                    aria-expanded={isActive}
+                                    onClick={() => setActive(i)}
+                                    onMouseEnter={() => setActive(i)}
+                                    onFocus={() => setActive(i)}
+                                    className={`group relative w-full overflow-hidden rounded-2xl border p-5 text-left transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                                        isActive
+                                            ? "border-primary bg-white shadow-lg"
+                                            : "border-gray-200 bg-gray-50/60 hover:border-gray-300 hover:bg-gray-50"
+                                    }`}
+                                >
+                                    {/* accent bar */}
+                                    <span
+                                        aria-hidden="true"
+                                        className={`absolute left-0 top-0 h-full w-1 bg-primary transition-transform duration-300 origin-top motion-reduce:transition-none ${
+                                            isActive ? "scale-y-100" : "scale-y-0"
+                                        }`}
+                                    />
+
+                                    {/* Title row */}
+                                    <div className="flex items-center gap-4">
+                                        <span
+                                            className={`shrink-0 transition-colors ${
+                                                isActive ? "text-primary" : "text-text-primary"
+                                            }`}
+                                        >
+                                            <MouldIcon filled={isActive} />
+                                        </span>
+                                        <h6 className="flex-1 text-fluid-24 font-bold leading-tight text-primary">
+                                            {item.title}
+                                        </h6>
+                                        <span
+                                            className={`shrink-0 rounded-full px-3 py-1 font-ce text-sm font-semibold transition-colors ${
+                                                isActive
+                                                    ? "bg-primary text-white"
+                                                    : "bg-gray-200 text-text-primary"
+                                            }`}
+                                        >
+                                            {item.count} {item.count === 1 ? "machine" : "machines"}
+                                        </span>
+                                    </div>
+
+                                    {/* Expandable details */}
+                                    <div
+                                        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${
+                                            isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                        }`}
+                                    >
+                                        <div className="overflow-hidden">
+                                            <div className="flex flex-col gap-5 pt-5">
+                                                <div className="flex items-stretch gap-4">
+                                                    <div className="flex w-14 shrink-0 flex-col justify-center gap-1">
+                                                        <span className="font-ce text-sm text-text-para">Count</span>
+                                                        <span className="text-fluid-16 font-bold leading-none text-text-primary">
+                                                            {item.count}
+                                                        </span>
+                                                    </div>
+                                                    <div className="w-px shrink-0 bg-text-para/40" />
+                                                    <div className="flex flex-col justify-center gap-1">
+                                                        <span className="font-ce text-sm text-text-para">Typical use</span>
+                                                        <span className="text-fluid-16 font-bold leading-tight text-text-primary">
+                                                            {item.use}
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                {/* Fleet share bar */}
+                                                <div className="flex items-center gap-3">
+                                                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-200">
+                                                        <div
+                                                            className="h-full rounded-full bg-primary transition-[width] duration-700 ease-out motion-reduce:transition-none"
+                                                            style={{ width: isActive ? `${share}%` : "0%" }}
+                                                        />
+                                                    </div>
+                                                    <span className="font-ce text-xs text-text-para tabular-nums">
+                                                        {Math.round(share)}% of fleet
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+
+            {/* Right image with live info card */}
+            <div className="relative overflow-hidden rounded-3xl shadow-black/30 shadow-lg lg:max-w-[45%] w-full group/image">
+                <Image
+                    height={1080}
+                    width={1920}
+                    src={"/injection-moulding/milling-machine.jpg"}
+                    className="w-full object-cover h-64 sm:h-96 md:h-140 lg:h-180 xl:h-210 transition-transform duration-700 ease-out group-hover/image:scale-105 motion-reduce:transition-none"
+                    alt="Injection moulding machine"
+                />
+
+                {/* soft gradient so the card stays readable */}
+                <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/50 to-transparent"
+                />
+
+                {/* Info card */}
+                <div
+                    aria-live="polite"
+                    className="absolute inset-x-4 bottom-4 sm:inset-x-6 sm:bottom-6 rounded-2xl border border-white/30 bg-white/80 p-4 sm:p-5 shadow-xl backdrop-blur-md"
+                >
+                    <div className="flex items-start justify-between gap-4">
+                        <div className="flex flex-col gap-1">
+                            <span className="font-ce text-xs uppercase tracking-wider text-text-para">
+                                Selected class
+                            </span>
+                            <span className="text-fluid-16 font-bold leading-tight text-primary">
+                                {current.title}
+                            </span>
+                        </div>
+                        <div className="flex shrink-0 flex-col items-end leading-none">
+                            <span className="text-fluid-40 font-bold text-text-primary tabular-nums">
+                                {current.count}
+                            </span>
+                            <span className="font-ce text-xs text-text-para">
+                                {current.count === 1 ? "machine" : "machines"}
+                            </span>
+                        </div>
+                    </div>
+                    <p className="mt-2 font-ce text-sm leading-snug text-text-para">{current.use}</p>
+
+                    {/* Dot switcher */}
+                    <div className="mt-3 flex items-center gap-2">
+                        {machineClasses.map((m, i) => (
+                            <button
+                                key={m.title}
+                                type="button"
+                                aria-label={`Show ${m.title}`}
+                                onClick={() => setActive(i)}
+                                className={`h-1.5 rounded-full transition-all duration-300 motion-reduce:transition-none ${
+                                    i === active ? "w-8 bg-primary" : "w-3 bg-gray-400/60 hover:bg-gray-500"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default function Injection() {
     return (
@@ -134,75 +325,7 @@ export default function Injection() {
 
             {/* Tonnage range / Machine class */}
             <Section disablePaddingY>
-                <div className="flex lg:flex-row flex-col justify-between items-start gap-10 section-container">
-                    {/* Left content */}
-                    <div className="flex flex-col lg:max-w-[48%] w-full gap-8">
-                        <div className="flex flex-col gap-4">
-                            <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold">
-                                What Tonnage Range Can SBB Mouldings Handle?
-                            </h4>
-                            <p className="font-ce text-fluid-16 text-text-para leading-snug">
-                                SBB Mouldings runs a 29-machine injection moulding fleet spanning 90 to 2,800 tons — from a
-                                single 2,800-ton Haitian press for the largest components, through eighteen machines in the
-                                600–2,300 ton bracket, down to compact 90-ton presses for smaller precision parts. That range
-                                means a single production program — from a large HVAC housing to a small automotive clip — can
-                                often be run entirely within our own walls.
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col gap-6">
-                            <h5 className="text-fluid-24 font-semibold text-text-primary">Machine class</h5>
-
-                            <div className="flex flex-col gap-6">
-                                {machineClasses.map((item, i) => (
-                                    <div
-                                        key={item.title}
-                                        tabIndex={0}
-                                        className="group flex flex-col gap-4 cursor-pointer focus:outline-none bg-gray-50/50 hover:bg-gray-50 p-4 rounded-2xl transition-colors"
-                                    >
-                                        {/* Title row */}
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-text-primary group-hover:text-primary transition-colors shrink-0">
-                                                <MouldIcon filled={i === 0} />
-                                            </span>
-                                            <h6 className="text-fluid-24 font-bold leading-none text-primary">
-                                                {item.title}
-                                            </h6>
-                                        </div>
-
-                                        {/* Count | Typical use */}
-                                        <div className="flex items-stretch gap-4">
-                                            <div className="flex flex-col justify-center gap-1 w-14 shrink-0">
-                                                <span className="font-ce text-sm text-text-para">Count</span>
-                                                <span className="text-fluid-16 font-bold text-text-primary leading-none">
-                                                    {item.count}
-                                                </span>
-                                            </div>
-                                            <div className="w-px bg-text-para/40 shrink-0" />
-                                            <div className="flex flex-col justify-center gap-1">
-                                                <span className="font-ce text-sm text-text-para">Typical use</span>
-                                                <span className="text-fluid-16 font-bold text-text-primary leading-tight">
-                                                    {item.use}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right image */}
-                    <div className="overflow-hidden rounded-3xl shadow-black/30 shadow-lg lg:max-w-[45%] w-full">
-                        <Image
-                            height={1080}
-                            width={1920}
-                            src={"/injection-moulding/milling-machine.jpg"}
-                            className="w-full object-cover h-64 sm:h-96 md:h-140 lg:h-180 xl:h-210"
-                            alt="Injection moulding machine"
-                        />
-                    </div>
-                </div>
+                <TonnageShowcase />
             </Section>
 
             <AdvantageSection />
