@@ -19,7 +19,7 @@ export default function Production() {
     {
       id: 1,
       title: "Advanced Infrastructure",
-      description: "Moulding and dedicated assembly facilities.",
+      description: "Three manufacturing units in Bawal, Rewari — totaling roughly 10,300 sqm — combining dedicated moulding halls, assembly lines and finished-goods warehousing under one group, with a 25-ton overhead crane for large tool and component handling.",
       imageSrc: "/advanced-infrastructure.png",
       imageAlt: "Advanced Infrastructure",
     },
@@ -27,14 +27,14 @@ export default function Production() {
       id: 2,
       title: "Flexible Production",
       description:
-        "A broad range of machine capacities for different component requirements.",
+        "A 29-machine fleet spanning 90 to 2,800 tons means production runs — from small precision parts to the largest automotive and HVAC components — can be matched to the right press size rather than a one-size-fits-all approach.",
       imageSrc: "/flexible-production.jpg",
       imageAlt: "Flexible Production",
     },
     {
       id: 3,
       title: "Integrated Capabilities",
-      description: "Moulding, assembly packaging, warehousing, and testing.",
+      description: "Moulding, assembly, packaging, warehousing and quality inspection all run within the same group, so a program moves from raw material to boxed, traceable finished goods without leaving our facilities.",
       imageSrc: "/integrated-capabilities.jpg",
       imageAlt: "Integrated Capabilities",
     },
@@ -50,8 +50,8 @@ export default function Production() {
                 Flexible build
               </p>
               <h2 className="text-fluid-40 font-bold text-neutral-900 leading-none">
-                Built Around Production <br />
-                <span className="text-[#0052cc]">Requirements</span>
+                Core Manufacturing  <br />
+                <span className="text-[#0052cc]">Capabilitiess</span>
               </h2>
             </div>
             <div className="sm:max-w-[42%] w-full font-ce text-fluid-16 text-neutral-600 sm:text-right leading-relaxed space-y-4">
@@ -145,13 +145,13 @@ function CapabilitiesCarousel({ capabilities }: CapabilitiesCarouselProps) {
             <div
               key={`${item.id}-${index}`}
               onClick={() => scrollTo(index)}
-              className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] pl-4 min-w-0"
+              className="flex-[0_0_90%] sm:flex-[0_0_70%] md:flex-[0_0_60%] lg:flex-[0_0_48%] pl-4 min-w-0"
             >
               <div className="group flex flex-col items-center text-center w-full">
                 {/* Capsule Card (Swipe target & clickable) */}
                 <div className="w-full flex items-center justify-center mb-6">
                   <div
-                    className={`w-full xl:h-64 sm:h-56 h-48 relative rounded-full p-1 border-4 transition-all duration-500 ease-out ${
+                    className={`w-full xl:h-96 lg:h-80 sm:h-72 h-56 relative rounded-full p-1 border-4 transition-all duration-500 ease-out ${
                       isSelected
                         ? "border-[#0052cc] scale-100 shadow-lg shadow-blue-500/10"
                         : "border-transparent scale-95 opacity-60 hover:opacity-85"
@@ -168,7 +168,7 @@ function CapabilitiesCarousel({ capabilities }: CapabilitiesCarouselProps) {
                         fill
                         draggable={false} // Prevents native browser image dragging from blocking touch swipe
                         className="object-cover object-center transition-transform duration-500 group-hover:scale-105 pointer-events-none"
-                        sizes="(max-width: 768px) 85vw, 40vw"
+                        sizes="(max-width: 768px) 90vw, 48vw"
                       />
                     </div>
                   </div>
@@ -176,7 +176,7 @@ function CapabilitiesCarousel({ capabilities }: CapabilitiesCarouselProps) {
 
                 {/* Text Section */}
                 <h3
-                  className={`text-fluid-32 font-bold tracking-tight leading-none mb-2 transition-all duration-500 ${
+                  className={`w-full text-fluid-32 font-bold tracking-tight leading-tight mb-3 transition-all duration-500 ${
                     isSelected
                       ? "text-neutral-900 opacity-100"
                       : "text-neutral-400 opacity-60"
@@ -185,7 +185,7 @@ function CapabilitiesCarousel({ capabilities }: CapabilitiesCarouselProps) {
                   {item.title}
                 </h3>
                 <p
-                  className={`text-fluid-16 max-w-70 leading-snug transition-all duration-500 ${
+                  className={`w-full text-fluid-16 leading-snug text-pretty transition-all duration-500 ${
                     isSelected
                       ? "text-neutral-600 opacity-100"
                       : "text-neutral-400 opacity-60"

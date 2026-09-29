@@ -33,7 +33,7 @@ const features: FeatureItem[] = [
     id: "integration",
     title: "Integration",
     description:
-      "Injection moulding, assembly, packaging, and traceability capabilities within an integrated manufacturing environment.",
+      "Moulding, assembly, quality and warehousing in one unified manufacturing environment",
     imageSrc: "/manufacturing-capabilities/integration.jpg",
     imageAlt: "Interlocking glowing puzzle pieces on circuit board",
     imageOnRight: true,
@@ -42,7 +42,10 @@ const features: FeatureItem[] = [
 
 export default function TechnicalExcellence() {
   return (
-    <Section className="relative overflow-hidden py-16" disablePaddingY>
+    <Section
+      className="relative overflow-hidden py-(--section-y) "
+      disablePaddingY
+    >
       <div className="pointer-events-none absolute inset-0 z-0">
         <Image
           src="/map-bg.jpg"
@@ -53,19 +56,19 @@ export default function TechnicalExcellence() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8">
-        <div className="mb-14 sm:mb-20 max-w-2xl text-left">
-          <h2 className="text-fluid-40 font-bold leading-relaxed text-slate-800">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 section-container">
+        <div className="mb-10 sm:mb-14 lg:mb-16 max-w-2xl text-left">
+          <h2 className="text-fluid-40 font-bold leading-tight text-slate-800">
             <span className="text-[#0e5c9e]">Technical Excellence</span> in
             Production
           </h2>
-          <p className="mt-4 text-fluid-24 leading-none font-normal text-slate-500">
+          <p className="mt-4 text-fluid-24 leading-snug font-normal text-slate-500">
             Our manufacturing infrastructure is built around three core
             principles:
           </p>
         </div>
 
-        <div className="space-y-12 md:space-y-14">
+        <div className="flex flex-col gap-10 sm:gap-12 lg:gap-16">
           {features.map((feature) => (
             <div
               key={feature.id}
@@ -81,7 +84,7 @@ export default function TechnicalExcellence() {
                 <h3 className="text-fluid-24 leading-none font-bold tracking-wide text-[#0e5c9e]">
                   {feature.title}
                 </h3>
-                <p className="mt-1.5 text-fluid-16 leading-relaxed text-slate-500">
+                <p className="mt-2 text-fluid-16 leading-relaxed text-slate-500">
                   {feature.description}
                 </p>
               </div>
