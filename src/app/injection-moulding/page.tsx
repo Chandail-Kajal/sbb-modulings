@@ -78,8 +78,7 @@ function TonnageShowcase() {
     const current = machineClasses[active];
 
     return (
-        <div className="flex lg:flex-row flex-col justify-between items-start lg:items-center gap-12 lg:gap-16 section-container pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-32 lg:pb-32">
-            {/* Left content */}
+        <div className="flex lg:flex-row flex-col justify-between items-start lg:items-center gap-12 lg:gap-16 section-container">
             <div className="flex flex-col lg:max-w-[48%] w-full gap-10">
                 <div className="flex flex-col gap-5">
                     <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold">
@@ -263,14 +262,14 @@ export default function Injection() {
         <main className="min-h-screen w-full flex flex-col overflow-x-hidden">
             <Header />
             <Hero />
-            <Section>
+            <Section disablePaddingY className="pt-(--section-y)">
                 <div className="flex flex-col gap-10 sm:gap-16 section-container">
                     <Image
                         src={"/injection-moulding/capacity.png"}
                         alt={"capacity image"}
                         height={1080}
                         width={1920}
-                        className="w-full h-auto object-cover rounded-2xl sm:rounded-3xl shadow-lg"
+                        className="w-full h-auto object-cover rounded-2xl sm:rounded-3xl"
                     />
 
                     {/* Intro (left) + value prop stats card (right) */}
@@ -322,12 +321,9 @@ export default function Injection() {
                     </div>
                 </div>
             </Section>
-
-            {/* Tonnage range / Machine class */}
-            <Section disablePaddingY>
+            <Section disablePaddingY className="pt-(--section-y)">
                 <TonnageShowcase />
             </Section>
-
             <AdvantageSection />
             <Requirements />
             <ManufacturingCapacity />
