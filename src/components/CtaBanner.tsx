@@ -1,11 +1,11 @@
 
 export const CtaBanner = () => {
   return (
-   <div className="py-22">
+   <div className="py-10 sm:py-16 lg:py-22">
       <div className="section-container">
         {/* Main Banner Card */}
         <div
-          className="relative w-full rounded-4xl overflow-hidden p-8 sm:px-12 sm:py-6 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"
+          className="relative w-full rounded-3xl sm:rounded-4xl overflow-hidden p-6 sm:px-12 sm:py-8 lg:px-18 lg:py-14 flex flex-col md:flex-row justify-between items-center gap-8"
           style={{
             // 1. Linear Gradient (#569FF2 -> #0057B8)
             backgroundImage: "linear-gradient(to right, #569FF2, #0057B8)",
@@ -22,25 +22,25 @@ export const CtaBanner = () => {
           />
 
           {/* Content */}
-          <div className="flex flex-col gap-4 max-w-xl z-10 text-white">
-            <h2 className="text-fluid-32 font-bold leading-none">
+          <div className="flex flex-col gap-4 max-w-xl z-10 text-white w-full md:w-auto">
+            <h2 className="text-fluid-32 font-bold leading-tight">
               {"Let's Build the Next Generation of Components Together."}
             </h2>
             <p className="text-fluid-16 text-white/80 leading-snug max-w-lg">
               Short supporting text focused on OEM and manufacturing
               partnerships.
             </p>
-            <div className="pt-2">
-              <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-lg transition-colors cursor-pointer shadow-md">
+            <div className="pt-2 w-full sm:w-auto">
+              <button className="w-full sm:w-auto bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-lg transition-colors cursor-pointer shadow-md">
                 Request A Quote
               </button>
             </div>
           </div>
 
           {/* Masked Graphic */}
-          <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-full min-h-50 flex items-center justify-center z-10">
+          <div className="relative w-full md:w-1/2 h-36 sm:h-64 md:h-full min-h-36 sm:min-h-50 flex items-center justify-center z-10">
             <div
-              className="bg-white w-full h-64"
+              className="bg-white w-full h-36 sm:h-64"
               style={{
                 WebkitMaskImage: "url('/CtaBanner.png')",
                 maskImage: "url('/CtaBanner.png')",

@@ -73,56 +73,60 @@ export default function Injection() {
             <Header />
             <Hero />
             <Section>
-                <div className="flex flex-col gap-16 section-container">
-                    <Image src={"/injection-moulding/capacity.png"} alt={"image"} height={1080} width={1920} />
+                <div className="flex flex-col gap-10 sm:gap-16 section-container">
+                    <Image
+                        src={"/injection-moulding/capacity.png"}
+                        alt={"capacity image"}
+                        height={1080}
+                        width={1920}
+                        className="w-full h-auto object-cover rounded-2xl sm:rounded-3xl shadow-lg"
+                    />
 
-                    {/* Heading + description */}
-                    <div className="flex sm:flex-row flex-col justify-between items-start gap-6">
-                        <div className="sm:max-w-lg w-full mx-auto sm:mx-0">
-                            <h4 className="text-fluid-40 font-bold leading-none text-text-primary">
-                                High-Capacity Injection
-                                Moulding for
-                                <span className="text-primary lg:block">
+                    {/* Intro (left) + value prop stats card (right) */}
+                    <div className="grid lg:grid-cols-12 items-start gap-8 lg:gap-12">
+                        {/* Heading + description */}
+                        <div className="lg:col-span-7 flex flex-col gap-6">
+                            <h4 className="text-fluid-40 font-bold leading-[1.05] text-text-primary">
+                                High-Capacity Injection Moulding for
+                                <span className="block text-primary">
                                     Demanding Applications
                                 </span>
                             </h4>
-                        </div>
-                        <div className="sm:max-w-[35%] w-full font-ce text-fluid-16 text-text-para sm:text-right leading-snug">
-                            <p>
-                                A 29-machine fleet from 90 to 2,800 tons, backed by engineering support from tooling through to production — built for automotive, HVAC, white goods and industrial parts that can&lsquo;t afford inconsistency.
+                            <p className="max-w-xl font-ce text-fluid-16 text-text-para leading-relaxed">
+                                A 29-machine fleet from 90 to 2,800 tons, backed by engineering support from tooling through to production — built for automotive, HVAC, white goods and industrial parts that can&rsquo;t afford inconsistency.
                             </p>
                         </div>
-                    </div>
 
-                    {/* Value prop strip */}
-                    <div className="flex sm:flex-row flex-col justify-between items-start sm:items-center gap-8">
-                        <h5 className="text-fluid-40 font-bold leading-none text-text-primary sm:max-w-lg w-full">
-                            Value prop strip
-                        </h5>
+                        {/* Value prop strip: smaller title, stats as rows inside one card */}
+                        <div className="lg:col-span-5 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gray-50/70 p-6 sm:p-8">
+                            <h5 className="text-fluid-24 font-semibold leading-none text-text-primary pb-5 border-b-2 border-primary">
+                                Value prop strip
+                            </h5>
 
-                        <div className="flex sm:flex-row flex-col gap-6 sm:gap-0 w-full sm:w-auto">
-                            {/* Stat 1 */}
-                            <div className="sm:pr-6">
-                                <p className="flex items-baseline gap-2 font-bold text-text-primary leading-none">
-                                    <span className="text-fluid-40">90–2,800</span>
-                                    <span className="text-fluid-16">Tons</span>
-                                </p>
-                                <p className="mt-3 font-ce text-fluid-16 text-text-para">machine range</p>
-                            </div>
+                            <dl className="divide-y divide-gray-200">
+                                {/* Stat 1 */}
+                                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-5">
+                                    <dd className="flex items-baseline gap-2 font-bold leading-none text-text-primary">
+                                        <span className="text-fluid-40 tabular-nums">90–2,800</span>
+                                        <span className="text-fluid-16 text-primary">Tons</span>
+                                    </dd>
+                                    <dt className="font-ce text-fluid-16 text-text-para">machine range</dt>
+                                </div>
 
-                            {/* Stat 2 */}
-                            <div className="sm:border-l sm:border-text-primary/60 sm:px-6">
-                                <p className="text-fluid-40 font-bold text-text-primary leading-none">3</p>
-                                <p className="mt-3 font-ce text-fluid-16 text-text-para">Facilities in Bawal, Rewari</p>
-                            </div>
+                                {/* Stat 2 */}
+                                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-5">
+                                    <dd className="text-fluid-40 font-bold leading-none text-text-primary tabular-nums">3</dd>
+                                    <dt className="font-ce text-fluid-16 text-text-para">Facilities in Bawal, Rewari</dt>
+                                </div>
 
-                            {/* Stat 3 */}
-                            <div className="sm:border-l sm:border-text-primary/60 sm:pl-6">
-                                <p className="text-fluid-40 font-bold text-text-primary leading-none">45+</p>
-                                <p className="mt-3 font-ce text-fluid-16 text-text-para">
-                                    Professionals across engineering &amp; operations
-                                </p>
-                            </div>
+                                {/* Stat 3 */}
+                                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 pt-5">
+                                    <dd className="text-fluid-40 font-bold leading-none text-text-primary tabular-nums">45+</dd>
+                                    <dt className="font-ce text-fluid-16 text-text-para">
+                                        Professionals across engineering &amp; operations
+                                    </dt>
+                                </div>
+                            </dl>
                         </div>
                     </div>
                 </div>
@@ -130,9 +134,9 @@ export default function Injection() {
 
             {/* Tonnage range / Machine class */}
             <Section disablePaddingY>
-                <div className="flex sm:flex-row flex-col justify-between items-center gap-10 section-container">
+                <div className="flex lg:flex-row flex-col justify-between items-start gap-10 section-container">
                     {/* Left content */}
-                    <div className="flex flex-col sm:max-w-[45%] w-full gap-8">
+                    <div className="flex flex-col lg:max-w-[48%] w-full gap-8">
                         <div className="flex flex-col gap-4">
                             <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold">
                                 What Tonnage Range Can SBB Mouldings Handle?
@@ -154,11 +158,11 @@ export default function Injection() {
                                     <div
                                         key={item.title}
                                         tabIndex={0}
-                                        className="group flex flex-col gap-4 cursor-pointer focus:outline-none"
+                                        className="group flex flex-col gap-4 cursor-pointer focus:outline-none bg-gray-50/50 hover:bg-gray-50 p-4 rounded-2xl transition-colors"
                                     >
                                         {/* Title row */}
                                         <div className="flex items-center gap-3">
-                                            <span className="text-text-primary group-hover:text-primary transition-colors">
+                                            <span className="text-text-primary group-hover:text-primary transition-colors shrink-0">
                                                 <MouldIcon filled={i === 0} />
                                             </span>
                                             <h6 className="text-fluid-24 font-bold leading-none text-primary">
@@ -174,7 +178,7 @@ export default function Injection() {
                                                     {item.count}
                                                 </span>
                                             </div>
-                                            <div className="w-px bg-text-para/40" />
+                                            <div className="w-px bg-text-para/40 shrink-0" />
                                             <div className="flex flex-col justify-center gap-1">
                                                 <span className="font-ce text-sm text-text-para">Typical use</span>
                                                 <span className="text-fluid-16 font-bold text-text-primary leading-tight">
@@ -189,12 +193,12 @@ export default function Injection() {
                     </div>
 
                     {/* Right image */}
-                    <div className="overflow-hidden rounded-3xl shadow-black/30 shadow-lg sm:max-w-[45%] w-full">
+                    <div className="overflow-hidden rounded-3xl shadow-black/30 shadow-lg lg:max-w-[45%] w-full">
                         <Image
                             height={1080}
                             width={1920}
                             src={"/injection-moulding/milling-machine.jpg"}
-                            className="w-full object-cover lg:h-210 md:h-190 sm:h-170 h-150"
+                            className="w-full object-cover h-64 sm:h-96 md:h-140 lg:h-180 xl:h-210"
                             alt="Injection moulding machine"
                         />
                     </div>

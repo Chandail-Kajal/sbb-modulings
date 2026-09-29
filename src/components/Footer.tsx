@@ -194,10 +194,10 @@ export const Footer = () => {
       </div>
 
       {/* Bottom Sub-Footer Bar */}
-      <div className="bg-white section-container text-text-secondary py-3.5 border-t border-gray-100">
-        <div className="mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-fluid-16">
+      <div className="w-full bg-white border-t border-gray-100 py-4 text-text-secondary">
+        <div className="section-container flex flex-col sm:flex-row justify-between items-center gap-4 text-fluid-16 text-center sm:text-left">
           <p>© 2026 SBB Mouldings Pvt. Ltd. All Rights Reserved.</p>
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center justify-center gap-2.5">
             <Link
               href="#"
               aria-label="Facebook"

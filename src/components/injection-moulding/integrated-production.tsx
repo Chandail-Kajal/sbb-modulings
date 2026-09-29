@@ -52,7 +52,7 @@ export function IntegratedProduction() {
             height={1080}
             width={1920}
             src="/injection-moulding/milling-machine.jpg"
-            className="w-full lg:h-110 object-cover"
+            className="w-full h-64 sm:h-80 lg:h-110 object-cover"
             alt="Injection moulding assembly line machinery"
             priority
           />

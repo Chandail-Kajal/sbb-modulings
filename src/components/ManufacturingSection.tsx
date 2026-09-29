@@ -72,11 +72,11 @@ export const ManufacturingCarousel = () => {
             mx-auto
             flex
             flex-col
-            sm:flex-row
+            lg:flex-row
             carousel-section
             items-start
-
             overflow-visible
+            px-4 sm:px-6 lg:px-0
           "
         >
           <div
@@ -84,19 +84,14 @@ export const ManufacturingCarousel = () => {
               w-full
               shrink-0
               lg:max-w-[35%]
-              h-123.5
+              h-auto lg:h-123.5
+              mb-6 lg:mb-0
             "
           >
             <div className="flex flex-col gap-4">
               <h2 className="text-fluid-40 w-full font-bold leading-none text-text-primary">
-               What Are SBB <br/>Mouldings&apos; Core <br/>Capabilities? 
+               What Are SBB <br className="hidden sm:inline" />Mouldings&apos; Core <br className="hidden sm:inline" />Capabilities? 
               </h2>
-
-              {/* <p className="text-fluid-16 leading-snug text-text-secondary">
-                SBB Mouldings delivers precision moulding and assembly solutions
-                across automotive, HVAC, white goods, and industrial
-                applications.
-              </p> */}
             </div>
           </div>
 
@@ -111,8 +106,10 @@ export const ManufacturingCarousel = () => {
                     key={`${card.image}-${index}`}
                     className="
                       min-w-0
-                      flex-[0_0_100%]
-                      sm:flex-[0_0_30%]
+                      flex-[0_0_85%]
+                      sm:flex-[0_0_45%]
+                      md:flex-[0_0_35%]
+                      lg:flex-[0_0_30%]
                       px-3
                     "
                   >
@@ -183,16 +180,17 @@ const ManufacturingCard = ({
       <div className="group flex w-full cursor-pointer flex-col gap-6">
         <div
           className="
-    lg:h-94
-    md:h-85
-    sm:h-78
-    w-full
-    overflow-hidden
-    rounded-3xl
-    border
-    border-gray-200
-    relative
-  "
+            h-64
+            sm:h-78
+            md:h-85
+            lg:h-94
+            w-full
+            overflow-hidden
+            rounded-3xl
+            border
+            border-gray-200
+            relative
+          "
         >
           <Image src={'/advance-manufacturing/card-bg.jpg'} alt="title" fill className={`object-cover inset-0 z-10 opacity-80 ${image != "card_1.png" && "hidden"}`} />
           <Image

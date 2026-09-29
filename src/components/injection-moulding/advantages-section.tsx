@@ -43,7 +43,7 @@ export function AdvantageSection() {
     return (
         <Section className="overflow-hidden py-(--section-y)" disablePaddingX disablePaddingY asChild>
             <div className="flex flex-col gap-6 carousel-section overflow-hidden">
-                <div>
+                <div className="px-4 sm:px-6 lg:px-0">
                     <p className="font-neue text-fluid-24">Injection Moulding Advantages</p>
                     <h4 className="font-neue text-fluid-40 font-bold leading-none">
                         Injection Moulding Advantages
@@ -51,13 +51,13 @@ export function AdvantageSection() {
                 </div>
 
                 {/* Embla Viewport */}
-                <div className="overflow-visible lg:mt-8 mt-4" ref={emblaRef}>
+                <div className="overflow-visible lg:mt-8 mt-4 px-4 sm:px-6 lg:px-0" ref={emblaRef}>
                     {/* Embla Container */}
                     <div className="-ml-6 flex touch-pan-y py-2">
                         {[...advantages, ...advantages, ...advantages].map((item, index) => (
                             <div
                                 key={`${item.title}-${index}`}
-                                className="min-w-0 flex-[0_0_72%] pl-6 sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%]"
+                                className="min-w-0 flex-[0_0_85%] pl-6 sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%]"
                             >
                                 <AdvantageCard {...item} />
                             </div>
@@ -72,7 +72,7 @@ export function AdvantageSection() {
 const AdvantageCard = ({ title, description }: Advantage) => {
     return (
         <div
-            className="group relative h-125 w-full overflow-hidden rounded-4xl bg-white text-text-primary transition-colors duration-300 hover:text-white"
+            className="group relative h-auto min-h-[380px] sm:min-h-[440px] lg:h-125 w-full overflow-hidden rounded-3xl sm:rounded-4xl bg-white text-text-primary transition-colors duration-300 hover:text-white p-6 sm:p-8"
             style={{
                 boxShadow: "4px 4px 8px 0px rgba(0, 0, 0, 0.25)",
             }}
@@ -106,8 +106,8 @@ const AdvantageCard = ({ title, description }: Advantage) => {
             />
 
             {/* Content */}
-            <div className="relative z-20 mx-auto flex h-full max-w-[80%] flex-col gap-6 pt-6 font-neue">
-                <RiStackFill className="size-30 text-black transition-colors duration-300 group-hover:text-white" />
+            <div className="relative z-20 flex h-full w-full flex-col gap-4 font-neue">
+                <RiStackFill className="size-16 sm:size-24 lg:size-28 text-black transition-colors duration-300 group-hover:text-white shrink-0" />
 
                 <h5 className="text-fluid-24 font-bold leading-tight transition-colors duration-300 group-hover:text-white">
                     {title}

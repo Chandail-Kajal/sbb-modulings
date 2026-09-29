@@ -48,9 +48,16 @@ export function ManufacturingCapacity() {
         </p>
 
         {/* Metrics Grid with Vertical Dividers */}
-        <div className="grid grid-cols-2 md:grid-cols-5 w-full divide-y md:divide-y-0 md:divide-x divide-neutral-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 w-full gap-4 sm:gap-0 divide-y sm:divide-y-0 md:divide-x divide-neutral-300">
           {metricsData.map((item, index) => (
-            <MetricBlock key={index} title={item.title} subtitle={item.subtitle} />
+            <div
+              key={index}
+              className={`${
+                index === 4 ? "sm:col-span-2 md:col-span-1" : ""
+              } flex flex-col justify-center items-center py-2 sm:py-0`}
+            >
+              <MetricBlock title={item.title} subtitle={item.subtitle} />
+            </div>
           ))}
         </div>
       </div>

@@ -36,7 +36,7 @@ export const ComponentsToAssemblies = () => {
           </p>
         </div>
         <div className="lg:col-span-4 flex justify-center w-full">
-          <div className="relative w-full max-w-md aspect-3/4 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+          <div className="relative w-full max-w-md aspect-4/3 sm:aspect-3/4 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
             <Image
               src="/capability.jpg"
               alt="Manufacturing facility floor"
