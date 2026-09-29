@@ -1,3 +1,4 @@
+import ContactFaq from "@/components/contact-us/contact-faq";
 import ContactUsSection from "@/components/contact-us/hero";
 import { CompanyLocations } from "@/components/contact-us/location";
 import { Footer } from "@/components/Footer";
@@ -12,6 +13,7 @@ export default function ContactUs() {
 
             <ContactUsSection/>
             <CompanyLocations/>
+            <ContactFaq/>
             <Footer />
         </div>
     )

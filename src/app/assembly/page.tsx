@@ -10,6 +10,7 @@ import { Packaging } from "@/components/assembly/packaging";
 import WhyUs from "@/components/assembly/chooseUS";
 import { AssemblyBanner } from "@/components/assembly/assemblyBanner";
 import { CassetsSection } from "@/components/assembly/cassetsSection";
+import AssemblyFaq from "@/components/assembly/assembly-faq";
 
 export default function Assembly() {
     return (
@@ -61,6 +62,7 @@ export default function Assembly() {
             <Packaging />
             <WhyUs />
             <AssemblyBanner />
+            <AssemblyFaq/>
             <Footer />
         </main>
 

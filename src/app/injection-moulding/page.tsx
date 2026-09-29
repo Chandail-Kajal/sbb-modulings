@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 "use client";
 
 /* eslint-disable jsx-a11y/alt-text */
@@ -5,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { AdvantageSection } from "@/components/injection-moulding/advantages-section";
+import InjectionFaq from "@/components/injection-moulding/injection-faq";
 import { IntegratedProduction } from "@/components/injection-moulding/integrated-production";
 import { ManufacturingCapacity } from "@/components/injection-moulding/manufacturing-capacity";
 import { ProjectBanner } from "@/components/injection-moulding/project-banner";
@@ -329,6 +331,7 @@ export default function Injection() {
             <ManufacturingCapacity />
             <IntegratedProduction />
             <ProjectBanner />
+            <InjectionFaq/>
             <Footer />
         </main>
     )

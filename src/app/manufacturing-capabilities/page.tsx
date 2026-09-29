@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import ControlledManufacturing from "@/components/manufacturing-capabilities/controlled-manufacturing";
+import ManufacturingFaq from "@/components/manufacturing-capabilities/manufacturing-faq";
 import ManufacturingHero from "@/components/manufacturing-capabilities/manufacturingHero";
 import Production from "@/components/manufacturing-capabilities/production";
 import TechnicalExcellence from "@/components/manufacturing-capabilities/technical-excellence";
@@ -28,6 +29,7 @@ export default function ManufacturingCapabilities() {
             <ControlledManufacturing/>
             <TechnicalExcellence/>
             <WhatsNext/>
+            <ManufacturingFaq/>
             <Footer />
 
         </div>

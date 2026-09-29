@@ -9,6 +9,7 @@ import { ComponentsToAssemblies } from "@/components/CapabilitySection";
 import { StrategicFacilities } from "@/components/StrategicFacilities";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Footer } from "@/components/Footer";
+import Faq from "@/components/faq";
 
 const metricsData = [
   { title: "2018", subtitle: "Established" },
@@ -74,6 +75,7 @@ export default function HomePage() {
 
 
       <CtaBanner />
+      <Faq/>
 
       <Footer />
     </main>

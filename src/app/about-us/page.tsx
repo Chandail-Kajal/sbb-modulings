@@ -1,3 +1,4 @@
+import AboutFaq from "@/components/about-us/about-faq";
 import { BuiltOnExperience } from "@/components/about-us/builtOn-experience";
 import { EngineeringExpertise } from "@/components/about-us/engineering-expertise";
 import { OurApproach } from "@/components/about-us/our-approach";
@@ -19,6 +20,7 @@ export default function AboutUs(){
       <OurTeam/>
       <OurPeople/>
       <OurApproach/>
+      <AboutFaq/>
       <Footer/>
     </div>
   )

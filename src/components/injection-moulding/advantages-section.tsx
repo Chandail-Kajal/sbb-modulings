@@ -41,8 +41,8 @@ export function AdvantageSection() {
 
   return (
     <Section className="overflow-hidden">
-      <div className="flex flex-col gap-6 carousel-section overflow-hidden">
-        <div className="px-4 sm:px-6 lg:px-0">
+      <div className="flex flex-col gap-6 section-container">
+        <div>
           <p className="font-neue text-fluid-24">
             Injection Moulding Advantages
           </p>
@@ -50,8 +50,10 @@ export function AdvantageSection() {
             Injection Moulding Advantages
           </h4>
         </div>
+
+        {/* Viewport is limited to the section-container width */}
         <div
-          className="overflow-visible lg:mt-8 mt-4 px-4 sm:px-6 lg:px-0"
+          className="w-full overflow-hidden lg:mt-8 mt-4 pb-4"
           ref={emblaRef}
         >
           <div className="-ml-6 flex touch-pan-y py-2">
