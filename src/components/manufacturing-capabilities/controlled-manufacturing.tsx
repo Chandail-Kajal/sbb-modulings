@@ -30,9 +30,7 @@ export function ControlledManufacturing() {
           </div>
           <div className="mt-8 flex flex-col gap-6 text-fluid-16 leading-snug text-neutral-600">
             <p className="font-normal leading-snug text-fluid-16 text-neutral-500 font-ce">
-              Quality is integrated into our manufacturing operations through
-              inspection, assessment, production controls, and traceability
-              practices.
+              SBB Mouldings is certified to ISO 9001:2015 and IATF 16949:2016 by RINA Services S.p.A., covering the manufacture of plastic injection moulded components. Every production run is backed by in-process quality assurance and production inspection, MRP labelling and barcode printing, full product traceability to international standards, and regular VSA (vendor/supplier) and fire-risk assessments as part of our compliance program.
             </p>
             <div className="flex flex-col gap-3">
               <h3 className="font-bold text-neutral-900 text-fluid-24 leading-relaxed font-ce">

@@ -15,35 +15,35 @@ const steps: ProcessStep[] = [
     number: "01",
     title: "Component Preparation",
     description:
-      "Injection-moulded components & required parts are prepared according to production requirements.",
+      "Moulded and sourced parts staged and inspected.",
     position: "bottom",
   },
   {
     number: "02",
     title: "Sub-Assembly",
     description:
-      "Individual components are combined through dedicated sub-assembly stations.",
+      "Component-level assembly at dedicated sub-assembly stations",
     position: "top",
   },
   {
     number: "03",
     title: "Main-Line Assembly",
     description:
-      "Sub-assemblies and components are integrated through structured main-line assembly operations.",
+      "Full unit assembly across main production line.",
     position: "bottom",
   },
   {
     number: "04",
     title: "Quality Inspection",
     description:
-      "Finished assemblies are checked according to defined production and quality requirements.",
+      "In-line and end-of-line checks against customer specification",
     position: "top",
   },
   {
     number: "05",
     title: "Packaging & Traceability",
     description:
-      "Completed products can be box-packed with MRP labels, barcode printing, and complete traceability.",
+      "MRP labelling, barcode printing, box-packed finished goods with full traceability",
     position: "bottom",
   },
 ];
