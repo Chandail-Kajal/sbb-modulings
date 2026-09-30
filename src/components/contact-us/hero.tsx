@@ -1,7 +1,25 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import {
+  User,
+  Building2,
+  Mail,
+  Phone,
+  Cog,
+  MessageSquare,
+  Send,
+} from "lucide-react";
 import { Section } from "../Section";
+
+const inputBase =
+  "w-full h-14 rounded-xl bg-[#E8E8E8] border border-neutral-300/60 pl-12 pr-4 text-neutral-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100";
+
+const labelBase =
+  "block text-xl font-semibold text-neutral-700 font-neue tracking-wider";
+
+const iconBase =
+  "pointer-events-none absolute left-4 text-neutral-500 transition-colors peer-focus:text-blue-500";
 
 export default function ContactUsSection() {
   return (
@@ -9,25 +27,26 @@ export default function ContactUsSection() {
       <div className="section-container mx-auto space-y-12">
         {/* ================= Header ================= */}
         <div className="w-full flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-4">
-          {/* Left Main Title */}
           <div className="shrink-0">
             <h1 className="text-[64px] sm:text-[80px] xl:text-[92px] font-extrabold tracking-[-0.04em] leading-[0.95] text-[#262626]">
               Contact Us
             </h1>
           </div>
 
-          {/* Right Information Block */}
           <div className="flex flex-col items-start lg:items-end text-left lg:text-right space-y-3.5 max-w-[720px] pb-1">
-  <h2 className="text-[32px] sm:text-[36px] lg:text-[38px] font-normal tracking-[-0.02em] leading-snug text-[#374151]">
-    Get in touch with{" "}
-    <span className="font-bold text-[#0B57D0]">SBB Mouldings</span>
-  </h2>
+            <h2 className="text-[32px] sm:text-[36px] lg:text-[38px] font-normal tracking-[-0.02em] leading-snug text-[#374151]">
+              Get in touch with{" "}
+              <span className="font-bold text-[#0B57D0]">SBB Mouldings</span>
+            </h2>
 
-  <p className="text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.4] font-normal text-[#595959] tracking-tight">
-    Whether you&apos;re evaluating us as a Tier-1 or Tier-2 supplier, planning a vendor audit, or exploring a new injection moulding or assembly program, our team is ready to help.
-  </p>
-</div>
+            <p className="text-[17px] sm:text-[18px] lg:text-[19px] leading-[1.4] font-normal text-[#595959] tracking-tight">
+              Whether you&apos;re evaluating us as a Tier-1 or Tier-2 supplier,
+              planning a vendor audit, or exploring a new injection moulding or
+              assembly program, our team is ready to help.
+            </p>
+          </div>
         </div>
+
         {/* ================= Content Grid ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-14">
           {/* Form Card */}
@@ -36,78 +55,116 @@ export default function ContactUsSection() {
               {/* Row 1: Name & Company Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
+                  <label htmlFor="name" className={labelBase}>
                     Name
                   </label>
-                  <input
-                    type="text"
-                    className="w-full h-14 rounded-xl bg-[#E8E8E8] border border-neutral-300/60 px-4 text-neutral-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      id="name"
+                      type="text"
+                      placeholder="Your full name"
+                      className={`peer ${inputBase}`}
+                    />
+                    <User size={20} className={iconBase} />
+                  </div>
                 </div>
+
                 <div className="space-y-2">
-                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
+                  <label htmlFor="company" className={labelBase}>
                     Company Name
                   </label>
-                  <input
-                    type="text"
-                    className="w-full h-14 rounded-xl bg-[#E8E8E8] border border-neutral-300/60 px-4 text-neutral-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      id="company"
+                      type="text"
+                      placeholder="Your company"
+                      className={`peer ${inputBase}`}
+                    />
+                    <Building2 size={20} className={iconBase} />
+                  </div>
                 </div>
               </div>
 
+              {/* Row 2: Email & Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
+                  <label htmlFor="email" className={labelBase}>
                     Email Address
                   </label>
-                  <input
-                    type="email"
-                    className="w-full h-14 rounded-xl bg-[#E8E8E8] border border-neutral-300/60 px-4 text-neutral-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="you@company.com"
+                      className={`peer ${inputBase}`}
+                    />
+                    <Mail size={20} className={iconBase} />
+                  </div>
                 </div>
+
                 <div className="space-y-2">
-                  <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
+                  <label htmlFor="phone" className={labelBase}>
                     Phone Number
                   </label>
-                  <input
-                    type="tel"
-                    className="w-full h-14 rounded-xl bg-[#E8E8E8] border border-neutral-300/60 px-4 text-neutral-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                  />
+                  <div className="relative flex items-center">
+                    <input
+                      id="phone"
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      className={`peer ${inputBase}`}
+                    />
+                    <Phone size={20} className={iconBase} />
+                  </div>
                 </div>
               </div>
 
-              {/* Row 3: Inline Label & Field */}
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                <label className="text-xl font-semibold text-neutral-700 sm:w-1/3 font-neue tracking-wider">
+              {/* Row 3: Machine Type */}
+              <div className="space-y-2">
+                <label htmlFor="machine" className={labelBase}>
                   Machine Type
                 </label>
-                <input
-                  type="text"
-                  className="w-full sm:w-2/3 h-14 rounded-xl bg-[#E8E8E8] border border-neutral-300/60 px-4 text-neutral-800 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                />
+                <div className="relative flex items-center">
+                  <input
+                    id="machine"
+                    type="text"
+                    placeholder="e.g. 150T injection moulding"
+                    className={`peer ${inputBase}`}
+                  />
+                  <Cog size={20} className={iconBase} />
+                </div>
               </div>
 
-              {/* Row 4: Large Field / Textarea */}
+              {/* Row 4: Message */}
               <div className="space-y-2">
-                <label className="block text-xl font-semibold text-neutral-700 font-neue tracking-wider">
+                <label htmlFor="message" className={labelBase}>
                   Message
                 </label>
-                <textarea
-                  rows={6}
-                  className="w-full rounded-xl bg-[#E8E8E8] border border-neutral-300/60 p-4 text-neutral-800 outline-none resize-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
-                />
+                <div className="relative">
+                  <textarea
+                    id="message"
+                    rows={6}
+                    placeholder="Tell us about your requirement..."
+                    className="peer w-full rounded-xl bg-[#E8E8E8] border border-neutral-300/60 py-4 pl-12 pr-4 text-neutral-800 outline-none resize-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                  />
+                  <MessageSquare
+                    size={20}
+                    className="pointer-events-none absolute left-4 top-4 text-neutral-500 transition-colors peer-focus:text-blue-500"
+                  />
+                </div>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#1560BD] hover:from-[#2563EB] hover:to-[#104899] text-white font-bold tracking-[0.25em] text-sm shadow-md transition-all active:scale-[0.99]"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#1560BD] hover:from-[#2563EB] hover:to-[#104899] text-white font-semibold text-base shadow-md transition-all active:scale-[0.99] flex items-center justify-center gap-2.5"
               >
-                S e n d
+                <Send size={20} />
+                <span className="tracking-wide">Send Message</span>
               </button>
             </form>
           </div>
 
+          {/* Image */}
           <div className="lg:col-span-4 min-h-140 lg:min-h-160 rounded-[28px] overflow-hidden relative shadow-sm">
             <Image
               src="/contact-us.jpg"

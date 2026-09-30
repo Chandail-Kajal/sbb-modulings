@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Section } from "../Section";
 
-
 interface FaqItem {
   id: string;
   question: string;
@@ -12,36 +11,36 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    id: "founded",
-    question: "When was SBB Mouldings founded?",
+    id: "iso-9001",
+    question: "Is SBB Mouldings ISO 9001 certified?",
     answer:
-      "Incorporated in October 2018, with the first unit commissioned in Bawal, Rewari shortly after.",
+      "Yes — ISO 9001:2015, certified by RINA Services S.p.A. (certificate no. 44564/23/AN).",
   },
   {
-    id: "ownership",
-    question: "Who owns SBB Mouldings?",
+    id: "iatf-16949",
+    question: "Is SBB Mouldings IATF 16949 certified?",
     answer:
-      "A 50:50 joint venture between SB Felts (India) Pvt Ltd and Panipat Texo Fabs Pvt Ltd.",
+      "Yes — IATF 16949:2016, certified by RINA Services S.p.A. (certificate no. TS/44564/23).",
   },
   {
-    id: "growth",
-    question: "How has SBB Mouldings grown since 2018?",
+    id: "traceability",
+    question: "How does SBB ensure traceability on every shipment?",
     answer:
-      "From a single unit to three facilities in Bawal, Rewari, with revenue growing roughly 6x — from ₹25.5 Cr (FY19-20) to ₹150 Cr (FY25-26).",
+      "MRP labelling and barcode printing on all finished goods, with full product traceability to international standards from raw material to shipped part.",
   },
   {
-    id: "leadership",
-    question: "Who leads SBB Mouldings today?",
+    id: "vendor-audit",
+    question: "Can SBB support a vendor audit?",
     answer:
-      "Narshi Chauhan (Managing Director), Lalit Bansal (Director), Ravi Arya (Business Lead) and Amitabh Srivastava (Operations Lead), supported by a team of 45+ professionals.",
+      "Yes — regular VSA (vendor/supplier) and fire-risk assessments are part of our compliance program, and our quality systems are built to make an audit straightforward.",
   },
 ];
 
-export default function AboutFaq() {
+export default function QualityFaq() {
   const [openId, setOpenId] = useState<string | null>(faqs[0].id);
 
   return (
-    <Section className="py-(--section-y)">
+    <Section className="pb-(--section-y) pt-4">
       <div className="flex flex-col gap-8 lg:gap-10 section-container">
         {/* Heading */}
         <div className="w-full font-neue text-center">
@@ -137,14 +136,9 @@ export default function AboutFaq() {
             );
           })}
         </div>
-        <div className="p-6 flex sm:flex-row flex-col gap-4">
-          <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-            Request A Quote
-          </button>
-          <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-            Contact Our Team
-          </button>
-        </div>
+
+        {/* CTAs */}
+       
       </div>
     </Section>
   );

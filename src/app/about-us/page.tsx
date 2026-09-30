@@ -15,7 +15,7 @@ export default function AboutUs(){
       <Header/>
       <Hero/>
       <EngineeringExpertise/>
-      <BuiltOnExperience/>
+      {/* <BuiltOnExperience/> */}
       <OurJourney/>
       <OurTeam/>
       <OurPeople/>

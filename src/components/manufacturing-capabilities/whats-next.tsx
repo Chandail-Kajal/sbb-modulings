@@ -7,10 +7,9 @@ export default function WhatsNext() {
       <div className="w-full">
         <div className="section-container">
           <div
-            className="relative w-full rounded-[2.25rem] overflow-hidden px-8 py-12 sm:px-14 sm:py-16 md:px-20 lg:px-25 md:py-20 flex flex-col md:flex-row items-center justify-between gap-10 shadow-lg"
+            className="relative w-full rounded-[2.25rem] overflow-hidden px-8 py-10 sm:px-14 sm:py-12 md:px-20 lg:px-25 md:py-16 flex flex-col md:flex-row items-center justify-between gap-9 shadow-lg"
             style={{
-              backgroundImage:
-                "linear-gradient(115deg, #3b82f6 0%, #1e40af 100%)",
+              backgroundImage: "linear-gradient(115deg, #3b82f6 0%, #1e40af 100%)",
             }}
           >
             <div
@@ -36,7 +35,7 @@ export default function WhatsNext() {
                 requirements.
               </p>
 
-              <div className="pt-4 flex flex-wrap gap-3.5 items-center">
+              <div className="pt-3 flex flex-wrap gap-3.5 items-center">
                 <button className="bg-white text-[#1d4ed8] hover:bg-slate-50 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-colors cursor-pointer">
                   Request A Quote
                 </button>
@@ -46,12 +45,12 @@ export default function WhatsNext() {
               </div>
             </div>
 
-            <div className="flex h-full object-contain">
+            <div className="flex items-center justify-center z-10 max-h-48 sm:max-h-60 md:max-h-72">
               <Image
                 height={1080}
                 width={1280}
                 src={"/manufacturing-capabilities/puzzle.png"}
-                className="h-full w-full object-contain"
+                className="h-full max-h-48 sm:max-h-60 md:max-h-72 w-auto object-contain"
                 alt="puzzle"
               />
             </div>

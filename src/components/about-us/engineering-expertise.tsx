@@ -13,8 +13,8 @@ export function EngineeringExpertise() {
                 About SBB Mouldings
               </p>
               <h2 className="text-fluid-40 font-extrabold tracking-tight leading-none">
-                <span className="text-[#1f2428] block">Engineering Expertise.</span>
-                <span className="text-[#0052cc] block">Manufacturing Excellence.</span>
+                <span className="text-[#1f2428] block">Two Manufacturing Legacies, </span>
+                <span className="text-[#0052cc] block">One Focused Mission</span>
               </h2>
             </div>
 

@@ -4,12 +4,14 @@ import { Header } from "@/components/Header";
 import { Section } from "@/components/Section";
 import { Automotive } from "@/components/products/automotive";
 import { CasseteAc } from "@/components/products/casseteAC";
+import WorkFaq from "@/components/products/work-faq";
+import WhatWeBuild from "@/components/products/what-we-build";
 
 export default function OurWork() {
   return (
     <div>
       <Header />
-      <Section>
+      {/* <Section>
         <div className="flex flex-col items-center text-center font-neue  section-container">
           <p className="text-fluid-29 font-light text-neutral-500 tracking-tight mb-2">
             Products / Our Work
@@ -77,7 +79,8 @@ export default function OurWork() {
             </button>
           </div>
         </div>
-      </Section>
+      </Section> */}
+      <WhatWeBuild/>
       <Automotive />
       <CasseteAc />
       <Section disablePaddingY>
@@ -103,6 +106,7 @@ export default function OurWork() {
           </div>
         </div>
       </Section>
+       
       <Section>
         <div className="section-container">
           <div className="max-w-3xl">
@@ -127,6 +131,8 @@ export default function OurWork() {
           </div>
         </div>
       </Section>
+
+       <WorkFaq/>
       <Section disablePaddingY className="pb-(--section-y)">
         <div className="section-container">
           <div
@@ -181,6 +187,7 @@ export default function OurWork() {
           </div>
         </div>
       </Section>
+     
       <Footer />
     </div>
   );

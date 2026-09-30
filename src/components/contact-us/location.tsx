@@ -16,36 +16,39 @@ interface LocationItem {
 const locations: LocationItem[] = [
   {
     id: 1,
-    tagline: "Head Office / Unit 1",
-    name: "SBB Mouldings Pvt Ltd",
+    name: "UNIT 01",
+    tagline: "Head Office",
     addressLines: [
-      "Plot No. 08 & 09, Sector-3",
+      "Bawal — Sector 3",
+      "Plot No. 8 & 9, Sector 3",
       "HSIIDC Growth Centre, Bawal",
-      "Distt. Rewari, Haryana – 123501, India",
+      "Rewari, Haryana — 123501",
     ],
     imageSrc: "/advanced-infrastructure.png",
     imageAlt: "Head Office Unit 1 Injection Moulding Machinery",
   },
   {
     id: 2,
-    tagline: "Sangwari / Unit 2",
-    name: "Godown No. 2, SB Felts",
+    name: "UNIT 02",
+    tagline: "Sangwari Facility",
     addressLines: [
-      "Jarthal Road, Sangwari",
-      "P.O. Ladhuwas Gurjar, Bawal",
-      "Distt. Rewari, Haryana – 123501",
+      "Sangwari — Bawal",
+      "Godown No. 2, SB Felts, 84 KM Stone",
+      "Sangwari–Jarthal Road, Bawal",
+      "Rewari, Haryana — 123501",
     ],
     imageSrc: "/flexible-production.jpg",
     imageAlt: "Sangwari Unit 2 Manufacturing Facility",
   },
   {
     id: 3,
-    tagline: "Bawal Sector-14 / Unit 3",
-    name: "Plot No. 58",
+    name: "UNIT 03",
+    tagline: "Sector-14 Facility",
     addressLines: [
-      "Sector-14",
-      "HSIIDC Growth Centre, Bawal",
-      "Distt. Rewari, Haryana – 123501",
+      "Bawal — Sector 14",
+      "Plot No. 58, Sector 14, HSIIDC",
+      "Bawal, Rewari",
+      "Haryana — 123501",
     ],
     imageSrc: "/integrated-capabilities.jpg",
     imageAlt: "Bawal Sector-14 Unit 3 Technology",
@@ -90,19 +93,25 @@ export const CompanyLocations: React.FC = () => {
 
                 {/* Content Block */}
                 <div className="pt-6">
-                  {/* Tagline */}
-                  <p className="text-title-sm sm:text-title-sm text-[#4b5563] font-normal tracking-normal leading-normal font-neue">
-                    {loc.tagline}
+                  {/* Unit label (UNIT 01 / 02 / 03) */}
+                  <p className="text-fluid-16 text-[#696666] font-normal leading-normal font-neue">
+                    {loc.name}
                   </p>
 
-                  {/* Company / Facility Name */}
-                  <h3 className="text-[28px] sm:text-[28px] font-semibold text-[#0b63c6] tracking-tight leading-snug mt-1 font-neue">
-                    {loc.name}
+                  {/* Title (Head Office / Sangwari Facility / Sector-14 Facility) */}
+                  <h3 className="mt-1 text-fluid-16 text-[#696666] font-semibold tracking-tight leading-snug font-neue">
+                    {loc.tagline}
                   </h3>
 
                   {/* Address */}
-                  <div className="mt-7 space-y-0.5 text-sub sm:text-sub text-[#4D4D4D] font-normal leading-[1.45] tracking-tight font-ce">
-                    {loc.addressLines.map((line, idx) => (
+                  <div className="mt-2 space-y-0.5 text-sub text-[#696666]  leading-[1.45] tracking-tight font-ce">
+                    {/* Blue highlighted location line */}
+                    <p className="text-fluid-24 text-[#0b63c6] pb-1">
+                      {loc.addressLines[0]}
+                    </p>
+
+                    {/* Remaining address lines */}
+                    {loc.addressLines.slice(1).map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}
                   </div>

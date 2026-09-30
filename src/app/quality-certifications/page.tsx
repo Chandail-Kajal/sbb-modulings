@@ -2,6 +2,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Certificate } from "@/components/quality/certificates";
 import { Consistency } from "@/components/quality/consistency";
+import QualityFaq from "@/components/quality/quality-faq";
 import { QualityBanner } from "@/components/quality/qualityBanner";
 import { Section } from "@/components/Section";
 
@@ -46,7 +47,7 @@ export default function QualityCertifications() {
       <Consistency />
 
       <Section>
-        <div className="flex flex-col items-center text-center font-neue section-container max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center font-neue section-container max-w-4xl mx-auto pb-0">
           <h2 className="text-fluid-47 font-bold tracking-tight text-neutral-900 leading-tight">
             Why it <span className="text-[#0052cc]">matters to you</span>
           </h2>
@@ -62,6 +63,7 @@ export default function QualityCertifications() {
           </div>
         </div>
       </Section>
+      <QualityFaq/>
       <QualityBanner />
       <Footer />
     </div>

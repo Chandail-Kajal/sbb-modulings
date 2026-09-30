@@ -130,11 +130,11 @@ export function Certificate() {
           </div>
         </div>
 
-        <p className="mt-6 text-fluid-16 text-[#717171] font-ce sm:mt-10">
+        {/* <p className="mt-6 text-fluid-16 text-[#717171] font-ce sm:mt-10">
           Certificates expire 26 Oct 2026 — confirm renewal status before
           publishing this page, and update the &quot;valid until&quot; date once
           the renewed certificate is issued.
-        </p>
+        </p> */}
       </div>
     </Section>
   );

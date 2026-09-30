@@ -206,6 +206,7 @@ export function OurTeam() {
         disablePaddingY
       >
         <div className="mx-auto section-container">
+          {/* Header */}
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
             <div>
               <span className="text-fluid-24 text-slate-500">Leadership</span>
@@ -238,6 +239,7 @@ export function OurTeam() {
           </div>
 
           <div className="relative mt-2 h-100 sm:h-110 lg:h-120">
+            {/* Marquee name */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute left-1/2 top-[40%] z-0 w-screen -translate-x-1/2 -translate-y-1/2 select-none overflow-hidden"
@@ -266,12 +268,15 @@ export function OurTeam() {
               </div>
             </div>
 
+            {/* Divider line */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute bottom-4 left-1/2 z-10 hidden h-0.5 w-screen -translate-x-1/2 bg-[#E2E8F0] md:block"
             />
 
+            {/* Side avatars */}
             <div className="pointer-events-none absolute bottom-[64px] left-0 z-20 hidden w-full -translate-y-1/2 md:block">
+              {/* Left Avatars */}
               <div className="pointer-events-auto absolute left-6 flex items-center gap-48 lg:left-12">
                 <AnimatePresence
                   mode="popLayout"
@@ -322,7 +327,8 @@ export function OurTeam() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute  left-1/2 z-10 h-70 w-95 -translate-x-1/2  sm:h-95 sm:w-165  lg:h-105 lg:w-180">
+            {/* Hero image */}
+            <div className="pointer-events-none absolute left-1/2 z-10 h-70 w-95 -translate-x-1/2 sm:h-95 sm:w-165 lg:h-105 lg:w-180">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`hero-${active}`}
@@ -345,7 +351,8 @@ export function OurTeam() {
               </AnimatePresence>
             </div>
 
-            <div className="absolute bottom-0 left-1/2 z-30 w-[calc(100%-32px)] max-w-95 sm:h-40 -translate-x-1/2 sm:w-80">
+            {/* Info card */}
+            <div className="absolute bottom-0 left-1/2 z-30 w-[calc(100%-32px)] max-w-95 -translate-x-1/2 sm:h-40 sm:w-80">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.article
                   key={`card-${active}`}
@@ -357,7 +364,7 @@ export function OurTeam() {
                   transition={{ duration: 0.35, ease: "easeOut" }}
                   className="relative w-full rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
                 >
-                  <div className="flex items-start gap-4 min-h-20">
+                  <div className="flex min-h-20 items-start gap-4">
                     <div className="relative -mt-9 h-24 w-24 shrink-0 overflow-hidden rounded-xl border-2 border-white bg-slate-100 shadow-md">
                       <Image
                         src={current.cardImage}
@@ -407,27 +414,27 @@ export function OurTeam() {
                   </p>
                 </motion.article>
               </AnimatePresence>
-
-              <div className="absolute bottom-0 left-1/2 sm:-bottom-10 sm:left-60 z-40 flex h-7 w-28 -translate-x-1/2 items-center justify-between rounded-full bg-[#0E58BD] px-1 shadow-md">
-                <button
-                  type="button"
-                  onClick={() => go(-1)}
-                  aria-label="Previous leader"
-                  className="flex h-full flex-1 items-center justify-center text-white transition hover:opacity-80"
-                >
-                  <ArrowLeft className="h-3.5 w-3.5" />
-                </button>
-                <span className="h-3.5 w-[1px] bg-white/30" />
-                <button
-                  type="button"
-                  onClick={() => go(1)}
-                  aria-label="Next leader"
-                  className="flex h-full flex-1 items-center justify-center text-white transition hover:opacity-80"
-                >
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
             </div>
+          </div>
+
+          {/* Arrow controls: end of section */}
+          <div className="relative z-40 mt-24 flex items-center justify-center gap-3 sm:mt-28 sm:justify-end">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Previous leader"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0E58BD] text-white shadow-md transition hover:bg-[#0B47A0] active:scale-95 sm:h-14 sm:w-14"
+            >
+              <ArrowLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Next leader"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0E58BD] text-white shadow-md transition hover:bg-[#0B47A0] active:scale-95 sm:h-14 sm:w-14"
+            >
+              <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+            </button>
           </div>
         </div>
       </Section>

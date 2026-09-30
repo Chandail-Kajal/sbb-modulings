@@ -66,11 +66,10 @@ function HexagonCard({
         viewBox="0 0 320 280"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`w-full overflow-hidden h-full transition-all duration-300 ${
-          isDark
+        className={`w-full overflow-hidden h-full transition-all duration-300 ${isDark
             ? "drop-shadow-[0_16px_28px_rgba(0,87,183,0.28)]"
             : "drop-shadow-[0_10px_20px_rgba(184,210,238,0.35)]"
-        }`}
+          }`}
       >
         <defs>
           {/* 2. Create a pattern that scales to fill the shape */}
@@ -140,7 +139,8 @@ export function OurApproach() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <Section className="relative overflow-hidden bg-white py-16">
+    <Section disablePaddingY
+      className="relative overflow-hidden bg-white pt-8 pb-0 lg:pt-2">
       <div className="relative section-container">
         <div className="relative hidden lg:block w-full h-190 xl:h-210 2xl:h-225">
           <div className="absolute left-0 top-[12%] z-10 select-none">
@@ -213,6 +213,8 @@ export function OurApproach() {
             ))}
           </div>
         </div>
+
+        
       </div>
     </Section>
   );

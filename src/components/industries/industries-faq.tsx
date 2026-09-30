@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Section } from "../Section";
 
-
 interface FaqItem {
   id: string;
   question: string;
@@ -12,36 +11,36 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    id: "founded",
-    question: "When was SBB Mouldings founded?",
+    id: "automotive",
+    question: "Does SBB Mouldings supply the automotive industry?",
     answer:
-      "Incorporated in October 2018, with the first unit commissioned in Bawal, Rewari shortly after.",
+      "Yes — including door-visor sub-assembly running up to 1,600 car-sets per day, backed by a leadership team with deep Tier-1 automotive experience.",
   },
   {
-    id: "ownership",
-    question: "Who owns SBB Mouldings?",
+    id: "hvac",
+    question: "Does SBB Mouldings work with air conditioning/HVAC manufacturers?",
     answer:
-      "A 50:50 joint venture between SB Felts (India) Pvt Ltd and Panipat Texo Fabs Pvt Ltd.",
+      "Yes — this is SBB's deepest assembly specialization, including cassette AC lines for Daikin, Panasonic, Havells, Blue Star, Mitsubishi and Hitachi, plus split AC indoor unit assembly.",
   },
   {
-    id: "growth",
-    question: "How has SBB Mouldings grown since 2018?",
+    id: "white-goods",
+    question: "Does SBB handle white goods components?",
     answer:
-      "From a single unit to three facilities in Bawal, Rewari, with revenue growing roughly 6x — from ₹25.5 Cr (FY19-20) to ₹150 Cr (FY25-26).",
+      "Yes — white goods diversification was the original reason SBB was formed, and injection moulding capacity supports large-format white goods housings and components.",
   },
   {
-    id: "leadership",
-    question: "Who leads SBB Mouldings today?",
+    id: "industrial",
+    question: "Can SBB support small industrial component orders too?",
     answer:
-      "Narshi Chauhan (Managing Director), Lalit Bansal (Director), Ravi Arya (Business Lead) and Amitabh Srivastava (Operations Lead), supported by a team of 45+ professionals.",
+      "Yes — our 250–450T and 90T machines are sized for precision industrial components and fittings alongside larger automotive and HVAC programs.",
   },
 ];
 
-export default function AboutFaq() {
-  const [openId, setOpenId] = useState<string | null>(faqs[0].id);
+export default function IndustriesFaq() {
+  const [openId, setOpenId] = useState<string | null>(faqs[0]!.id);
 
   return (
-    <Section className="py-(--section-y)">
+    <Section className="pb-(--section-y) pt-2">
       <div className="flex flex-col gap-8 lg:gap-10 section-container">
         {/* Heading */}
         <div className="w-full font-neue text-center">
@@ -53,7 +52,7 @@ export default function AboutFaq() {
           </h2>
         </div>
 
-        {/* Accordion (full section width) */}
+        {/* Accordion */}
         <div className="w-full flex flex-col gap-4">
           {faqs.map((faq, i) => {
             const isOpen = openId === faq.id;
@@ -137,12 +136,11 @@ export default function AboutFaq() {
             );
           })}
         </div>
+
+        {/* CTA */}
         <div className="p-6 flex sm:flex-row flex-col gap-4">
           <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-            Request A Quote
-          </button>
-          <button className="bg-white text-[#0057B8] hover:bg-gray-100 font-semibold text-fluid-16 px-6 py-3 rounded-xl transition-colors cursor-pointer shadow-md">
-            Contact Our Team
+            Talk to Us About Your Industry
           </button>
         </div>
       </div>
