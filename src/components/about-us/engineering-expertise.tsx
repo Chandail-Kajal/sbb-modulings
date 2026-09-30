@@ -20,14 +20,12 @@ export function EngineeringExpertise() {
 
             <div className="mt-8 flex flex-col gap-6 text-fluid-16 leading-snug text-[#6a737d]">
               <p>
-                Established in 2018, SBB Mouldings Pvt. Ltd. is a growing injection moulding and assembly company serving the Automotive, HVAC &amp; Air Conditioning, White Goods, and Industrial sectors.
-              </p>
+               SBB Mouldings was built in 2018 to bring together deep automotive component experience and industrial manufacturing discipline under one purpose-built moulding and assembly operation.
+               </p>
               <p>
-                From injection moulded components to complete assemblies, we combine advanced manufacturing infrastructure, high-capacity machinery, experienced professionals, and integrated production capabilities to meet diverse customer requirements.
+               SBB Mouldings Pvt Ltd was incorporated in October 2018 as a 50:50 joint venture between SB Felts (India) Pvt Ltd and Panipat Texo Fabs Pvt Ltd, formed to diversify into injection moulding and assembly for the white goods and automotive industries. The company&lsquo;s first unit went into operation in Bawal, Rewari shortly after, and has since grown into a three-facility operation — adding a second unit in 2021 and a third, 4,000 sqm facility in December 2024 dedicated to new moulding capacity, assembly and finished-goods warehousing.
               </p>
-              <p>
-                Our focus is to build reliable manufacturing solutions around the product, application, and production requirements of every customer.
-              </p>
+              
             </div>
           </div>
 

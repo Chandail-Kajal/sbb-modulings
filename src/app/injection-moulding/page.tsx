@@ -84,7 +84,11 @@ function TonnageShowcase() {
             <div className="flex flex-col lg:max-w-[48%] w-full gap-10">
                 <div className="flex flex-col gap-5">
                     <h4 className="text-fluid-40 font-neue max-w-md text-text-primary leading-none font-bold">
-                        What Tonnage Range Can SBB Mouldings Handle?
+                        Tonnage Capabilities
+                        <span className="block text-primary">
+                            of SBB Mouldings
+                        </span>
+
                     </h4>
                     <p className="font-ce text-fluid-16 text-text-para leading-snug">
                         SBB Mouldings runs a 29-machine injection moulding fleet spanning 90 to 2,800 tons — from a
@@ -115,26 +119,23 @@ function TonnageShowcase() {
                                     onClick={() => setActive(i)}
                                     onMouseEnter={() => setActive(i)}
                                     onFocus={() => setActive(i)}
-                                    className={`group relative w-full overflow-hidden rounded-2xl border p-5 text-left transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-                                        isActive
-                                            ? "border-primary bg-white shadow-lg"
-                                            : "border-gray-200 bg-gray-50/60 hover:border-gray-300 hover:bg-gray-50"
-                                    }`}
+                                    className={`group relative w-full overflow-hidden rounded-2xl border p-5 text-left transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${isActive
+                                        ? "border-primary bg-white shadow-lg"
+                                        : "border-gray-200 bg-gray-50/60 hover:border-gray-300 hover:bg-gray-50"
+                                        }`}
                                 >
                                     {/* accent bar */}
                                     <span
                                         aria-hidden="true"
-                                        className={`absolute left-0 top-0 h-full w-1 bg-primary transition-transform duration-300 origin-top motion-reduce:transition-none ${
-                                            isActive ? "scale-y-100" : "scale-y-0"
-                                        }`}
+                                        className={`absolute left-0 top-0 h-full w-1 bg-primary transition-transform duration-300 origin-top motion-reduce:transition-none ${isActive ? "scale-y-100" : "scale-y-0"
+                                            }`}
                                     />
 
                                     {/* Title row */}
                                     <div className="flex items-center gap-4">
                                         <span
-                                            className={`shrink-0 transition-colors ${
-                                                isActive ? "text-primary" : "text-text-primary"
-                                            }`}
+                                            className={`shrink-0 transition-colors ${isActive ? "text-primary" : "text-text-primary"
+                                                }`}
                                         >
                                             <MouldIcon filled={isActive} />
                                         </span>
@@ -142,11 +143,10 @@ function TonnageShowcase() {
                                             {item.title}
                                         </h6>
                                         <span
-                                            className={`shrink-0 rounded-full px-3 py-1 font-ce text-sm font-semibold transition-colors ${
-                                                isActive
-                                                    ? "bg-primary text-white"
-                                                    : "bg-gray-200 text-text-primary"
-                                            }`}
+                                            className={`shrink-0 rounded-full px-3 py-1 font-ce text-sm font-semibold transition-colors ${isActive
+                                                ? "bg-primary text-white"
+                                                : "bg-gray-200 text-text-primary"
+                                                }`}
                                         >
                                             {item.count} {item.count === 1 ? "machine" : "machines"}
                                         </span>
@@ -154,9 +154,8 @@ function TonnageShowcase() {
 
                                     {/* Expandable details */}
                                     <div
-                                        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${
-                                            isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                                        }`}
+                                        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                                            }`}
                                     >
                                         <div className="overflow-hidden">
                                             <div className="flex flex-col gap-5 pt-5">
@@ -247,9 +246,8 @@ function TonnageShowcase() {
                                 type="button"
                                 aria-label={`Show ${m.title}`}
                                 onClick={() => setActive(i)}
-                                className={`h-1.5 rounded-full transition-all duration-300 motion-reduce:transition-none ${
-                                    i === active ? "w-8 bg-primary" : "w-3 bg-gray-400/60 hover:bg-gray-500"
-                                }`}
+                                className={`h-1.5 rounded-full transition-all duration-300 motion-reduce:transition-none ${i === active ? "w-8 bg-primary" : "w-3 bg-gray-400/60 hover:bg-gray-500"
+                                    }`}
                             />
                         ))}
                     </div>
@@ -330,8 +328,9 @@ export default function Injection() {
             <Requirements />
             <ManufacturingCapacity />
             <IntegratedProduction />
+            <InjectionFaq />
             <ProjectBanner />
-            <InjectionFaq/>
+
             <Footer />
         </main>
     )

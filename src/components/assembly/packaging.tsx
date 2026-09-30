@@ -20,12 +20,14 @@ export function Packaging() {
         <div className="flex flex-col w-full lg:max-w-[48%] font-sans text-neutral-800">
           {/* Header */}
           <div className="flex flex-col  font-neue">
-            <p className="text-fluid-24 font-light text-neutral-500 leading-relaxed">
+             <p className="text-fluid-16 font-medium text-slate-500 mb-1">
               Packaging & Traceability
             </p>
-            <h2 className="text-fluid-40 font-bold  text-neutral-900">
-              Ready-to-<span className="text-[#0052cc]">Dispatch.</span> <br />
-              Fully <span className="text-[#0052cc]">Traceable.</span>
+            <h2 className="text-fluid-40 font-extrabold text-[#1e293b] leading-none ">
+              Ready-to-Dispatch.
+            </h2>
+            <h2 className="text-fluid-40 font-extrabold text-[#0055b8] leading-none">
+              Fully Traceable.
             </h2>
           </div>
 

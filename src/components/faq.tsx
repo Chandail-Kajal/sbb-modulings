@@ -45,7 +45,7 @@ export default function Faq() {
   const [openId, setOpenId] = useState<string | null>(faqs[0].id);
 
   return (
-    <Section className="pt-0 sm:pt-0 lg:pt-0">
+    <Section className=" py-(--section-y)">
       <div className="flex flex-col gap-8 lg:gap-10 section-container">
         {/* Heading */}
         <div className="w-full font-neue text-center">

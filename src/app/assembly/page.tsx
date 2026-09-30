@@ -61,8 +61,9 @@ export default function Assembly() {
             <Engineering />
             <Packaging />
             <WhyUs />
-            <AssemblyBanner />
             <AssemblyFaq/>
+            <AssemblyBanner />
+            
             <Footer />
         </main>
 

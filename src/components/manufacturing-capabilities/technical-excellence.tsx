@@ -12,35 +12,35 @@ interface FeatureItem {
 
 const features: FeatureItem[] = [
   {
-    id: "capacity",
-    title: "Capacity",
+    id: "advanced-infrastructure",
+    title: "Advanced Infrastructure",
     description:
-      "High-tonnage injection moulding equipment for large and complex components.",
-    imageSrc: "/manufacturing-capabilities/capacity.jpg",
-    imageAlt: "Digital gauge and analytics interface",
+      "Three units in Bawal, Rewari spanning roughly 10,300 sqm, with moulding halls, assembly lines, warehousing and a 25-ton overhead crane.",
+    imageSrc: "/advanced-infrastructure.png",
+    imageAlt: "Advanced Infrastructure",
     imageOnRight: true,
   },
   {
-    id: "flexibility",
-    title: "Flexibility",
+    id: "flexible-production",
+    title: "Flexible Production",
     description:
-      "A broad equipment range supporting different component sizes and production requirements.",
-    imageSrc: "/manufacturing-capabilities/flexibility.jpg",
-    imageAlt: "Team working on laptop and reviewing schematics",
+      "A 29-machine fleet from 90 to 2,800 tons, so every part runs on the right press size.",
+    imageSrc: "/flexible-production.jpg",
+    imageAlt: "Flexible Production",
     imageOnRight: false,
   },
   {
-    id: "integration",
-    title: "Integration",
+    id: "integrated-capabilities",
+    title: "Integrated Capabilities",
     description:
-      "Moulding, assembly, quality and warehousing in one unified manufacturing environment",
-    imageSrc: "/manufacturing-capabilities/integration.jpg",
-    imageAlt: "Interlocking glowing puzzle pieces on circuit board",
+      "Moulding, assembly, packaging, warehousing and inspection under one group, from raw material to traceable finished goods.",
+    imageSrc: "/integrated-capabilities.jpg",
+    imageAlt: "Integrated Capabilities",
     imageOnRight: true,
   },
 ];
 
-export default function TechnicalExcellence() {
+export default function Tec() {
   return (
     <Section
       className="relative overflow-hidden py-(--section-y) "
@@ -57,14 +57,17 @@ export default function TechnicalExcellence() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 section-container">
-        <div className="mb-10 sm:mb-14 lg:mb-16 max-w-2xl text-left">
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-14 lg:mb-16">
+          <p className="mb-2 text-fluid-24 font-light tracking-tight text-slate-500">
+            Flexible build
+          </p>
           <h2 className="text-fluid-40 font-bold leading-tight text-slate-800">
-            <span className="text-[#0e5c9e]">Technical Excellence</span> in
-            Production
+            <span className="text-[#0e5c9e]">Core Manufacturing</span>{" "}
+            Capabilities
           </h2>
-          <p className="mt-4 text-fluid-24 leading-snug font-normal text-slate-500">
-            Our manufacturing infrastructure is built around three core
-            principles:
+          <p className="mt-4 text-fluid-16 leading-relaxed text-slate-500">
+            Built around your production requirements, from concept and tooling
+            to high-volume runs, with consistent quality at every stage.
           </p>
         </div>
 

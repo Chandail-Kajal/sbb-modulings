@@ -13,17 +13,17 @@ type Advantage = {
 
 const advantages: Advantage[] = [
   {
-    title: "Does SBB Mouldings Support Tooling and Part Design?",
+    title: "Tooling and Part Design Support",
     description:
-      "Yes — SBB Mouldings' engineering team works alongside customer engineering teams on tooling input, part and gate optimization, and material selection, so parts are designed for the realities of high-volume moulding before a single shot is made, not fixed after.",
+      "SBB Mouldings' engineering team works alongside customer engineering teams on tooling input, part and gate optimization, and material selection, so parts are designed for the realities of high-volume moulding before a single shot is made, not fixed after.",
   },
   {
-    title: "Does SBB Mouldings Handle Assembly After Moulding?",
+    title: "In-House Assembly After Moulding",
     description:
-      "Yes — moulded parts can move directly into SBB Mouldings' in-house assembly, welding and finishing, followed by quality inspection and traceable packaging, so a program moves from raw material to boxed finished good with fewer handoffs, fewer vendors, and tighter control over lead time and quality.",
+      "Moulded parts can move directly into SBB Mouldings' in-house assembly, welding and finishing, followed by quality inspection and traceable packaging, so a program moves from raw material to boxed finished good with fewer handoffs, fewer vendors, and tighter control over lead time and quality.",
   },
   {
-    title: "Where Does SBB Mouldings Run Injection Moulding?",
+    title: "Injection Moulding Across Three Bawal Units",
     description:
       "SBB Mouldings runs injection moulding across all three of its Bawal, Rewari units — 2,800 sqm, 3,500 sqm and a 4,000 sqm facility added in December 2024 for new moulding capacity, assembly and finished-goods warehousing — supported by a 25-ton overhead crane for large-tool and large-part handling.",
   },

@@ -18,25 +18,27 @@ export default function Production() {
   const capabilities: CapabilityItem[] = [
     {
       id: 1,
-      title: "Advanced Infrastructure",
-      description: "Three manufacturing units in Bawal, Rewari — totaling roughly 10,300 sqm — combining dedicated moulding halls, assembly lines and finished-goods warehousing under one group, with a 25-ton overhead crane for large tool and component handling.",
-      imageSrc: "/advanced-infrastructure.png",
-      imageAlt: "Advanced Infrastructure",
+      title: "Capacity",
+      description:
+        "High-tonnage injection moulding equipment for large and complex components.",
+      imageSrc: "/manufacturing-capabilities/capacity.jpg",
+      imageAlt: "Digital gauge and analytics interface",
     },
     {
       id: 2,
-      title: "Flexible Production",
+      title: "Flexibility",
       description:
-        "A 29-machine fleet spanning 90 to 2,800 tons means production runs — from small precision parts to the largest automotive and HVAC components — can be matched to the right press size rather than a one-size-fits-all approach.",
-      imageSrc: "/flexible-production.jpg",
-      imageAlt: "Flexible Production",
+        "A broad equipment range supporting different component sizes and production requirements.",
+      imageSrc: "/manufacturing-capabilities/flexibility.jpg",
+      imageAlt: "Team working on laptop and reviewing schematics",
     },
     {
       id: 3,
-      title: "Integrated Capabilities",
-      description: "Moulding, assembly, packaging, warehousing and quality inspection all run within the same group, so a program moves from raw material to boxed, traceable finished goods without leaving our facilities.",
-      imageSrc: "/integrated-capabilities.jpg",
-      imageAlt: "Integrated Capabilities",
+      title: "Integration",
+      description:
+        "Moulding, assembly, quality and warehousing in one unified manufacturing environment.",
+      imageSrc: "/manufacturing-capabilities/integration.jpg",
+      imageAlt: "Interlocking glowing puzzle pieces on circuit board",
     },
   ];
 
@@ -47,20 +49,17 @@ export default function Production() {
           <div className="flex sm:flex-row flex-col justify-between items-start gap-6">
             <div className="sm:max-w-lg w-full mx-auto sm:mx-0">
               <p className="text-fluid-24 font-light text-neutral-500 tracking-tight mb-2">
-                Flexible build
+                Three core principles
               </p>
               <h2 className="text-fluid-40 font-bold text-neutral-900 leading-none">
-                Core Manufacturing  <br />
-                <span className="text-[#0052cc]">Capabilitiess</span>
+                Technical Excellence <br />
+                <span className="text-[#0052cc]">in Production</span>
               </h2>
             </div>
             <div className="sm:max-w-[42%] w-full font-ce text-fluid-16 text-neutral-600 sm:text-right leading-relaxed space-y-4">
               <p>
-                Our manufacturing capabilities are designed around your specific
-                production requirements, from initial concept and tooling to
-                high-volume production. We combine advanced technology, skilled
-                expertise, and flexible processes to deliver consistent quality,
-                efficiency, and reliable results at every stage.
+                Our manufacturing infrastructure is built around three core
+                principles: capacity, flexibility and integration.
               </p>
             </div>
           </div>
@@ -105,9 +104,9 @@ function CapabilitiesCarousel({ capabilities }: CapabilitiesCarouselProps) {
     },
     [
       AutoScroll({
-        speed: 1,
-        stopOnInteraction: true,     // stops when user swipes so gesture doesn't fight auto-scroll
-        stopOnMouseEnter: true,      // pauses on hover
+        speed: 0.8,
+        stopOnInteraction: true,
+        stopOnMouseEnter: true,
       }),
     ]
   );
@@ -125,79 +124,85 @@ function CapabilitiesCarousel({ capabilities }: CapabilitiesCarouselProps) {
   }, [emblaApi, onSelect]);
 
   const scrollTo = useCallback(
-    (index: number) => {
-      if (!emblaApi) return;
-      emblaApi.scrollTo(index);
-    },
+    (index: number) => emblaApi?.scrollTo(index),
     [emblaApi]
   );
-
   return (
     <div
-      className="w-full overflow-hidden select-none cursor-grab active:cursor-grabbing"
-      ref={emblaRef}
+      className="w-full"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Technical excellence in production"
     >
-      <div className="flex -ml-4 touch-pan-y py-6">
-        {extendedCapabilities.map((item, index) => {
-          const isSelected = index === selectedIndex;
+      <div
+        className="w-full overflow-hidden select-none cursor-grab active:cursor-grabbing"
+        ref={emblaRef}
+      >
+        <div className="flex -ml-4 touch-pan-y py-4">
+          {extendedCapabilities.map((item, index) => {
+            const isSelected = index === selectedIndex;
 
-          return (
-            <div
-              key={`${item.id}-${index}`}
-              onClick={() => scrollTo(index)}
-              className="flex-[0_0_90%] sm:flex-[0_0_70%] md:flex-[0_0_60%] lg:flex-[0_0_48%] pl-4 min-w-0"
-            >
-              <div className="group flex flex-col items-center text-center w-full">
-                {/* Capsule Card (Swipe target & clickable) */}
-                <div className="w-full flex items-center justify-center mb-6">
-                  <div
-                    className={`w-full xl:h-96 lg:h-80 sm:h-72 h-56 relative rounded-full p-1 border-4 transition-all duration-500 ease-out ${
-                      isSelected
-                        ? "border-[#0052cc] scale-100 shadow-lg shadow-blue-500/10"
-                        : "border-transparent scale-95 opacity-60 hover:opacity-85"
-                    }`}
-                  >
+            return (
+              <div
+                key={`${item.id}-${index}`}
+                onClick={() => scrollTo(index)}
+                className="flex-[0_0_78%] sm:flex-[0_0_46%] md:flex-[0_0_38%] lg:flex-[0_0_30%] xl:flex-[0_0_26%] pl-4 min-w-0"
+              >
+                <div className="group flex flex-col items-center text-center w-full">
+                  {/* Capsule card */}
+                  <div className="w-full flex items-center justify-center mb-4">
                     <div
-                      className={`relative w-full h-full rounded-full overflow-hidden transition-all duration-500 ${
-                        isSelected ? "blur-none" : "blur-[2px]"
+                      className={`w-full xl:h-56 lg:h-48 sm:h-44 h-36 relative rounded-full p-1 border-[3px] transition-all duration-500 ease-out ${
+                        isSelected
+                          ? "border-[#0052cc] scale-100 shadow-lg shadow-blue-500/20"
+                          : "border-transparent scale-90 opacity-60 group-hover:opacity-100 group-hover:scale-95 group-hover:border-[#0052cc]/40"
                       }`}
                     >
-                      <Image
-                        src={item.imageSrc}
-                        alt={item.imageAlt}
-                        fill
-                        draggable={false} // Prevents native browser image dragging from blocking touch swipe
-                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105 pointer-events-none"
-                        sizes="(max-width: 768px) 90vw, 48vw"
-                      />
+                      <div
+                        className={`relative w-full h-full rounded-full overflow-hidden transition-all duration-500 ${
+                          isSelected
+                            ? "blur-none"
+                            : "blur-[2px] group-hover:blur-none"
+                        }`}
+                      >
+                        <Image
+                          src={item.imageSrc}
+                          alt={item.imageAlt}
+                          fill
+                          draggable={false}
+                          className="object-cover object-center transition-transform duration-500 group-hover:scale-110 pointer-events-none"
+                          sizes="(max-width: 768px) 78vw, 30vw"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Text Section */}
-                <h3
-                  className={`w-full text-fluid-32 font-bold tracking-tight leading-tight mb-3 transition-all duration-500 ${
-                    isSelected
-                      ? "text-neutral-900 opacity-100"
-                      : "text-neutral-400 opacity-60"
-                  }`}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className={`w-full text-fluid-16 leading-snug text-pretty transition-all duration-500 ${
-                    isSelected
-                      ? "text-neutral-600 opacity-100"
-                      : "text-neutral-400 opacity-60"
-                  }`}
-                >
-                  {item.description}
-                </p>
+                  {/* Text */}
+                  <h3
+                    className={`w-full text-fluid-24 font-bold tracking-tight leading-tight mb-2 transition-all duration-500 ${
+                      isSelected
+                        ? "text-neutral-900 opacity-100"
+                        : "text-neutral-400 opacity-60 group-hover:text-neutral-700 group-hover:opacity-100"
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className={`w-full max-w-xs text-fluid-16 leading-snug text-pretty transition-all duration-500 ${
+                      isSelected
+                        ? "text-neutral-600 opacity-100 translate-y-0"
+                        : "text-neutral-400 opacity-0 translate-y-1 h-0 overflow-hidden sm:h-auto sm:opacity-60 sm:translate-y-0"
+                    }`}
+                  >
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
+
     </div>
   );
 }
