@@ -20,11 +20,11 @@ export const Header = () => {
 
   const navItems = [
     { label: "Services", link: "/manufacturing-capabilities", isServices: true },
-    { label: "Blog", link: "/blog" },
     { label: "About Us", link: "/about-us" },
     { label: "Quality & Certification", link: "/quality-certifications" },
     { label: "Industries We Serve", link: "/industries" },
     { label: "Our Work", link: "/our-work" },
+    { label: "Clients", link: "/clients" },
     { label: "Contact Us", link: "/contact-us" },
   ];
 

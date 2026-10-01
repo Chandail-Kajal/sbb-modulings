@@ -85,7 +85,7 @@ export const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="#"
+                      href="/blog"
                       className="hover:text-white transition-colors"
                     >
                       Blog

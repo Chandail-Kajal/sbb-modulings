@@ -105,7 +105,7 @@ export default function Clients() {
                 </div>
             </Section>
             <LogoSection />
-            <Section>
+            <Section className="section-container py-(--section-y)">
                 <h2 className="mb-10 text-fluid-40 font-bold text-neutral-700 lg:mb-17.5">
                     Why they work with us
                 </h2>
@@ -124,8 +124,8 @@ export default function Clients() {
                     ))}
                 </ul>
             </Section>
-            <Section>
-                <div className="w-full">
+            <Section className="pt-0">
+                <div className="w-full ">
                     <div className="section-container">
                         <div
                             className="relative w-full rounded-[2.25rem] overflow-hidden px-8 py-10 sm:px-14 sm:py-12 md:px-20 lg:px-25 md:py-16 flex flex-col md:flex-row items-center justify-between gap-9 shadow-lg"

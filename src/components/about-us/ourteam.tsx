@@ -202,7 +202,7 @@ export function OurTeam() {
 
       <Section
         aria-label="Leadership team"
-        className="relative w-full overflow-hidden bg-white sm:py-20"
+        className="relative w-full overflow-hidden bg-white pb-12 sm:py-20"
         disablePaddingY
       >
         <div className="mx-auto section-container">
@@ -352,7 +352,7 @@ export function OurTeam() {
             </div>
 
             {/* Info card */}
-            <div className="absolute bottom-0 left-1/2 z-30 w-[calc(100%-32px)] max-w-95 -translate-x-1/2 sm:h-40 sm:w-80">
+            <div className="absolute bottom-0 left-1/2 z-30 w-full -translate-x-1/2 sm:h-40 sm:w-80">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.article
                   key={`card-${active}`}
@@ -417,8 +417,8 @@ export function OurTeam() {
             </div>
           </div>
 
-          {/* Arrow controls: end of section */}
-          <div className="relative z-40 mt-24 flex items-center justify-center gap-3 sm:mt-28 sm:justify-end">
+          {/* Arrow controls: centered below md, right-aligned from md up */}
+          <div className="relative z-40 mt-24 flex items-center justify-center gap-3 sm:mt-28 md:justify-end">
             <button
               type="button"
               onClick={() => go(-1)}
